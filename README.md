@@ -1,3 +1,9 @@
+** Pré-requis**
+
+1. Installer le [JDK Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
+2. Installer [Maven](https://maven.apache.org/download.cgi)
+3. Créer la variable d'environnement **JAVA_HOME** pointant sur le JDK (par exemple **C:\Program Files\Java\jdk-12.0.1**).
+
 **Installation**
 
 Suivre les consignes du github https://github.com/WebGoat/WebGoat
