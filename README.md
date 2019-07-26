@@ -1,4 +1,4 @@
-** Pré-requis**
+**Pré-requis**
 
 1. Installer le [JDK Java](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
 2. Installer [Maven](https://maven.apache.org/download.cgi)
