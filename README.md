@@ -26,7 +26,7 @@ Pour modifier une page sur Moodle avec du code HTML, une fois dans la fenêtre d
 
 Un conseil, ne PAS utiliser l'interface de Moodle pour apporter des corrections directement, cette dernière n'est pas prévue pour gérer le contenu multilang, et mettra le souk dans le code HTML ce qui le rendra difficile à éditer. Aussi, toujours préférer faire un copier-coller depuis un vrai éditeur de texte.
 
-**Remarque diverses**:
+**Remarque diverses**
 
 Certaines leçons sont buggées (certaines uniquement graphiquement, d'autres au niveau de la logique), un ticket est ouvert sur [Github](https://github.com/WebGoat/WebGoat/issues/619).
 
