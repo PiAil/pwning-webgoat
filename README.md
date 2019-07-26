@@ -11,7 +11,7 @@ Suivre les consignes du github https://github.com/WebGoat/WebGoat
 
 **Remarque diverses**:
 
-Certaines leçons sont buggées (certaines uniquement graphiquement, d'autres au niveau de la logique), un ticket est ouvert sur https://github.com/WebGoat/WebGoat/issues/619(Github).
+Certaines leçons sont buggées (certaines uniquement graphiquement, d'autres au niveau de la logique), un ticket est ouvert sur [Github](https://github.com/WebGoat/WebGoat/issues/619).
 Ne pas hésiter à compléter mon poste si jamais vous en trouvez d'autres. 
 Les personnes en charge du project ont l'air *assez* réactives.
 J'espère que les bugs seront résolus rapidement.
