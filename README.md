@@ -6,7 +6,7 @@
 
 **Installation**
 
-Suivre les consignes du github https://github.com/WebGoat/WebGoat
+Suivre les consignes du Github https://github.com/WebGoat/WebGoat
 
 	git clone https://github.com/WebGoat/WebGoat.git
     cd WebGoat
@@ -20,9 +20,11 @@ Suivre les consignes du github https://github.com/WebGoat/WebGoat
 
 **Moodle**
 
-Le code HTML de cette page, et du Wiki de correction sont sur ce dépot.
+Le code HTML de la page de résumé, et du Wiki de correction sont sur ce dépot.
 
-Pour modifier une page sur Moodle avec du code HTML, une fois dans la fenêtre d'édition, cliquer sur **Montrer/cacher les boutons avancés** puis sur **HTML**
+Pour modifier une page sur Moodle avec du code HTML, une fois dans la fenêtre d'édition, cliquer sur **Montrer/cacher les boutons avancés** puis sur **HTML**, et copier-coller votre code.
+
+Un conseil, ne PAS utiliser l'interface de Moodle pour apporter des corrections directement, cette dernière n'est pas prévue pour gérer le contenu multilang, et mettra le souk dans le code HTML ce qui le rendra difficile à éditer. Aussi, toujours préférer faire un copier-coller depuis un vrai éditeur de texte.
 
 **Remarque diverses**:
 
