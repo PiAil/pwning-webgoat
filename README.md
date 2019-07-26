@@ -8,13 +8,13 @@
 
 Suivre les consignes du github https://github.com/WebGoat/WebGoat
 
-	
 	git clone https://github.com/WebGoat/WebGoat.git
     cd WebGoat
 	mvn clean install
 	
 **Lancement**
 
+    cd WebGoat
 	mvn -pl webgoat-server spring-boot:run
 	mvn -pl webwolf spring-boot:run
 
