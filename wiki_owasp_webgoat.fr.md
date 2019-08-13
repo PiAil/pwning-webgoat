@@ -413,7 +413,9 @@ La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour
 
 5. Lire les différents conseils.
 
-6.  
+6.
+![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.
+
 ![Hint](images/wiki_owasp_webgoat/hint.png) Try to send a password reset link to your own account at {user}@webgoat.org, you can read this e-mail in WebWolf.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Look at the link, can you think how the server creates this link?  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Tom clicks all the links he receives in his mailbox, you can use the landing page in WebWolf to get the reset link...  
@@ -424,7 +426,7 @@ La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour
 *   Envoyer un mail à `tom@webgoat-cloud.org` et intercepter la requête.
 *   Modifier l'en-tête `Host: host:webgoat_port` en `Host: host:webwolf_port` et renvoyer une requête.
 *   Sur **WebWolf**, aller dans **Incoming requests**, récupérer la variable `path` et aller à l'URL http://host:webgoat\_port/WebGoat/path.
-*   Changer le mot de passe et valider le challenge avec ce dernier (validation buggée).
+*   Changer le mot de passe et valider le challenge avec ce dernier.
  
 ![Password Reset 6](images/wiki_owasp_webgoat/password-reset-6.png)  
 ![Password Reset 6](images/wiki_owasp_webgoat/password-reset-6-webwolf.png)
@@ -458,7 +460,12 @@ La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour
 *   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_.
 *   Sur WebGoat, se connecter avec Tom et cliquer sur **Reset Votes**.
 *   Repérer la requête vers `reset` dans l'onglet _Réseau_ et cliquer sur _En-têtes_.
-*   Remarquer l'en-tête : `Cookie: access_token=eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoiVG9tIn0._gPSRvB9wAAruFwaDgivXp4n5rHQFi5hTOJsVFqCkR9ZDUf3LhCgJQuTIIpTGnZIS3XWL9MHZGaExJC7XhIiXA`
+*   Remarquer l'en-tête : 
+```
+Cookie: access_token=eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoiZm
+Fsc2UiLCJ1c2VyIjoiVG9tIn0._gPSRvB9wAAruFwaDgivXp4n5rHQFi5hTOJsVFqCkR9ZDUf3LhCgJQ
+uTIIpTGnZIS3XWL9MHZGaExJC7XhIiXA
+```
 *   En base64, cela se décode en : `{"alg":"HS512"}.{"iat":1564402244,"admin":"false","user":"Tom"}.signature`.
 *   Le modifier en `{"alg":null}.{"iat":1564402244,"admin":"true","user":"Tom"}.`.
 *   Le ré-encoder en base64 (`eyJhbGciOiBudWxsfQ==.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoidHJ1ZSIsInVzZXIiOiJUb20ifQ==.`).
@@ -831,7 +838,9 @@ Envoyer une requête PUT vers http://192.168.99.100:8080/WebGoat/IDOR/profile/23
 ##### Cross Site Scripting
 
 2. 
-Les principaux navigateurs ont banni le Javascript de la barre d'URL, contrairement à ce que laisse penser la consigne. Ouvrir plutôt les _Outils de développements_, et l'onglet _Console_. La réponse attendue est `Yes`.
+![Warning](images/wiki_owasp_webgoat/warning.png) Les principaux navigateurs ont banni le Javascript de la barre d'URL, contrairement à ce que laisse penser la consigne. Ouvrir plutôt les _Outils de développements_, et l'onglet _Console_. 
+
+La réponse attendue est `Yes`.
 
 7.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Think about how the inputs are presumably processed by the application.  
