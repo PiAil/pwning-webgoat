@@ -1,7 +1,7 @@
 - [**Introduction:**](#introduction)
   * [WebGoat](#webgoat)
   * [WebWolf](#webwolf)
-- [**General:**](#--general---)
+- [**General:**](#general)
   * [HTTP Basics](#http-basics)
   * [HTTP Proxies](#http-proxies)
   * [CIA triad](#cia-triad)
