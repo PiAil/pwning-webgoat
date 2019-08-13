@@ -1,3 +1,5 @@
+*Read this in other languages: [English](wiki_owasp_webgoat.en.md).*
+
 - [**Introduction:**](#introduction)
   * [WebGoat](#webgoat)
   * [WebWolf](#webwolf)
