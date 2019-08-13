@@ -348,7 +348,7 @@ sql_injection_mitigation_10()
 
 ##### Secure Passwords
 
-4. La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour vérifier la force du mot de passe. 4\. The verification algorithm to check the password strength can be found here https://github.com/dropbox/zxcvbn .
+4. La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour vérifier la force du mot de passe.
 
 ##### Password reset
 
@@ -397,7 +397,7 @@ sql_injection_mitigation_10()
 ##### JWT tokens
 
 4.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.  Lesson number does not turn green on validation. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Select a different user and look at the token you receive back, use the delete button to reset the votes count  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Decode the token and look at the contents  
@@ -423,15 +423,14 @@ sql_injection_mitigation_10()
 ![Hint](images/wiki_owasp_webgoat/hint.png) Download a word list dictionary (https://github.com/first20hours/google-10000-english)  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Write a small program or use HashCat for brute forcing the token according the word list
 
-Il est possible d'effectuer ce challenge à l'aide d'outils tels que **johntheripper** et https://jwt.io/, mais afin de mieux comprendre voilà un petit script Python.  
-It is possible to validate this challenge with tools like **johntheripper** and https://jwt.io/, but in order to get a better understanding og the whole process, here a Python script.  
+Il est possible d'effectuer ce challenge à l'aide d'outils tels que **johntheripper** et https://jwt.io/, mais afin de mieux comprendre voilà un petit script Python.
 
 *   Isoler la signature, et la reformater correctement.
 *   Utiliser chaque mot du dictionnaire comme clé, calculer le HMAC du message initial, le convertir en base64, et comparer avec la signature.
 *   S'il y a correspondance, le mot du dictionnaire correspond à la clé (valeur trouvée : **victory**).
 *   Calculer alors la nouvelle signature avec le message modifié (valeur trouvée : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJ0b21Ad2ViZ29hdC5jb20iLCJ1c2VybmFtZSI6IldlYkdvYXQiLCJFbWFpbCI6InRvbUB3ZWJnb2F0LmNvbSIsIlJvbGUiOlsiTWFuYWdlciIsIlByb2plY3QgQWRtaW5pc3RyYXRvciJdfQ.dImA6LEwQc1-ZqVPWWGE01u1jO2a-yfx8lZetbDqiTc`).
 
-```
+```python
 import base64  
 import hashlib  
 import hmac  
@@ -512,7 +511,7 @@ jwt_tokens_5()
 *   Le nouveau token est `eyJ0eXAiOiJKV1QiLCJraWQiOiJoYWNrZWQnIFVOSU9OIHNlbGVjdCAnWkdWc1pYUnBibWRVYjIwPScgZnJvbSBJTkZPUk1BVElPTl9TQ0hFTUEuU1lTVEVNX1VTRVJTIC0tIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsInVzZXJuYW1lIjoiVG9tIiwiRW1haWwiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsIlJvbGUiOlsiQ2F0Il19.JrDpQmNiVI818UvOMQgRmPkZOetw7Ic1WbPvStS2B6U`.
 *   Cliquer sur _Modifier et Renvoyer_, modifier le paramètre avec la nouvelle valeur générée, et renvoyer la requête.
 
-```
+```python
 import base64  
 import hashlib  
 import hmac  
@@ -675,7 +674,7 @@ Les attributs attendus sont : **role**, **userID**.
 **View Another Profile**:  
 Le script ci-dessous permet de _fuzzer_ l'URL trouvée dans l'exercice précédent pour trouver un autre profil. On en trouve un ayant pour **id** 2342388.
 
-```
+```python
 import requests  
   
 def idor_5():  
@@ -825,7 +824,7 @@ Solution 4: No there are many other ways. Like HTML, Flash or any other type of 
 
 Le code suivant permet de valider la leçon.
 
-```
+```java
 import org.owasp.validator.html.*;  
 import MyCommentDAO;  
   
