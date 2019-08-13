@@ -863,7 +863,7 @@ Entrer `<script>alert()</script>` dans la case **Enter your credit card number:*
 ![Hint](images/wiki_owasp_webgoat/hint.png) Replace '/' with '%2F' in your URL parameters.
 
 *   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Console_.
-*   Naviguer vers l'URL [http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;](http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;)
+*   Naviguer vers l'URL [http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;](http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;).
 *   Récupérer le numéro en sortie de la fonction.
 
 ![XSS 11](images/wiki_owasp_webgoat/xss-11.png)

