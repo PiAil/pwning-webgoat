@@ -1188,7 +1188,8 @@ Suivre les instructions. Follow the instructions.
 
 ##### Without password
 
-Username: **Larry** Password: **' or 1=1 --**
+*   **Username**: `Larry`
+*   **Password**: `' or 1=1 --`
 
 ##### Creating a new account
 
