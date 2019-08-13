@@ -428,7 +428,7 @@ Il est possible d'effectuer ce challenge à l'aide d'outils tels que **johntheri
 *   Isoler la signature, et la reformater correctement.
 *   Utiliser chaque mot du dictionnaire comme clé, calculer le HMAC du message initial, le convertir en base64, et comparer avec la signature.
 *   S'il y a correspondance, le mot du dictionnaire correspond à la clé (valeur trouvée : **victory**).
-*   Calculer alors la nouvelle signature avec le message modifié:
+*   Calculer alors la nouvelle signature avec le message modifié :
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJ
 pYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJ
@@ -500,6 +500,7 @@ jwt_tokens_5()
 
 8.  
 ![Warning](images/wiki_owasp_webgoat/warning.png)  Il manque une précision dans les indices, la clé est décodée comme une chaine en base64, aussi au lieu d'utiliser comme **kid** `hacked' UNION select 'deletingTom' from INFORMATION_SCHEMA.SYSTEM_USERS --`, il faut utiliser `hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --`.
+
 ![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Take a look at the token and specifically and the header  
