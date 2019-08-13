@@ -825,7 +825,8 @@ Envoyer une requête PUT vers http://192.168.99.100:8080/WebGoat/IDOR/profile/23
 
 ##### Cross Site Scripting
 
-2. Les principaux navigateurs ont banni le Javascript de la barre d'URL, contrairement à ce que laisse penser la consigne. Ouvrir plutôt les _Outils de développements_, et l'onglet _Console_. La réponse attendue est `Yes`.
+2. 
+Les principaux navigateurs ont banni le Javascript de la barre d'URL, contrairement à ce que laisse penser la consigne. Ouvrir plutôt les _Outils de développements_, et l'onglet _Console_. La réponse attendue est `Yes`.
 
 7.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Think about how the inputs are presumably processed by the application.  
