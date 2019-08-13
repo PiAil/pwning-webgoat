@@ -6,7 +6,7 @@
   * [HTTP Proxies](#http-proxies)
   * [CIA triad](#cia-triad)
   * [Google Chrome Developer Tools](#google-chrome-developer-tools)
-- [**(A1) Injection:**](#%29a1%29-injection)
+- [**(A1) Injection:**](#%28a1%29-injection)
   * [SQL Injection (introduction)](#sql-injection--introduction-)
   * [SQL Injection (advanced)](#sql-injection--advanced-)
   * [SQL Injection (mitigation)](#sql-injection--mitigation-)
