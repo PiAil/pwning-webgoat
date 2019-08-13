@@ -428,7 +428,14 @@ Il est possible d'effectuer ce challenge à l'aide d'outils tels que **johntheri
 *   Isoler la signature, et la reformater correctement.
 *   Utiliser chaque mot du dictionnaire comme clé, calculer le HMAC du message initial, le convertir en base64, et comparer avec la signature.
 *   S'il y a correspondance, le mot du dictionnaire correspond à la clé (valeur trouvée : **victory**).
-*   Calculer alors la nouvelle signature avec le message modifié (valeur trouvée : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJpYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJ0b21Ad2ViZ29hdC5jb20iLCJ1c2VybmFtZSI6IldlYkdvYXQiLCJFbWFpbCI6InRvbUB3ZWJnb2F0LmNvbSIsIlJvbGUiOlsiTWFuYWdlciIsIlByb2plY3QgQWRtaW5pc3RyYXRvciJdfQ.dImA6LEwQc1-ZqVPWWGE01u1jO2a-yfx8lZetbDqiTc`).
+*   Calculer alors la nouvelle signature avec le message modifié:
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJXZWJHb2F0IFRva2VuIEJ1aWxkZXIiLCJ
+pYXQiOjE1MjQyMTA5MDQsImV4cCI6MTYxODkwNTMwNCwiYXVkIjoid2ViZ29hdC5vcmciLCJzdWIiOiJ
+0b21Ad2ViZ29hdC5jb20iLCJ1c2VybmFtZSI6IldlYkdvYXQiLCJFbWFpbCI6InRvbUB3ZWJnb2F0LmN
+vbSIsIlJvbGUiOlsiTWFuYWdlciIsIlByb2plY3QgQWRtaW5pc3RyYXRvciJdfQ.dImA6LEwQc1-ZqVP
+WWGE01u1jO2a-yfx8lZetbDqiTc
+```
 
 ```python
 import base64  
