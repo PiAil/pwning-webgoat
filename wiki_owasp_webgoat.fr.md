@@ -1,4 +1,4 @@
-- [**Introduction:**](#--introduction---)
+- [**Introduction:**](#introduction)
   * [WebGoat](#webgoat)
   * [WebWolf](#webwolf)
 - [**General:**](#--general---)
