@@ -2,7 +2,7 @@
 
 ##### WebGoat
 
-1\. Lire la leçon.
+1. Lire la leçon.
 
 ##### WebWolf
 
@@ -493,7 +493,7 @@ jwt_tokens_5()
 ![JWT 7](images/wiki_owasp_webgoat/jwt-7-5.png)
 
 8.  
-![Warning](images/wiki_owasp_webgoat/warning.png)  Il manque une précision dans les indices, la clé est décodée comme une chaine en base64, aussi au lieu d'utiliser comme **kid** `hacked' UNION select 'deletingTom' from INFORMATION_SCHEMA.SYSTEM_USERS --`, il faut utiliser `hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --`
+![Warning](images/wiki_owasp_webgoat/warning.png)  Il manque une précision dans les indices, la clé est décodée comme une chaine en base64, aussi au lieu d'utiliser comme **kid** `hacked' UNION select 'deletingTom' from INFORMATION_SCHEMA.SYSTEM_USERS --`, il faut utiliser `hacked' UNION select 'ZGVsZXRpbmdUb20=' from INFORMATION_SCHEMA.SYSTEM_USERS --`.
 ![Warning](images/wiki_owasp_webgoat/warning.png)  Le numéro de leçon ne devient pas vert après validation.
 
 ![Hint](images/wiki_owasp_webgoat/hint.png) Take a look at the token and specifically and the header  
