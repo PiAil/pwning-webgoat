@@ -75,7 +75,6 @@ Read the lesson.
 2.  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Type in your name and press 'go'
 
-Entrer un nom et appuyer sur **Go!**.  
 Enter your name and press **Go!**.  
 
 3.  
@@ -352,7 +351,7 @@ try {
 ![Hint](images/wiki_owasp_webgoat/hint.png) Intercept the request and try to specify a different order by  
 ![Hint](images/wiki_owasp_webgoat/hint.png) Use for example "(case when (true) then hostname else id end)" in the order by and see what happens
 
-*   uClick on column sort performs a request to http://localhost:8080/WebGoat/SqlInjection/servers?column=ip. This can be exploited by intercepting the request with Browser Tools and providing prepared string as column value.
+*   Click on column sort performs a request to http://localhost:8080/WebGoat/SqlInjection/servers?column=ip. This can be exploited by intercepting the request with Browser Tools and providing prepared string as column value.
 *   To get the idea about **webgoat-prd** IP address we first have to find out the table name and ip column name. The obvious guess is **servers** and **ip**:  
     `column=(CASE WHEN (SELECT ip FROM servers WHERE hostname='webgoat-acc') = '192.168.3.3' THEN id ELSE hostname END)`
 *   If that is the correct table and column name, the table will get sorted by **ids**.
