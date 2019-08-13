@@ -529,7 +529,7 @@ et
 {"iss":"WebGoat Token Builder","iat":1524210904,"exp":1618905304,
 "aud":"webgoat.org","sub":"jerry@webgoat.com","username":"Tom",
 "Email":"jerry@webgoat.com","Role":["Cat"]}
-```, 
+```
 puis recalculer la signature avec la clé `deletingTom`, avec le script Python ci-dessous par exemple.
 *   Le nouveau token est :
 ```
