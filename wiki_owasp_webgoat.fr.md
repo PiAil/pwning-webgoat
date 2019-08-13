@@ -48,7 +48,8 @@
 
 ##### WebGoat
 
-1. Lire la leçon.
+1. 
+Lire la leçon.
 
 ##### WebWolf
 
@@ -394,7 +395,8 @@ sql_injection_mitigation_10()
 
 ##### Secure Passwords
 
-4. La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour vérifier la force du mot de passe.
+4. 
+La vérification utilise la bibliothèque https://github.com/dropbox/zxcvbn pour vérifier la force du mot de passe.
 
 ##### Password reset
 
@@ -662,7 +664,8 @@ jwt_tokens_8()
 
 ![XXE 4](images/wiki_owasp_webgoat/xxe-4.png)
 
-6. Même si ce n'est pas un challenge, une petite erreur s'est glissée dans la leçon, faire attention à rentrer les bonnes URL pour pouvoir effectuer le test. 
+6. 
+Même si ce n'est pas un challenge, une petite erreur s'est glissée dans la leçon, faire attention à rentrer les bonnes URL pour pouvoir effectuer le test. 
   
 **attack.dtd**  
 ```xml
@@ -1013,7 +1016,8 @@ AAQAYABoACXB0AARQd25ycHcBAHhxAH4ABXNxAH4AAnEAfgAScQB-ACxxAH4ANHg
 
 ##### Vulnerable Components
 
-5. Copier-coller `Ok<script>XSS</script>` dans chaque case.
+5. 
+Copier-coller `Ok<script>XSS</script>` dans chaque case.
 
 12.
 ![Warning](images/wiki_owasp_webgoat/warning.png)  Cette leçon ne semble pas fonctionner.
