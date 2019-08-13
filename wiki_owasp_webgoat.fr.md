@@ -81,9 +81,9 @@ Entrer un nom et appuyer sur **Go!**.
 ![Hint](images/wiki_owasp_webgoat/hint.png) Try to intercept the request with OWASP ZAP
 
 *   Ouvrir les _Outils de développements_ du navigateur, et aller dans l'onglet _Réseau_.
-*   Remplir les champs sur **WebGoat** avec `POST` ou `GET` et un nombre aléatoire, et cliquer sur **Go!**. Fill out the fields on **WebGoat** with `POST` or `GET` and a random number, and click on **Go!**.
-*   Repérer la requête vers `attack2` dans l'onglet _Réseau_ et cliquer sur _Modifier et renvoyer_. Locate the query to `attack2` in the _Network_ tab and click on _Edit and Resend_.
-*   Récupérer le `magic_num` dans le corps de la requête, repérer que la requête est un `POST` et recliquer sur **Go!** avec les bons paramètres. Retrieve the `magic_num` in the body of the request, find that the request is a `POST` and click again on **Go!** with the correct parameters.
+*   Remplir les champs sur **WebGoat** avec `POST` ou `GET` et un nombre aléatoire, et cliquer sur **Go!**.
+*   Repérer la requête vers `attack2` dans l'onglet _Réseau_ et cliquer sur _Modifier et renvoyer_.
+*   Récupérer le `magic_num` dans le corps de la requête, repérer que la requête est un `POST` et recliquer sur **Go!** avec les bons paramètres.
 
 ![HTTP Basics](images/wiki_owasp_webgoat/http-basics.png)
 
